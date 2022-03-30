@@ -5,12 +5,41 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Earthenwares</title>
+
+        <!-- local stylesheet -->
         <link rel="stylesheet" href="./css/style.css">
     </head>
 
     <body>
         
+        <div>
+            <h1>Sign up</h1>
 
+            <input type="text" placeholder="username..." id="signUpUsername">
+
+            <input type="text" placeholder="email..." id="signUpEmail">
+
+            <input type="text" placeholder="password..." id="signUpPassword">
+
+            <div>
+                <label for="yes">yes</label>
+                <input type="radio" name="signUpSeller" value="yes">
+
+                <label for="no">no</label>
+                <input type="radio" name="signUpSeller" value="no">
+            </div>
+
+            <input type="text" placeholder="store name..." id="signUpStoreName">
+
+            <input type="text" placeholder="store description..." id="signUpStoreDescription">
+
+            <button id="signUpBtn">Sign up</button>
+        </div>
+
+        <!-- jquery cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- local script -->
         <script src="./js/index.js"></script>
     </body>
 </html>
