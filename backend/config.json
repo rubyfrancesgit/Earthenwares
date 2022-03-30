@@ -1,0 +1,6 @@
+{
+    "MONGO_USER": "codingcowboyz",
+    "MONGO_PASSWORD": "earthenwares",
+    "MONGO_CLUSTER_NAME": "mboun",
+    "MONGO_DBNAME": "earthenwares"
+}
