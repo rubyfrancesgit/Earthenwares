@@ -29,3 +29,28 @@ mongoose.connect(`mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@cl
     });
 
 app.listen(port, () => console.log(`My full stack application is listening on port ${port}`));
+
+// Register user
+app.post("/registerUser", (req, res) => {
+    // checking if user is already in DB
+    User.findOne({username: req.body.username}, (err, userResult) => {
+        if (userResult) {
+            res.send("Username already taken. Please try another name");
+        } else {
+            const hash = bcrypt.hashSync(req.body.password); // encrypting user password
+            const user = new User({
+                _id: new mongoose.Types.ObjectId,
+                username: req.body.username,
+                email: req.body.password,
+                password: hash,
+                seller: req.body.seller,
+                storeName: req.body.storeName,
+                storeDescription: req.body.storeDescription
+            }); // end of if/else
+            // save to DB and notify userResult
+            user.save().then(result => {
+                res.send(result);
+            }).catch(err => res.send(err));
+        }
+    }); // end of user check
+}); // end of register user

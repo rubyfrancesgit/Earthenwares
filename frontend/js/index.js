@@ -32,11 +32,44 @@ $(document).ready(function() {
 
         if (username == "" || email == "" || password == "") {
             alert("Please enter all fields");
-        } else if (seller == "yes" && username == "" || email == "" || password == "" || storeName == "" || storeDescription == "") {
+        } else if ((seller == "yes") && (username == "" || email == "" || password == "" || storeName == "" || storeDescription == "")) {
             alert("Please enter all fields, including store fields");
         } else {
             console.log("Form complete");
-        }
+            $.ajax({
+                url: `http://${url}/registerUser`,
+                type: "POST",
+                data: {
+                    username: username,
+                    email: email,
+                    password: password,
+                    seller: seller,
+                    storeName: storeName,
+                    storeDescription: storeDescription
+                },
+                success: function(user) {
+                    console.log(user); // remove later
+                    if(user !== "Username already taken. Please try another name") {
+                        alert("Thanks for signing up! Please login.");
+
+                        // clearning inputs
+                        $("#signUpUsername").val("");
+                        $("#signUpEmail").val("");
+                        $("#signUpPassword").val("");
+                    } else {
+                        alert('Username already taken. Please use a different username');
+
+                        // clearning inputs
+                        $("#signUpUsername").val("");
+                        $("#signUpEmail").val("");
+                        $("#signUpPassword").val("");
+                    } // end of if/else
+                }, // end of success
+                error: function() {
+                    console.log("Cannot call api");
+                }
+            }); // end of ajax
+        } // end of if/else
 
     });
 
