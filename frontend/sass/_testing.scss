@@ -1,0 +1,38 @@
+.test{
+    padding: 5rem;
+
+    .title, .heading, .sub-heading, .body-text{
+        padding-bottom: 2em;
+    }
+
+    .title{
+        padding-top: 2em;
+        @include title;
+        // font-family: "Cremona", sans-serif;
+    }
+
+    .heading{
+        @include heading;
+        
+    }
+
+    .sub-heading{
+        @include sub-heading;
+    }
+
+    .body-text{
+        @include body-text;
+    }
+
+    .btn-one{
+        @include button-orange;
+    }
+
+    .btn-two{
+        @include button-green;
+    }
+
+    .btn-three{
+        @include button-text;
+    }
+}
