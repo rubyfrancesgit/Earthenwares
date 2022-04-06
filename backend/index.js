@@ -45,7 +45,10 @@ app.post("/registerUser", (req, res) => {
                 password: hash,
                 seller: req.body.seller,
                 storeName: req.body.storeName,
-                storeDescription: req.body.storeDescription
+                storeDescription: req.body.storeDescription,
+                instagram: req.body.instagram,
+                facebook: req.body.facebook,
+                twitter: req.body.twitter
             }); // end of if/else
             // save to DB and notify userResult
             user.save().then(result => {
