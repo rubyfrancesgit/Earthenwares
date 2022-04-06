@@ -7,7 +7,10 @@ const userSchema = new mongoose.Schema({
     password: String,
     seller: Boolean,
     storeName: String,
-    description: String
+    description: String,
+    instagram: String,
+    facebook: String,
+    twitter: String
 });
 
 module.exports = mongoose.model('User', userSchema);

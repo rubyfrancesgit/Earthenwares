@@ -28,8 +28,11 @@ $(document).ready(function() {
         let seller = document.querySelector('input[name="signUpSeller"]:checked').value;
         let storeName = $("#signUpStoreName").val();
         let storeDescription = $("#signUpStoreDescription").val();
+        let instagram = $("#signUpInstagram").val();
+        let facebook = $("#signUpFacebook").val();
+        let twitter = $("#signUpTwitter").val();
 
-        console.log(username, email, password, seller, storeName, storeDescription);
+        console.log(username, email, password, seller, storeName, storeDescription, instagram, facebook, twitter);
 
         if (username == "" || email == "" || password == "") {
             alert("Please enter all fields");
@@ -41,12 +44,15 @@ $(document).ready(function() {
                 url: `http://${url}/registerUser`,
                 type: "POST",
                 data: {
-                    username: username,
-                    email: email,
-                    password: password,
-                    seller: seller,
-                    storeName: storeName,
-                    storeDescription: storeDescription
+                    username,
+                    email,
+                    password,
+                    seller,
+                    storeName,
+                    storeDescription,
+                    instagram,
+                    facebook,
+                    twitter
                 },
                 success: function(user) {
                     console.log(user); // remove later
@@ -88,8 +94,8 @@ $(document).ready(function() {
                 url: `http://${url}/loginUser`,
                 type: "POST",
                 data: {
-                    username: username,
-                    password: password
+                    username,
+                    password
                 },
                 success: function(user) {
                     console.log(user) // remove later
