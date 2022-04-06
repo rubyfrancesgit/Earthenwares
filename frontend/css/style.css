@@ -6,10 +6,73 @@
 }
 
 html {
-  font-size: 65.5%;
+  font-size: 62.5%;
 }
 
 li {
   list-style: none;
+  cursor: pointer;
+}
+
+.test {
+  padding: 5rem;
+}
+.test .title, .test .heading, .test .sub-heading, .test .body-text {
+  padding-bottom: 2em;
+}
+.test .title {
+  padding-top: 2em;
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+}
+.test .heading {
+  font-family: "Assistant", sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.test .sub-heading {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+.test .body-text {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+.test .btn-one {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+.test .btn-two {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: #D5E0A8;
+  color: #4A4F4F;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+.test .btn-three {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
   cursor: pointer;
 }

@@ -5,7 +5,7 @@ function generateCSS(cb) {
     console.log('css');
     src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(dest('./css'));
+    .pipe(dest('css'));
     cb();
 }
 

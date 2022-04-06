@@ -1,0 +1,69 @@
+// TEXT MIXINS
+
+@mixin title {
+    font-family: $displayfont;
+    font-size: 3.75em; //3.75rem = 60px
+    font-weight: 400;
+    // line-height: 4.125em;
+}
+
+@mixin heading {
+    font-family: $contentfont;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@mixin sub-heading {
+    font-family: $contentfont;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+@mixin body-text {
+    font-family: $contentfont;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+// END OF TEXT MIXINS
+
+// BUTTON MIXINS
+
+@mixin button-orange {
+    font-family: $contentfont;
+    font-size: 1.5em;
+    font-weight: 600;
+    background-color: $orange;
+    color: white;
+    border: none;
+    border-radius: none;
+    padding: .75em 2em;
+    cursor: pointer;
+}
+
+@mixin button-green {
+    font-family: $contentfont;
+    font-size: 1.5em;
+    font-weight: 600;
+    background-color: $green;
+    color: $darkgrey;
+    border: none;
+    border-radius: none;
+    padding: .75em 2em;
+    cursor: pointer;
+}
+
+@mixin button-text {
+    font-family: $contentfont;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $orange;
+    background-color: transparent;
+    border: none;   
+    border-bottom: 2px $orange solid;
+    cursor: pointer;
+}
+// END OF BUTTON MIXINS
