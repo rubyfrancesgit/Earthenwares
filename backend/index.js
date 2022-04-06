@@ -54,3 +54,18 @@ app.post("/registerUser", (req, res) => {
         }
     }); // end of user check
 }); // end of register user
+
+// Login user
+app.post("/loginUser", (req, res) => {
+    User.findOne({username: req.body.username}, (err, userResult) => {
+        if (userResult) {
+            if(bcrypt.compareSync(req.body.password, userResult.password)) {
+                res.send(userResult);
+            } else {
+                res.send("Not authorized");
+            } // end of inner if statement
+        } else {
+            res.send("User not found. Please register");
+        } // end of outer if statement
+    }); // end of find one
+}); // end of login

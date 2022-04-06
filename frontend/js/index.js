@@ -18,6 +18,7 @@ $(document).ready(function() {
         }
     }); // end of first ajax
 
+    // start of sign up
     $("#signUpBtn").click(function() {
         event.preventDefault();
 
@@ -70,7 +71,58 @@ $(document).ready(function() {
                 }
             }); // end of ajax
         } // end of if/else
+    }); // end of sign up
 
-    });
+    $("#loginBtn").click(function() {
+        event.preventDefault();
+
+        let username = $("#loginUsername").val();
+        let password = $("#loginPassword").val();
+
+        console.log(username, password);
+
+        if(username == "" || password == "") {
+            alert("Please enter all details");
+        } else {
+            $.ajax({
+                url: `http://${url}/loginUser`,
+                type: "POST",
+                data: {
+                    username: username,
+                    password: password
+                },
+                success: function(user) {
+                    console.log(user) // remove later
+                    if (user == "User not found. Please register") {
+                        alert("User not found. Please register");
+                    } else if (user == "Not authorized") {
+                        alert("Please try again with the correct details");
+
+                        // clearing inputs
+                        $("#loginUsername").val("");
+                        $("#loginPassword").val("");
+                    } else {
+                        alert("Logged in");
+
+                        // storing logged-in user's details
+                        sessionStorage.setItem("userID", user["_id"]);
+                        sessionStorage.setItem("username", user["username"]);
+                        sessionStorage.setItem("userEmail", user["email"]);
+
+                        // clearing inputs
+                        $("#loginUsername").val("");
+                        $("#loginPassword").val("");
+                    } // end of inner if/else
+                } // end of success
+            }); // end of ajax
+        } // end of outer if/else
+    }); // end of login
+
+    // Start of sign out
+    $("#signOutBtn").click(function() {
+        sessionStorage.clear();
+        alert('You have logged out');
+        console.log(sessionStorage);
+    }); // end of sign out
 
 }); // end of document.ready
