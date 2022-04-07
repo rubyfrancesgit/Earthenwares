@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "gulp-sass": "^5.1.0",
+    "jquery": "^3.6.0",
     "sass": "^1.49.9"
   },
   "devDependencies": {

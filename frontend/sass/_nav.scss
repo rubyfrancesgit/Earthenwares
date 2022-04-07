@@ -1,0 +1,85 @@
+.nav{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+
+    &__logo{
+        flex-basis: 30%;
+        z-index: 51;
+    }
+
+    &__navigation{
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    &__top{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        margin-right: 10vw;
+        display: none;
+    }
+
+    &__bottom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        margin-right: 10vw;
+    }
+
+    &__ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 9em;
+        color: $white;
+    }
+
+    &-li{
+        font-family: $contentfont;
+        font-size: 1.6em;
+        font-weight: 200;
+    }
+
+    &-li:hover{
+        color: $green;
+    }
+
+    &-back{
+        @include button-text;
+    }
+
+    &__btn{
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+        align-items: center
+    }
+
+    &__back{
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+        align-items: center;
+    }
+
+
+    &-fa-landing{
+        color: $orange;
+        font-size: 3em;
+    }
+
+    &-btn{
+        @include button-orange;
+    }
+}
