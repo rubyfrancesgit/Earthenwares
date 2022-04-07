@@ -82,7 +82,8 @@ app.post("/addProduct", (req, res) => {
         price: req.body.price,
         imgOneUrl: req.body.imgOneUrl,
         imgTwoUrl: req.body.imgTwoUrl,
-        imgThreeUrl: req.body.imgThreeUrl
+        imgThreeUrl: req.body.imgThreeUrl,
+        authorId: req.body.authorId
     });
 
     dbProduct.save().then(result => {
@@ -93,6 +94,13 @@ app.post("/addProduct", (req, res) => {
 // get all products from DB
 app.get("/allProductsFromDB", (req, res) => {
     Product.find().then(result => {
+        res.send(result);
+    });
+}); // end of get all products from DB
+
+// get all users from DB
+app.get("/allUsersFromDB", (req, res) => {
+    User.find().then(result => {
         res.send(result);
     });
 }); // end of get all products from DB
