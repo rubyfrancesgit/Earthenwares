@@ -4,6 +4,7 @@ $(document).ready(function() {
     console.log("document ready");
 
     let url;
+    let userId;
 
     $.ajax({
         url: "config.json",
@@ -56,7 +57,7 @@ $(document).ready(function() {
                 },
                 success: function(user) {
                     console.log(user); // remove later
-                    if(user !== "Username already taken. Please try another name") {
+                    if (user !== "Username already taken. Please try another name") {
                         alert("Thanks for signing up! Please login.");
 
                         // clearning inputs
@@ -87,7 +88,7 @@ $(document).ready(function() {
 
         console.log(username, password);
 
-        if(username == "" || password == "") {
+        if (username == "" || password == "") {
             alert("Please enter all details");
         } else {
             $.ajax({
@@ -130,5 +131,73 @@ $(document).ready(function() {
         alert('You have logged out');
         console.log(sessionStorage);
     }); // end of sign out
+
+    // add product to DB
+    $("#addProductBtn").click(function() {
+        event.preventDefault();
+
+        let productName = $("#addProductName").val();
+        let description = $("#addProductDescription").val();
+        let price = $("#addProductPrice").val();
+        let imgOneUrl = $("#addProductImgOneUrl").val();
+        let imgTwoUrl = $("#addProductImgTwoUrl").val();
+        let imgThreeUrl = $("#addProductImgThreeUrl").val();
+        userId = sessionStorage.getItem('userID');
+        
+        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl);
+        if(!userId) {
+            alert("Sign in to add product")
+        } else {
+            if(isNaN(price) == true) {
+                alert("Price must be a number");
+            } else if (isNaN(price) == false) {
+                if (productName == "" || description == "" || price == "" && (imgOneUrl == "" && imgTwoUrl == "" && imgThreeUrl == "")) {
+                    alert("Please login and enter all fields");
+                } else {
+                    $.ajax({
+                        url: `http://${url}/addProduct`,
+                        type: "POST",
+                        data: {
+                            productName,
+                            description,
+                            price,
+                            imgOneUrl,
+                            imgTwoUrl,
+                            imgThreeUrl
+                        },
+                        success: function(product) {
+                            console.log(product);
+                            alert("Product added");
+        
+                            $("#addProductName").val("");
+                            $("#addProductDescription").val("");
+                            $("#addProductPrice").val("");
+                            $("#addProductImgOneUrl").val("");
+                            $("#addProductImgTwoUrl").val("");
+                            $("#addProductImgThreeUrl").val("");
+                        },
+                        error: function() {
+                            console.log("Error: cannot call api");
+                        }
+                    }); // end of ajax
+                } // end of info fields if/else statement
+            } // end of price is number if/else statement
+        } // end of userId if/else statement
+    }); // end of add product to DB
+
+    // view products from DB
+    $("#viewProductsBtn").click(function() {
+        $.ajax({
+            url: `http://${url}/allProductsFromDB`,
+            type: "GET",
+            dataType: "json",
+            success: function(productsFromMongo) {
+                console.log(productsFromMongo);
+            },
+            error: function() {
+                alert("Unable to get products");
+            }
+        });
+    }); // end of view products
 
 }); // end of document.ready
