@@ -47,6 +47,7 @@ li {
   font-family: "Assistant", sans-serif;
   font-size: 1.5em;
   font-weight: 600;
+  text-transform: uppercase;
   background-color: #F4794F;
   color: white;
   border: none;
@@ -74,5 +75,114 @@ li {
   background-color: transparent;
   border: none;
   border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-upper {
+  background-image: url("/frontend/img/footer-img.png");
+  background-size: cover;
+  background-position: 0% 35%;
+  padding: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-upper__cta {
+  color: #EFEFEB;
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.footer-upper__btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer-upper__btn-container .sell-work-btn {
+  justify-self: center;
+  width: fit-content;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+.footer-lower {
+  display: flex;
+  justify-content: space-between;
+  padding: 5em 8em;
+  background-color: #EFEFEB;
+  border-bottom: solid 1px #C3C3B7;
+}
+.footer-lower__left .footer-logo__display {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3em;
+  color: #4A4F4F;
+}
+.footer-lower__left .footer-logo__tag {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-weight: 300;
+  color: #4A4F4F;
+}
+.footer-lower__right {
+  text-align: right;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #4A4F4F;
+}
+.footer-lower__right .footer-nav__item {
+  cursor: pointer;
+}
+.footer-lower__right .footer-nav__item:hover {
+  font-weight: 600;
+}
+.footer-bottom {
+  background-color: #EFEFEB;
+  display: flex;
+  justify-content: space-between;
+  padding: 5em 8em;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size: 1.5em;
+  color: #4A4F4F;
+  font-weight: 400;
+}
+.footer-bottom .socials {
+  display: flex;
+  color: white;
+}
+.footer-bottom .socials-container {
+  background-color: #F4794F;
+  margin-left: 1em;
+  line-height: 2em;
+  width: 2em;
+  border-radius: 2em;
+  text-align: center;
   cursor: pointer;
 }
