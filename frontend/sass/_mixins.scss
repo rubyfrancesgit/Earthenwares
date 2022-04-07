@@ -69,3 +69,14 @@
     cursor: pointer;
 }
 // END OF BUTTON MIXINS
+
+// BEGINNING OF FLEX MIXINS
+
+@mixin center-flex {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+// END OF FLEX MIXINS

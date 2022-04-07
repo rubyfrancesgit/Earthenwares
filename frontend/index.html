@@ -6,15 +6,108 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Earthenwares</title>
 
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- local stylesheet -->
         <link rel="stylesheet" href="./css/style.css">
     </head>
 
     <body>
-        
-        <!-- Testing backend functionality start -->
+
+
+        <section class="landing__hero">
+            <div class="landing__hero-overlay"></div>
+            <div class="nav">
+                <div class="nav__logo">
+                    <img src="./img/earthenwares-langing-logo.png" alt="" class="nav-logo">
+                </div>
+                <div class="nav__navigation">
+                    <div class="nav__top"> <!-- Remember display none on this -->
+                        <div class="nav__btn">
+                            <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
+                            <button class="nav-back">Go Back</button>
+                        </div>
+                        <div class="nav__btn">
+                            <button class="nav-back">Post a Listing</button>
+                            <i class="fa-solid fa-circle-plus nav-fa-landing"></i>
+                        </div>
+                    </div>
+                    <div class="nav__bottom">
+                        <ul class="nav__ul">
+                            <div class="nav__back">
+                                <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
+                                <button class="nav-back">Go Back</button>
+                            </div>
+                            <li class="nav-li">Home</li>
+                            <li class="nav-li">Collection</li>
+                            <li class="nav-li">About Us</li>
+                        </ul>
+                        <div class="nav__btn">
+                            <button class="nav-btn">User Profile</button>
+                            <i class="fa-solid fa-bag-shopping nav-fa-landing"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="landing__intro">
+                <div class="landing__intro-header">
+                    <h1 class="landing__intro-heading">Pottery is <div class="landing__intro-rotate landing__intro-rotate-1">
+                        <span>Earthenwares</span>
+                        <span>Homewares</span>
+                        <span>Tablewares</span>
+                        <span>Kitchenwares</span>
+                        <span>Very Skuxx</span>
+                    </div>
+                    </h1>
+                </div>
+                <div class="landing__intro-subheader">
+                    <p class="landing__intro-subheading">Welcome to Earthenwares, a space designed for potters. A product of Wellington Potters Association and the wellington potters community as a whole. </p> 
+                </div>
+                <div class="landing__intro-proceed">
+                    <button class="landing__intro-btn">Shop Now</button>
+                    <a href="" class="landing__intro-btn-alt">Or scroll to continue</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing__body">
+            <div class="landing__background">
+                <img src="./img/landing-background-left-merged.png" alt="" class="landing__background-img">
+                <img src="./img/landing-background-right-merged.png" alt="" class="landing__background-img">
+                <!-- <img src="./img/landing-background-left-img-ext.png" alt="" class="landing__background-img">
+                <img src="./img/landing-background-right-img-ext.png" alt="" class="landing__background-img"> -->
+            </div>
+            <div class="landing__content">
+                <div class="landing__content-images">
+                    <div class="landing__content-image">
+                        <img src="./img/landing-img-1.png" alt=""   class="landing__content-img">
+                    </div>
+                    <div class="landing__content-image">
+                        <img src="./img/landing-img-2.png" alt=""  class="landing__content-img">
+                    </div>
+                </div>
+                <div class="landing__content-text">
+                    <div class="landing__content-textbox">
+                        <h3 class="landing__content-heading">1.</h3>
+                        <p class="landing__content-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis et nisi nec iaculis. Aliquam ullamcorper dolor ac nibh ultricies, sit amet pretium eros tempus. Fusce gravida in purus vitae placerat.</p>
+                    </div>
+                    <div class="landing__content-textbox">
+                        <h3 class="landing__content-heading">2.</h3>
+                        <p class="landing__content-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis et nisi nec iaculis. Aliquam ullamcorper dolor ac nibh ultricies, sit amet pretium eros tempus. Fusce gravida in purus vitae placerat.</p>
+                    </div>
+                    <div class="landing__content-textbox">
+                        <h3 class="landing__content-heading">3.</h3>
+                        <p class="landing__content-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis et nisi nec iaculis. Aliquam ullamcorper dolor ac nibh ultricies, sit amet pretium eros tempus. Fusce gravida in purus vitae placerat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--         
+        Testing backend functionality start
         <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Sign up</h1>
 
@@ -61,6 +154,7 @@
             <h1>Sign out</h1>
 
             <button id="signOutBtn">Sign out</button>
+
         </div>
 
         <div style="padding-left: 10rem; padding-top: 10rem;">
@@ -86,11 +180,12 @@
 
             <button id="viewProductsBtn">View products</button>
         </div>
+  
         <!-- Testing backend functionality start -->
 
 
         <!-- setting up mixins -->
-        <div class="test">
+        <!-- <div class="test">
             <button class="btn-one">Button 1</button>
             <button class="btn-two">Button 2</button>
             <button class="btn-three">Button 3</button>
@@ -100,8 +195,9 @@
             <h6 class="sub-heading">Subheading</h6>
             <p class="body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem ipsa cumque eius aperiam doloremque ducimus cum beatae corporis assumenda iusto quis illo omnis repudiandae, magni quasi pariatur est! Hic perferendis explicabo ipsum officia incidunt veritatis qui fugiat alias adipisci corrupti nesciunt, aliquid voluptatem expedita! Voluptate non sed tenetur repellat?</p>
 
+        </div> -->
+
            
-        </div>
         <!-- end of mixins -->
 
         <!-- footer -->
@@ -151,7 +247,11 @@
         <!-- end of footer -->
 
         <!-- jquery cdn -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+        <!-- jQuery through node -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!-- local script -->
         <script src="./js/index.js"></script>

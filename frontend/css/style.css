@@ -14,6 +14,91 @@ li {
   cursor: pointer;
 }
 
+@-webkit-keyframes rotateWord {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+  }
+  5% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  17% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  20% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes rotateWord {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    -ms-transform: translateY(-30px);
+  }
+  5% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  17% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  20% {
+    opacity: 0;
+    -ms-transform: translateY(30px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rotateWord {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  5% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  17% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  20% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .test {
   padding: 5rem;
 }
@@ -78,6 +163,87 @@ li {
   cursor: pointer;
 }
 
+.nav {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+.nav__logo {
+  flex-basis: 30%;
+  z-index: 51;
+}
+.nav__navigation {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5em;
+}
+.nav__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin-right: 10vw;
+  display: none;
+}
+.nav__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+.nav__ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9em;
+  color: #fff;
+}
+.nav-li {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.6em;
+  font-weight: 200;
+}
+.nav-li:hover {
+  color: #D5E0A8;
+}
+.nav-back {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+.nav__btn {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  align-items: center;
+}
+.nav__back {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  align-items: center;
+}
+.nav-fa-landing {
+  color: #F4794F;
+  font-size: 3em;
+}
+.nav-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
 .footer {
   width: 100%;
   display: flex;
@@ -122,6 +288,111 @@ li {
   padding: 0.75em 2em;
   cursor: pointer;
 }
+
+.landing__hero {
+  height: 100vh;
+  width: 100%;
+  background: url("../img/tom-crew-hero2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10em;
+  z-index: 30;
+}
+.landing__hero-overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+.landing__hero .landing__intro {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3.5em;
+  text-align: center;
+  width: 50%;
+  z-index: 100;
+}
+.landing__hero .landing__intro-header {
+  margin-right: 38%;
+}
+.landing__hero .landing__intro-heading {
+  color: #EFEFEB;
+}
+.landing__hero .landing__intro-rotate {
+  display: inline;
+  text-indent: 0.4em;
+}
+.landing__hero .landing__intro-rotate-1 span {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  color: #D5E0A8;
+  -webkit-animation: rotateWord 18s linear infinite 0s;
+  -ms-animation: rotateWord 18s linear infinite 0s;
+  animation: rotateWord 18s linear infinite 0s;
+}
+.landing__hero .landing__intro-rotate-1 span:nth-child(2) {
+  -webkit-animation-delay: 3s;
+  -ms-animation-delay: 3s;
+  animation-delay: 3s;
+  color: #D5E0A8;
+}
+.landing__hero .landing__intro-rotate-1 span:nth-child(3) {
+  -webkit-animation-delay: 6s;
+  -ms-animation-delay: 6s;
+  animation-delay: 6s;
+  color: #D5E0A8;
+}
+.landing__hero .landing__intro-rotate-1 span:nth-child(4) {
+  -webkit-animation-delay: 9s;
+  -ms-animation-delay: 9s;
+  animation-delay: 9s;
+  color: #D5E0A8;
+}
+.landing__hero .landing__intro-rotate-1 span:nth-child(5) {
+  -webkit-animation-delay: 12s;
+  -ms-animation-delay: 12s;
+  animation-delay: 12s;
+  color: #D5E0A8;
+}
+.landing__hero .landing__intro-header {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+}
+.landing__hero .landing__intro-subheading {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #EFEFEB;
+}
+.landing__hero .landing__intro-proceed {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.landing__hero .landing__intro-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  color: #EFEFEB;
+}
 .footer-lower {
   display: flex;
   justify-content: space-between;
@@ -149,6 +420,54 @@ li {
   font-size: 1.5em;
   font-weight: 300;
   line-height: 1.6em;
+  color: #D5E0A8;
+}
+
+.landing__background {
+  width: 100%;
+  height: 130vh;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.landing__background-img:nth-child(2) {
+  position: relative;
+  z-index: 20;
+}
+
+.landing__body {
+  height: 130vh;
+  width: 100%;
+}
+
+.landing__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 70vh;
+  width: 100%;
+}
+.landing__content-images {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.landing__content-text {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.landing__content-img {
+  height: 10%;
+  width: auto;
+}
+.landing__content-heading {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+}
+.landing__content-body {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.25em;
