@@ -72,3 +72,27 @@ app.post("/loginUser", (req, res) => {
         } // end of outer if statement
     }); // end of find one
 }); // end of login
+
+// Add product to DB
+app.post("/addProduct", (req, res) => {
+    const dbProduct = new Product({
+        _id: new mongoose.Types.ObjectId,
+        productName: req.body.productName,
+        description: req.body.description,
+        price: req.body.price,
+        imgOneUrl: req.body.imgOneUrl,
+        imgTwoUrl: req.body.imgTwoUrl,
+        imgThreeUrl: req.body.imgThreeUrl
+    });
+
+    dbProduct.save().then(result => {
+        res.send(result);
+    }).catch(err => res.send(err));
+}); // end of add product to DB
+
+// get all products from DB
+app.get("/allProductsFromDB", (req, res) => {
+    Product.find().then(result => {
+        res.send(result);
+    });
+}); // end of get all products from DB

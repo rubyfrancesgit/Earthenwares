@@ -18,6 +18,7 @@
     font-family: $contentfont;
     font-size: 1.8em;
     font-weight: 400;
+    // letter-spacing: .1em;
 }
 
 @mixin body-text {
@@ -35,6 +36,7 @@
     font-family: $contentfont;
     font-size: 1.5em;
     font-weight: 600;
+    text-transform: uppercase;
     background-color: $orange;
     color: white;
     border: none;
