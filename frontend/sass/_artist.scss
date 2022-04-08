@@ -1,0 +1,142 @@
+.artist{
+    min-height: 100vh;
+    overflow: hidden;
+
+    &-background{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: absolute;
+        z-index: 100;
+        overflow: hidden;
+
+        &__right{
+            width: 45vw;
+            position: absolute;
+            left: 78vw;
+            top: -22.5vw;
+            overflow: hidden;
+        }
+
+        &__left{
+            height: fit-content;
+            bottom: 20%;
+            
+        }
+    }
+
+    &-profile{
+        padding: 3% 10%;
+        width: 100%;
+        position: relative;
+        z-index: 500;
+
+        &__top{
+            display: flex;
+        }
+
+       .top-left{
+           display: flex;
+           width: 80%;
+       }
+
+        .top-left__left{
+            min-height: 13vw;
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            padding-right: 3em;
+          
+
+            .artist-img{
+                width: 10vw;
+                padding-bottom: 2em;
+            }
+
+            .socials{
+                display: flex;
+                color: white;
+                // justify-content: space-between;
+
+                &-container{
+                    font-size: 1.75em;
+                    margin-right: 1.25em;
+                    background-color: $orange;
+                    line-height: 2.2em;
+                    width: 2.2em;
+                    border-radius: 2em;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .top-left__right{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 2em;
+            min-height: 13vw;
+            justify-content: space-between;
+              overflow: hidden;
+
+            .edit-profile-btn{
+                background: transparent;
+                border: none;
+                font-size: 2.5em;
+                padding-bottom: 2em;
+                color: $darkgrey;
+                width: fit-content;
+            }
+
+            .artist-name{
+                @include title;
+                // font-size: 3em;
+                color: $darkgrey;
+                padding-bottom: 1em
+            }
+
+            .artist-about{
+                @include body-text;
+                color: $darkgrey;
+            }
+
+        }
+
+        .top-right{
+            width: 20%;
+          
+            
+            .svg-curve{
+                width: 34%;
+                height: auto;
+                position: absolute;
+                top: -5.8vw;
+                left: 74.5vw;
+
+            }
+
+            path {
+                fill: transparent;
+                width: 180%; 
+                height: auto;
+            }
+
+            // .curve{
+          
+            // }
+
+            textPath{
+                
+                @include title;
+                font-size: 3.2em;
+                letter-spacing: .15em;
+                color: $darkgrey;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+

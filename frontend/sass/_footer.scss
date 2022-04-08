@@ -38,6 +38,11 @@
                 width:fit-content; 
                 @include button-orange;
             }
+
+            :hover{
+                background-color: $green;
+                color: $darkgrey;
+            }
         }
         
     }
