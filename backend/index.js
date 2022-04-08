@@ -8,6 +8,8 @@ const config = require("./config.json");
 
 const User = require("./models/user");
 const Product = require("./models/product");
+const Comment = require("./models/comment");
+const product = require("./models/product");
 
 const port = 5000;
 
@@ -104,3 +106,50 @@ app.get("/allUsersFromDB", (req, res) => {
         res.send(result);
     });
 }); // end of get all products from DB
+
+
+// ----- comments backend start -----
+
+// Post comment start
+app.post("/createComment", (req, res) => {
+    const newComment = new Comment({
+        _id: new mongoose.Types.ObjectId,
+        comment: req.body.comment,
+        date: new Date(),
+        authorId: req.body.authorId,
+        productId: req.body.productId
+    });
+    newComment.save()
+    .then(result => {
+        Product.findByIdAndUpdate(
+            newComment.productId,
+            {$push: {comment: newComment}}
+        ).then(result => {
+            res.send(newComment);
+        }).catch(err => {
+            res.send(err);
+        });
+    });
+}); // Post comment end
+
+// // View comments
+// app.get("/seeComments/:productId", (req, res) => {
+//     const productId = req.params.productId;
+//     Product.findById(productId, function (err, product) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log("Result:", product.comment);
+//             res.send(product.comment);
+//         } // end of if/else statement
+//     }); // end of find by id
+// }); // end of view comments
+
+// View comments
+app.get("/seeComments/:productId", (req, res) => {
+    Comment.find().then(result => {
+        res.send(result);
+    });
+});
+
+// ----- comments backend start -----
