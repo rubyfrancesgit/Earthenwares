@@ -13,6 +13,34 @@ $(document).ready(function() {
         dataType: "json",
         success: function(configData) {
             url = `${configData.SERVER_URL}:${configData.SERVER_PORT}`;
+
+            $.ajax({
+                url: `http://${url}/allProductsFromDB`,
+                type: "GET",
+                dataType: "json",
+                success: function(productsFromMongo) {
+                    console.log(productsFromMongo);
+    
+                    for(let i = 0; i < productsFromMongo.length; i++) {
+                        generateShopCard(productsFromMongo, i)
+                    }
+                },
+                error: function() {
+                    alert("Unable to get products");
+                }
+            });
+
+            $.ajax({
+                url: `http://${url}/allUsersFromDB`,
+                type: "GET",
+                dataType: "json",
+                success: function(usersFromMongo) {
+                    console.log(usersFromMongo);
+                },
+                error: function() {
+                    alert("Unable to get users");
+                }
+            });
         },
         error: function(error) {
             console.log(error);
@@ -163,7 +191,8 @@ $(document).ready(function() {
                             price,
                             imgOneUrl,
                             imgTwoUrl,
-                            imgThreeUrl
+                            imgThreeUrl,
+                            authorId: userId
                         },
                         success: function(product) {
                             console.log(product);
@@ -185,20 +214,90 @@ $(document).ready(function() {
         } // end of userId if/else statement
     }); // end of add product to DB
 
-    // view products from DB
-    $("#viewProductsBtn").click(function() {
-        $.ajax({
-            url: `http://${url}/allProductsFromDB`,
-            type: "GET",
-            dataType: "json",
-            success: function(productsFromMongo) {
-                console.log(productsFromMongo);
-            },
-            error: function() {
-                alert("Unable to get products");
+    // ----- shop page start -----
+
+    // reusable code for product cards (is called initially from the first successful ajax function)
+    function generateShopCard(productsFromMongo, i) {
+        $("#shopContainer").append(
+            `
+                <a class="shop-card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
+                    <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
+                    <div class="card-body">
+                        <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
+                        <p class="card__p">$${productsFromMongo[i].price}</p>
+                    </div>
+                </a>
+            `
+        );
+
+        $(`.${productsFromMongo[i].authorId}`).click(function() {
+            console.log(this.id);
+            console.log(this.classList[1]);
+
+            let thisUserId = this.classList[1];
+
+            if(this.classList.contains("624e8fcd78f43bdfe0524c8e")) {
+                console.log("yes")
+            } else {
+                console.log("no")
             }
+
+            for(let i = 0; i < productsFromMongo.length; i++) {
+                if(productsFromMongo[i]._id === this.id) {
+                    $("#productContainer").empty();
+                    generateProductSection(productsFromMongo, i);
+                }
+            }
+
+            $.ajax({
+                url: `http://${url}/allUsersFromDB`,
+                type: "GET",
+                dataType: "json",
+                success: function(usersFromMongo) {
+                    for(let i = 0; i < usersFromMongo.length; i++) {
+                        if(thisUserId === usersFromMongo[i]._id) {
+                            console.log("equal");
+                            $("#authorContainer").empty();
+                            $("#authorContainer").append(
+                                `
+                                    <p>Store name: ${usersFromMongo[i].storeName}</p>
+                                `
+                            );
+                        }
+                    }
+                },
+                error: function() {
+                    alert("Unable to get users");
+                }
+            });
+            
         });
-    }); // end of view products
+    }
+
+    
+
+    // ----- shop page end -----
+
+
+    // ----- product page start -----
+
+    function generateProductSection(productsFromMongo, i) {
+        $("#productContainer").append(
+            `
+                <div class="card" style="width: 25rem;" href="./product-page.html">
+                    <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 10rem;">
+                    <div class="card-body">
+                        <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
+                        <p class="card__p">$${productsFromMongo[i].price}</p>
+                    </div>
+                </div>
+            `
+        );
+    }
+
+    // ----- product page end -----
+
+
 
 }); // end of document.ready
 

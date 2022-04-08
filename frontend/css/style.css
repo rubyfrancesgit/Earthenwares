@@ -630,6 +630,7 @@ li {
   white-space: nowrap;
 }
 
+
 .footer {
   width: 100%;
   display: flex;
@@ -638,6 +639,7 @@ li {
   position: relative;
   z-index: 1000;
 }
+
 .footer-upper {
   background-image: url("/frontend/img/footer-img.png");
   background-size: cover;
@@ -676,10 +678,12 @@ li {
   padding: 0.75em 2em;
   cursor: pointer;
 }
+
 .footer-upper__btn-container :hover {
   background-color: #D5E0A8;
   color: #4A4F4F;
 }
+
 .footer-lower {
   display: flex;
   justify-content: space-between;
