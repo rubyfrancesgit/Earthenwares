@@ -291,11 +291,48 @@ $(document).ready(function() {
                         <p class="card__p">$${productsFromMongo[i].price}</p>
                     </div>
                 </div>
+
+                <input type="text" id="commentField">
+                <button id="submitComment" onclick="" value="${productsFromMongo[i]._id}">Submit comment</button>
             `
         );
+
+        // ----- comments start -----
+
+        $("#submitComment").click(function() {
+            let productId = document.querySelector("#submitComment").value;
+            userId = sessionStorage.getItem('userID');
+            let comment = document.querySelector("#commentField").value;
+            
+            if (!userId) {
+                alert("Please login to comment");
+            } else {
+                $.ajax({
+                    url: `http://${url}/createComment`,
+                    type: "POST",
+                    data: {
+                        comment,
+                        authorId: userId,
+                        productId
+                    },
+                    success: function(comment) {
+                        alert("Comment posted");
+                        console.log(comment);
+                    },
+                    error: function() {
+                        alert("Unable to post comment");
+                    }
+                }); // end of ajax
+            } // end of if/else statement
+        }); // end of submit comment function
+
+        // ----- comments end -----
     }
 
     // ----- product page end -----
+
+
+    
 
 
 
