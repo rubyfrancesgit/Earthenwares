@@ -201,3 +201,6 @@ $(document).ready(function() {
     }); // end of view products
 
 }); // end of document.ready
+
+
+// curving text start
