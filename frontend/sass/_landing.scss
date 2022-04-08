@@ -30,12 +30,14 @@
 
         &-header{
             margin-right: 38%;
+            @include title;
         }
         
 
         &-heading{
             // text-transform: uppercase;
             color: $lightgrey;
+            font-size: 5rem;
         }
 
         &-rotate{
@@ -115,6 +117,11 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &-img:nth-child(1){
+        position: relative;
+        top: 10em;
+    }
+
     &-img:nth-child(2){
         position: relative;
         z-index: 20;
@@ -122,8 +129,10 @@
 }
 
 .landing__body{
-    height: 130vh;
+    height: 140vh;
     width: 100%;
+    // display: flex;
+    // flex-direction: column;
 }
 
 .landing__content{
@@ -132,17 +141,53 @@
     justify-content: space-around;
     height: 70vh;
     width: 100%;
+    position: relative;
+    z-index: 499;
     
     &-images{
         flex-basis: 50%;
         display: flex;
         flex-direction: row;
+        padding-left: 10vw;
+        // justify-content: center;
     }
+
+    &-image{
+        height: 35em;
+        width: 35em;
+        position: relative;
+        top: 15vh;
+    }
+
+    &-image:nth-child(1){
+        background: url('../img/landing-img-1.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    
+    &-image:nth-child(2){
+        background: url('../img/landing-img-2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 3em;
+    }
+
 
     &-text{
         flex-basis: 50%;
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
+        gap: 4em;
+        padding-right: 10%;
+        padding-left: 3%;
+    }
+
+    &-textbox{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
     }
 
     &-img{
@@ -152,10 +197,61 @@
 
     &-heading{
         @include title;
+        flex-basis: 25%;
     }
 
     &-body{
         @include body-text;
     }
 
+}
+
+.landing__products{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    padding-left: 10vw;
+    position: relative;
+    z-index: 600;
+
+    &-cards{
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 4em;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+    }
+
+    &-cards::-webkit-scrollbar{
+        display: none;
+    }
+
+
+    &-card{
+        margin: 2em;
+    }
+
+    &-card-img{
+        height: 100%;
+        width: auto;
+    }
+
+    &-cont{
+        width: 100%;
+        padding-right: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2em;
+    }
+
+    &-btn{
+        @include button-text;
+    }
 }

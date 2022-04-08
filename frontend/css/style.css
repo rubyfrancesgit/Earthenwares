@@ -253,6 +253,126 @@ li {
   cursor: pointer;
 }
 
+.card {
+  border: none;
+  background: none;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+.card-body p {
+  margin: 0;
+}
+.card-body-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-body-bottom {
+  color: #C3C3B7;
+  font-style: italic;
+}
+.secondary-nav {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5000;
+}
+.secondary-nav__logo {
+  flex-basis: 25%;
+  z-index: 51;
+}
+.secondary-nav__logo .secondary-nav-logo {
+  width: 20vw;
+}
+.secondary-nav__navigation {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5em;
+}
+.secondary-nav__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin-right: 10vw;
+  display: none;
+}
+.secondary-nav__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+.secondary-nav__ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9em;
+  color: #4A4F4F;
+}
+.secondary-nav-li {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+.secondary-nav-li:hover {
+  color: #D5E0A8;
+}
+.secondary-nav-back {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+.secondary-nav__btn {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  align-items: center;
+}
+.secondary-nav__back {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  align-items: center;
+}
+.secondary-nav-fa-landing {
+  color: #4A4F4F;
+  font-size: 3em;
+}
+.secondary-nav-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+
 .landing__hero {
   height: 100vh;
   width: 100%;
@@ -285,9 +405,13 @@ li {
 }
 .landing__hero .landing__intro-header {
   margin-right: 38%;
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
 }
 .landing__hero .landing__intro-heading {
   color: #EFEFEB;
+  font-size: 5rem;
 }
 .landing__hero .landing__intro-rotate {
   display: inline;
@@ -374,6 +498,218 @@ li {
   flex-direction: row;
   justify-content: space-between;
 }
+.landing__background-img:nth-child(1) {
+  position: relative;
+  top: 10em;
+}
+.landing__background-img:nth-child(2) {
+  position: relative;
+  z-index: 20;
+}
+
+.landing__body {
+  height: 140vh;
+  width: 100%;
+}
+
+.landing__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 70vh;
+  width: 100%;
+  position: relative;
+  z-index: 499;
+}
+.landing__content-images {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10vw;
+}
+.landing__content-image {
+  height: 35em;
+  width: 35em;
+  position: relative;
+  top: 15vh;
+}
+.landing__content-image:nth-child(1) {
+  background: url("../img/landing-img-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.landing__content-image:nth-child(2) {
+  background: url("../img/landing-img-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 3em;
+}
+.landing__content-text {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4em;
+  padding-right: 10%;
+  padding-left: 3%;
+}
+.landing__content-textbox {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.landing__content-img {
+  height: 10%;
+  width: auto;
+}
+.landing__content-heading {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  flex-basis: 25%;
+}
+.landing__content-body {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+
+.landing__products {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  padding-left: 10vw;
+  position: relative;
+  z-index: 600;
+}
+.landing__products-cards {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4em;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.landing__products-cards::-webkit-scrollbar {
+  display: none;
+}
+.landing__products-card {
+  margin: 2em;
+}
+.landing__products-card-img {
+  height: 100%;
+  width: auto;
+}
+.landing__products-cont {
+  width: 100%;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2em;
+}
+.landing__products-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+.footer-upper {
+  background-image: url("/frontend/img/footer-img.png");
+  background-size: cover;
+  background-position: 0% 35%;
+  padding: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-upper__cta {
+  color: #EFEFEB;
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.footer-upper__btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer-upper__btn-container .sell-work-btn {
+  justify-self: center;
+  width: fit-content;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+.footer-lower {
+  display: flex;
+  justify-content: space-between;
+  padding: 5em 8em;
+  background-color: #EFEFEB;
+  border-bottom: solid 1px #C3C3B7;
+}
+.footer-lower__left .footer-logo__display {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3em;
+  color: #4A4F4F;
+}
+.footer-lower__left .footer-logo__tag {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-weight: 300;
+  color: #4A4F4F;
+}
+.footer-lower__right {
+  text-align: right;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: #D5E0A8;
+}
+
+.landing__background {
+  width: 100%;
+  height: 130vh;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .landing__background-img:nth-child(2) {
   position: relative;
   z-index: 20;
@@ -417,12 +753,134 @@ li {
   line-height: 1.6em;
 }
 
+.artist {
+  min-height: 100vh;
+  overflow: hidden;
+}
+.artist-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+}
+.artist-background__right {
+  width: 45vw;
+  position: absolute;
+  left: 78vw;
+  top: -22.5vw;
+  overflow: hidden;
+}
+.artist-background__left {
+  height: fit-content;
+  bottom: 20%;
+}
+.artist-profile {
+  padding: 3% 10%;
+  width: 100%;
+  position: relative;
+  z-index: 500;
+}
+.artist-profile__top {
+  display: flex;
+}
+.artist-profile .top-left {
+  display: flex;
+  width: 80%;
+}
+.artist-profile .top-left__left {
+  min-height: 13vw;
+  display: flex;
+  flex-direction: column;
+  padding-right: 3em;
+}
+.artist-profile .top-left__left .artist-img {
+  width: 10vw;
+  padding-bottom: 2em;
+}
+.artist-profile .top-left__left .socials {
+  display: flex;
+  color: white;
+}
+.artist-profile .top-left__left .socials-container {
+  font-size: 1.75em;
+  margin-right: 1.25em;
+  background-color: #F4794F;
+  line-height: 2.2em;
+  width: 2.2em;
+  border-radius: 2em;
+  text-align: center;
+  cursor: pointer;
+}
+.artist-profile .top-left__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  min-height: 13vw;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.artist-profile .top-left__right .edit-profile-btn {
+  background: transparent;
+  border: none;
+  font-size: 2.5em;
+  padding-bottom: 2em;
+  color: #4A4F4F;
+  width: fit-content;
+}
+.artist-profile .top-left__right .artist-name {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  color: #4A4F4F;
+  padding-bottom: 1em;
+}
+.artist-profile .top-left__right .artist-about {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: #4A4F4F;
+}
+.artist-profile .top-right {
+  width: 20%;
+}
+.artist-profile .top-right .svg-curve {
+  width: 34%;
+  height: auto;
+  position: absolute;
+  top: -5.8vw;
+  left: 74.5vw;
+}
+.artist-profile .top-right path {
+  fill: transparent;
+  width: 180%;
+  height: auto;
+}
+.artist-profile .top-right textPath {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3.2em;
+  letter-spacing: 0.15em;
+  color: #4A4F4F;
+  white-space: nowrap;
+}
+
+
 .footer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1000;
 }
+
 .footer-upper {
   background-image: url("/frontend/img/footer-img.png");
   background-size: cover;
@@ -461,6 +919,12 @@ li {
   padding: 0.75em 2em;
   cursor: pointer;
 }
+
+.footer-upper__btn-container :hover {
+  background-color: #D5E0A8;
+  color: #4A4F4F;
+}
+
 .footer-lower {
   display: flex;
   justify-content: space-between;

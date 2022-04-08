@@ -300,3 +300,6 @@ $(document).ready(function() {
 
 
 }); // end of document.ready
+
+
+// curving text start

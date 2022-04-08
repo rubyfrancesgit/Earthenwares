@@ -1,0 +1,27 @@
+.card{
+
+    border: none;
+    background: none;
+
+    &-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include body-text;
+    }
+
+    &-body p {
+        margin: 0;
+    }
+
+    &-body-top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-body-bottom{
+        color: $midgrey;
+        font-style: italic;
+    }
+}

@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 1000;
 
 
     &-upper{
@@ -35,6 +37,11 @@
                 justify-self: center;
                 width:fit-content; 
                 @include button-orange;
+            }
+
+            :hover{
+                background-color: $green;
+                color: $darkgrey;
             }
         }
         
