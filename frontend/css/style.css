@@ -278,11 +278,13 @@ li {
   color: #C3C3B7;
   font-style: italic;
 }
+
 .secondary-nav {
   width: 100%;
-  height: 30vh;
+  height: 15vw;
   display: flex;
   flex-direction: row;
+  justify-content: spa;
   text-transform: uppercase;
   position: relative;
   z-index: 5000;
@@ -292,10 +294,14 @@ li {
   z-index: 51;
 }
 .secondary-nav__logo .secondary-nav-logo {
-  width: 20vw;
+  width: 17vw;
+}
+.secondary-nav a {
+  color: #4A4F4F;
+  text-decoration: none;
 }
 .secondary-nav__navigation {
-  flex-basis: 75%;
+  flex-basis: 68vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -316,19 +322,20 @@ li {
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  margin-right: 10vw;
 }
 .secondary-nav__ul {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 9em;
+  justify-content: space-between;
   color: #4A4F4F;
+  padding-right: 15vw;
 }
 .secondary-nav-li {
   font-family: "Assistant", sans-serif;
-  font-size: 1.6em;
-  font-weight: 400;
+  font-size: 1.8em;
+  font-weight: 500;
 }
 .secondary-nav-li:hover {
   color: #D5E0A8;
@@ -343,12 +350,16 @@ li {
   border: none;
   border-bottom: 2px #F4794F solid;
   cursor: pointer;
+  font-size: 1.8em;
 }
 .secondary-nav__btn {
+  width: fit-content;
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
   gap: 3em;
   align-items: center;
+  white-space: nowrap;
 }
 .secondary-nav__back {
   display: flex;
@@ -371,6 +382,7 @@ li {
   border-radius: none;
   padding: 0.75em 2em;
   cursor: pointer;
+  font-size: 1.8em;
 }
 
 .landing__hero {
@@ -626,133 +638,6 @@ li {
   cursor: pointer;
 }
 
-.footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 1000;
-}
-.footer-upper {
-  background-image: url("/frontend/img/footer-img.png");
-  background-size: cover;
-  background-position: 0% 35%;
-  padding: 8em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.footer-upper__cta {
-  color: #EFEFEB;
-  font-family: "Assistant", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 2.5em;
-  letter-spacing: 0.05em;
-  text-align: center;
-  padding-bottom: 1.5em;
-}
-.footer-upper__btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.footer-upper__btn-container .sell-work-btn {
-  justify-self: center;
-  width: fit-content;
-  font-family: "Assistant", sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: #F4794F;
-  color: white;
-  border: none;
-  border-radius: none;
-  padding: 0.75em 2em;
-  cursor: pointer;
-}
-.footer-lower {
-  display: flex;
-  justify-content: space-between;
-  padding: 5em 8em;
-  background-color: #EFEFEB;
-  border-bottom: solid 1px #C3C3B7;
-}
-.footer-lower__left .footer-logo__display {
-  font-family: "Cremona", sans-serif;
-  font-size: 3.75em;
-  font-weight: 400;
-  font-size: 3em;
-  color: #4A4F4F;
-}
-.footer-lower__left .footer-logo__tag {
-  font-family: "Assistant", sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  font-weight: 300;
-  color: #4A4F4F;
-}
-.footer-lower__right {
-  text-align: right;
-  font-family: "Assistant", sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  line-height: 1.6em;
-  color: #D5E0A8;
-}
-
-.landing__background {
-  width: 100%;
-  height: 130vh;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.landing__background-img:nth-child(2) {
-  position: relative;
-  z-index: 20;
-}
-
-.landing__body {
-  height: 130vh;
-  width: 100%;
-}
-
-.landing__content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 70vh;
-  width: 100%;
-}
-.landing__content-images {
-  flex-basis: 50%;
-  display: flex;
-  flex-direction: row;
-}
-.landing__content-text {
-  flex-basis: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.landing__content-img {
-  height: 10%;
-  width: auto;
-}
-.landing__content-heading {
-  font-family: "Cremona", sans-serif;
-  font-size: 3.75em;
-  font-weight: 400;
-}
-.landing__content-body {
-  font-family: "Assistant", sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  line-height: 1.6em;
-}
-
 .artist {
   min-height: 100vh;
   overflow: hidden;
@@ -767,12 +652,41 @@ li {
   z-index: 100;
   overflow: hidden;
 }
-.artist-background__right {
-  width: 45vw;
+.artist-background .page-heading {
+  height: 100%;
+  width: 100%;
+  left: 3vw;
   position: absolute;
-  left: 78vw;
-  top: -22.5vw;
   overflow: hidden;
+}
+.artist-background .page-heading .artist-background__right {
+  width: 43vw;
+  position: absolute;
+  right: -25vw;
+  top: -26vw;
+  overflow: hidden;
+  transform: rotate(-9.32deg);
+}
+.artist-background .page-heading .svg-curve {
+  width: 35vw;
+  height: auto;
+  position: absolute;
+  top: 8.5vw;
+  right: -11.5vw;
+}
+.artist-background .page-heading path {
+  fill: transparent;
+  width: 10vw;
+  height: auto;
+}
+.artist-background .page-heading textPath {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3em;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  fill: #4A4F4F;
 }
 .artist-background__left {
   height: fit-content;
@@ -792,28 +706,23 @@ li {
   width: 80%;
 }
 .artist-profile .top-left__left {
+  width: 15vw;
   min-height: 13vw;
   display: flex;
   flex-direction: column;
-  padding-right: 3em;
 }
 .artist-profile .top-left__left .artist-img {
   width: 10vw;
-  padding-bottom: 2em;
+  padding-bottom: 5em;
 }
-.artist-profile .top-left__left .socials {
-  display: flex;
-  color: white;
+.artist-profile .top-left__left .fa-circle {
+  color: #F4794F;
 }
-.artist-profile .top-left__left .socials-container {
-  font-size: 1.75em;
-  margin-right: 1.25em;
-  background-color: #F4794F;
-  line-height: 2.2em;
-  width: 2.2em;
-  border-radius: 2em;
-  text-align: center;
+.artist-profile .top-left__left .fa-stack {
   cursor: pointer;
+  padding: 0;
+  padding-right: 3vw;
+  text-align: left;
 }
 .artist-profile .top-left__right {
   width: 100%;
@@ -827,10 +736,20 @@ li {
 .artist-profile .top-left__right .edit-profile-btn {
   background: transparent;
   border: none;
-  font-size: 2.5em;
-  padding-bottom: 2em;
-  color: #4A4F4F;
+  font-size: 1em;
+  padding-bottom: 6em;
+  color: #D5E0A8;
   width: fit-content;
+  cursor: pointer;
+}
+.artist-profile .top-left__right .edit-profile-btn :hover {
+  color: #F4794F;
+}
+.artist-profile .top-left__right .edit-profile-btn :hover .fa-pen-to-square {
+  color: #fff;
+}
+.artist-profile .top-left__right .edit-profile-btn .fa-pen-to-square {
+  color: #4A4F4F;
 }
 .artist-profile .top-left__right .artist-name {
   font-family: "Cremona", sans-serif;
@@ -846,31 +765,50 @@ li {
   line-height: 1.6em;
   color: #4A4F4F;
 }
-.artist-profile .top-right {
-  width: 20%;
+.artist-profile .artist-profile__bottom {
+  margin-top: 7em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  position: relative;
+  z-index: 600;
 }
-.artist-profile .top-right .svg-curve {
-  width: 34%;
-  height: auto;
+.artist-profile .artist-profile__bottom .artist-products {
+  width: fit-content;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4em;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.artist-profile .artist-profile__bottom .artist-products::-webkit-scrollbar {
+  display: none;
+}
+.artist-profile .artist-profile__bottom .card .edit-btns {
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   position: absolute;
-  top: -5.8vw;
-  left: 74.5vw;
 }
-.artist-profile .top-right path {
-  fill: transparent;
-  width: 180%;
-  height: auto;
+.artist-profile .artist-profile__bottom .card .fa-stack {
+  cursor: pointer;
+  margin-bottom: 0.5em;
 }
-.artist-profile .top-right textPath {
-  font-family: "Cremona", sans-serif;
-  font-size: 3.75em;
-  font-weight: 400;
-  font-size: 3.2em;
-  letter-spacing: 0.15em;
+.artist-profile .artist-profile__bottom .card .fa-stack .fa-circle {
+  color: #D5E0A8;
+}
+.artist-profile .artist-profile__bottom .card .fa-stack .circle-trash {
+  color: #F4794F;
+}
+.artist-profile .artist-profile__bottom .card .fa-stack .fa-pen-to-square {
   color: #4A4F4F;
-  white-space: nowrap;
 }
-
 
 .footer {
   width: 100%;
@@ -880,7 +818,6 @@ li {
   position: relative;
   z-index: 1000;
 }
-
 .footer-upper {
   background-image: url("/frontend/img/footer-img.png");
   background-size: cover;
@@ -919,12 +856,10 @@ li {
   padding: 0.75em 2em;
   cursor: pointer;
 }
-
 .footer-upper__btn-container :hover {
   background-color: #D5E0A8;
   color: #4A4F4F;
 }
-
 .footer-lower {
   display: flex;
   justify-content: space-between;

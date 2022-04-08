@@ -26,7 +26,7 @@ $(document).ready(function() {
                     }
                 },
                 error: function() {
-                    alert("Unable to get products");
+                    // alert("Unable to get products");
                 }
             });
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
                     console.log(usersFromMongo);
                 },
                 error: function() {
-                    alert("Unable to get users");
+                    // alert("Unable to get users");
                 }
             });
         },
