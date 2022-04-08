@@ -282,9 +282,13 @@ $(document).ready(function() {
     // ----- product page start -----
 
     function generateProductSection(productsFromMongo, i) {
+        let productId = productsFromMongo[i]._id;
+        
+        $("#commentContainer").empty();
+
         $("#productContainer").append(
             `
-                <div class="card" style="width: 25rem;" href="./product-page.html">
+                <div class="card" href="./product-page.html">
                     <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 10rem;">
                     <div class="card-body">
                         <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
@@ -299,8 +303,9 @@ $(document).ready(function() {
 
         // ----- comments start -----
 
+        // Post comment start
         $("#submitComment").click(function() {
-            let productId = document.querySelector("#submitComment").value;
+            // let productId = document.querySelector("#submitComment").value;
             userId = sessionStorage.getItem('userID');
             let comment = document.querySelector("#commentField").value;
             
@@ -324,7 +329,30 @@ $(document).ready(function() {
                     }
                 }); // end of ajax
             } // end of if/else statement
-        }); // end of submit comment function
+        }); // end of post comment function
+
+        // view comments start
+        $.ajax({
+            url: `http://${url}/seeComments/${productId}`,
+            type: "GET",
+            success: function(commentsFromMongo) {
+                console.log(commentsFromMongo);
+                for (let i = 0; i < commentsFromMongo.length; i++) {
+                    if (commentsFromMongo[i].productId === productId) {
+                        $("#commentContainer").append(
+                            `
+                                <p>${commentsFromMongo[i].comment}</p>
+                            `
+                        );
+                    }
+                }
+            },
+            error: function() {
+                console.log(productId);
+                console.log("Error: cannot retrieve comments");
+            } // end of error
+        }); // end of ajax
+        // end of view comments
 
         // ----- comments end -----
     }
