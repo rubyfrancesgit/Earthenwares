@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "circletype": "^2.3.0",
     "gulp-sass": "^5.1.0",
     "jquery": "^3.6.0",
     "sass": "^1.49.9"
