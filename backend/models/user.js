@@ -5,9 +5,10 @@ const userSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
+    profilePicture: String,
     seller: Boolean,
     storeName: String,
-    description: String,
+    storeDescription: String,
     instagram: String,
     facebook: String,
     twitter: String
