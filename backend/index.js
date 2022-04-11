@@ -101,6 +101,20 @@ app.get("/allProductsFromDB", (req, res) => {
     });
 }); // end of get all products from DB
 
+// Delete product from DB
+app.delete("/deleteProduct/:id", (req, res) => {
+    const idParam = req.params.id;
+    Product.findOne({_id: idParam}, (err, product) => {
+        if(product) {
+            Product.deleteOne({_id: idParam}, err => {
+                console.log("Deleted on backend");
+            });
+        } else {
+            alert("Not found");
+        }
+    }).catch(err => res.send(err));
+});
+
 // get all users from DB
 app.get("/allUsersFromDB", (req, res) => {
     User.find().then(result => {
