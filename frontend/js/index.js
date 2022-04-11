@@ -124,6 +124,7 @@ $(document).ready(function() {
 
     // start of login
     $("#loginBtn").click(function() {
+        console.log("login")
         event.preventDefault();
 
         let username = $("#loginUsername").val();
