@@ -84,23 +84,15 @@
             <div class="artist-profile__top">
                 <div class="top-left">
                     <div class="top-left__left">
-                        <img class="artist-img" src="/frontend/img/artist.png" alt="store image">
-                        <div class="socials">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
+                        <div id="profileImgDiv"></div>
 
+                        <div class="socials">
+                            <div id="profileInstaDiv"></div>
+                            <div id="profileFacebookDiv"></div>
+                            <div id="profileTwitterDiv"></div>
+                        </div>
                     </div>
+
                     <div class="top-left__right">
                         <button class="edit-profile-btn">
                             <span class="fa-stack fa-2x">
@@ -110,18 +102,39 @@
                         </button>
                         
                         <div class="artist-info">
-                            <h3 class="artist-name">PETER POTTER</h3>
-                            <p class="artist-about">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sint dolorem totam quis praesentium nemo id. Impedit unde quisquam sequi cum blanditiis velit deserunt doloribus incidunt libero. Fugiat, id! Doloremque voluptatem quis deserunt impedit. Assumenda laboriosam, distinctio aliquid, mollitia accusamus possimus quos explicabo, esse officiis voluptas est sunt obcaecati voluptatem.
-                            <br>
-                            <br>
-                            Duis tempor felis eget nisl dictum dignissim. Vivamus et egestas erat. Aenean non felis accumsan, laoreet erat a, dignissim lacus.</p>
+                            <div id="profileName"></div>
+                            <div id="profileDescription"></div>
                         </div>
                     </div>
                 </div>
-                
             </div>
+
             <div class="artist-profile__bottom">
-                <div class="artist-products">
+                <div class="artist-products" id="profileListings">
+                    <!-- <div class="card" style="width: 27rem;">
+                        <div class="edit-btns">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
+                            </span>
+
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
+                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
+                        <div class="card-body">
+                          <div class="card-body-top">
+                              <p class="card-name">Item Name</p>
+                              <p class="card-price">$34</p>
+                          </div>
+                          <div class="card-body-bottom">
+                              <p class="card-artist">Jane Doe</p>
+                          </div>
+                        </div>
+                    </div>
+
                     <div class="card" style="width: 27rem;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
@@ -144,9 +157,9 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27rem;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -168,9 +181,9 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27rem;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -192,9 +205,9 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27rem;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -216,9 +229,9 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27rem;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -240,9 +253,9 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27em;">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -264,31 +277,7 @@
                               <p class="card-artist">Jane Doe</p>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="card" style="width: 27em;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                      </div>
+                    </div> -->
                 </div>
             </div>
         </div>
