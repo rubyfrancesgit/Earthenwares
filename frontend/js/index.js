@@ -34,7 +34,7 @@ $(document).ready(function() {
                     }
                 },
                 error: function() {
-                    alert("Unable to get products");
+                    // alert("Unable to get products");
                 }
             }); // end of all products from DB ajax
 
@@ -48,7 +48,7 @@ $(document).ready(function() {
                     populateProfile(usersFromMongo);
                 },
                 error: function() {
-                    alert("Unable to get users");
+                    // alert("Unable to get users");
                 }
             }); // end of all users from DB ajax
         },
