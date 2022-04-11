@@ -1,15 +1,35 @@
+.add-product__background{
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    background: url('../img/add-products-background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 15;
+}
+
+
 .upload{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10vh;
     padding: 10%;
+    z-index: 20;
 
     &-heading{
         @include heading;
     }
 
+    &__header{
+        border-style: solid;
+        border-width: 0px 1px 0px 0px;
+        border-color: $midgrey;
+        padding-right: 3em;
+    }
+
     &-subheading{
-        @include body-text;
+        @include sub-heading;
     }
 
     &__images{
@@ -26,6 +46,13 @@
         gap: 3%;
     }
 
+    &__image-preview{
+        padding: 0em 1em;
+        border: none;
+        margin-left: 0.5em;
+        background: $green;
+    }
+
     &__image-input-box{
         flex-basis: 30%;
         display: flex;
@@ -35,7 +62,8 @@
     &__image-box{
         background: $orange;
         margin-top: 2em;
-        height: 50em;
+        width: 25vw;
+        height: 25vw;
     }
 
     &__image-input{
@@ -95,6 +123,10 @@
         padding: 2em;
     }
 
+    &-select-input option{
+        background: $midgrey
+    }
+
     &__label{
         flex-basis: 30%;
     }
@@ -109,7 +141,47 @@
 
     &__input{
         flex-basis: 60%;
+        @include body-text;
     }
 
   
+}
+
+@media screen and (min-width: 1px) and (max-width: 1024px) {
+    
+    .upload{
+        
+        &__box{
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 1024px) {
+    .upload{
+        
+        &__block{
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        &__header{
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        &__image{
+            flex-direction: column;
+            gap: 3vh;
+        }
+
+        &__image-input-box{
+            width: 100%;
+        }
+
+        &__image-box{
+            width: 80vw;
+            height: 80vw;
+        }
+    }
 }
