@@ -1,0 +1,217 @@
+.artist{
+    min-height: 100vh;
+    overflow: hidden;
+
+    &-background{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: absolute;
+        z-index: 100;
+        overflow: hidden;
+
+
+        .page-heading{
+            height: 100%;
+            width: 100%;
+            left: 3vw;
+            position: absolute;
+            overflow: hidden;
+
+            .artist-background__right{
+                width: 43vw;
+                position: absolute;
+                right: -25vw;
+                top: -26vw;
+                overflow: hidden;
+                transform: rotate(-9.32deg);
+            }
+
+            .svg-curve{
+                width: 35vw;
+                height: auto;
+                position: absolute;
+                top: 8.5vw;
+                right: -11.5vw;
+
+            }
+
+            path {
+                fill: transparent;
+                width: 10vw; 
+                height: auto;
+            }
+
+            // .curve{
+          
+            // }
+
+            textPath{                
+                @include title;
+                font-size: 3em;
+                letter-spacing: .15em;
+                white-space: nowrap;
+                fill: $darkgrey;
+
+             
+            }
+        }
+        
+
+        &__left{
+            height: fit-content;
+            bottom: 20%;
+            
+        }
+    }
+
+    &-profile{
+        padding: 3% 10%;
+        width: 100%;
+        position: relative;
+        z-index: 500;
+
+        &__top{
+            display: flex;
+        }
+
+       .top-left{
+           display: flex;
+           width: 80%;
+       }
+
+        .top-left__left{
+            width: 15vw;
+            min-height: 13vw;
+            display: flex;
+            flex-direction: column;
+          
+
+            .artist-img{
+                width: 10vw;
+                padding-bottom: 5em;
+            }
+            
+            .fa-circle{
+                color: $orange;
+            }
+
+            .fa-stack{
+                cursor: pointer;
+                padding: 0;
+                padding-right: 3vw;
+                text-align: left;
+            }            
+            
+        }
+
+        .top-left__right{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 2em;
+            min-height: 13vw;
+            justify-content: space-between;
+              overflow: hidden;
+
+            .edit-profile-btn{
+                background: transparent;
+                border: none;
+                font-size: 1em;
+                padding-bottom: 6em;
+                color: $green;
+                width: fit-content;
+                cursor: pointer;
+                
+                :hover{
+                    color: $orange;
+
+                    .fa-pen-to-square{
+                        color: $white;
+                    }
+                }
+
+                .fa-pen-to-square{
+                    color: $darkgrey;
+                }
+            }
+
+            .artist-name{
+                @include title;
+                // font-size: 3em;
+                color: $darkgrey;
+                padding-bottom: 1em
+            }
+
+            .artist-about{
+                @include body-text;
+                color: $darkgrey;
+            }
+
+        }
+
+    
+        .artist-profile__bottom{
+            margin-top: 7em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2em;
+            position: relative;
+            z-index: 600;
+
+            .artist-products{
+                width: fit-content;
+                overflow-x: scroll;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 4em;
+                -ms-overflow-style: none; 
+                scrollbar-width: none;
+            }
+
+            .artist-products::-webkit-scrollbar{
+                display: none;
+            }
+
+            .card{
+
+                
+                .edit-btns{
+                    width: 100%;
+                    padding: 2em;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    position: absolute;
+                }
+
+                .fa-stack{
+                    cursor: pointer;
+                    margin-bottom: .5em;
+
+                    .fa-circle{
+                        color: $green;
+                    }
+
+                    .circle-trash{
+                        color: $orange;
+                    }
+
+                    .fa-pen-to-square{
+                        color: $darkgrey;
+
+                    }
+                }      
+
+                    
+            }
+        }
+       
+    }
+}
+
