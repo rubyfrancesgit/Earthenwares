@@ -1219,6 +1219,393 @@ li {
   color: #4A4F4F;
 }
 
+.products {
+  padding: 3vw 10vw;
+  padding-top: 0;
+}
+.products-title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 3vw;
+}
+.products-title .title {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3.4em;
+  color: #4A4F4F;
+  border-bottom: solid 3px #4A4F4F;
+}
+.products-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6.666%;
+}
+.products-container .card {
+  width: 20%;
+}
+.products-container .card-img-top {
+  border-radius: 0;
+  cursor: pointer;
+}
+.products-container .card-img-top:hover {
+  outline: solid 8px #D5E0A8;
+  outline-offset: -4px;
+  outline-style: solid;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .products-container .card {
+    width: 28.5%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px), (max-width: 480px) {
+  .products-container .card {
+    width: 44%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px), (max-width: 480px) {
+  .products-container {
+    gap: 12%;
+  }
+}
+
+.product-detail {
+  padding: 3% 10%;
+}
+.product-detail__upper {
+  display: flex;
+  gap: 5vw;
+}
+.product-detail__upper .type {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #C3C3B7;
+  font-size: 1.8em;
+}
+.product-detail__upper .product-name {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #4A4F4F;
+}
+.product-detail__upper .artist-name {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #C3C3B7;
+  font-size: 1.8em;
+}
+.product-detail__upper .price {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-weight: 700;
+  color: #4A4F4F;
+}
+.product-detail__upper .info {
+  padding: 1vw 0;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: #4A4F4F;
+  font-size: 1.4em;
+}
+.product-detail__upper .product-btns {
+  display: flex;
+  gap: 1vw;
+  padding-bottom: 2vw;
+}
+.product-detail__upper .product-btns .quantity {
+  width: 2vw;
+}
+.product-detail__upper .product-btns .add-to-cart {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: #D5E0A8;
+  color: #4A4F4F;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  font-size: 1.4em;
+}
+.product-detail__upper .product-btns .add-to-cart:hover {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  font-size: 1.4em;
+}
+.product-detail__upper .product-dropdowns {
+  width: 100%;
+}
+.product-detail__upper .product-dropdowns .care-title, .product-detail__upper .product-dropdowns .shipping-title, .product-detail__upper .product-dropdowns .purchase-title {
+  width: 100%;
+  background-color: #EFEFEB;
+  border-right: solid 2px #fff;
+  height: 3em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.product-detail__upper .product-dropdowns .care-title h6, .product-detail__upper .product-dropdowns .shipping-title h6, .product-detail__upper .product-dropdowns .purchase-title h6 {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-size: 1.4em;
+  font-weight: 500;
+  line-height: 1.4em;
+  align-content: center;
+  margin: 0;
+  padding-left: 0.5em;
+  color: #4A4F4F;
+}
+.product-detail__upper .product-dropdowns .care-drop-down, .product-detail__upper .product-dropdowns .shipping-drop-down, .product-detail__upper .product-dropdowns .purchase-drop-down {
+  width: 3em;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #EFEFEB;
+}
+
+.product-images {
+  display: flex;
+}
+
+.images-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding-right: 1vw;
+}
+
+.product-img-one, .product-img-two, .product-img-three {
+  width: 8vw;
+  height: 8vw;
+}
+
+.main-image {
+  height: 26vw;
+}
+
+.product-description__upper {
+  display: flex;
+}
+.product-description .product-care, .product-description .product-shipping, .product-description .product-purchase {
+  display: flex;
+  margin-bottom: 0.5vw;
+}
+.product-description .shipping-info, .product-description .care-info, .product-description .purchase-info {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  padding-bottom: 0.5vw;
+  font-size: 1.2em;
+  display: none;
+}
+
+.product-detail__lower {
+  display: flex;
+  padding-top: 4vw;
+  gap: 4vw;
+}
+.product-detail__lower .product-artist {
+  width: 40%;
+}
+.product-detail__lower .artist__upper {
+  display: flex;
+  gap: 2vw;
+  padding-bottom: 2vw;
+}
+.product-detail__lower .artist-img {
+  width: 6vw;
+}
+.product-detail__lower .artist-detail .artist-name {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+}
+.product-detail__lower .artist-detail .view-profile {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+.product-detail__lower .artist-bio {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size: 1.4em;
+  padding-bottom: 2vw;
+}
+.product-detail__lower .artist-socials .fa-circle {
+  color: #F4794F;
+}
+.product-detail__lower .artist-socials .fa-stack {
+  cursor: pointer;
+  padding: 0;
+  padding-right: 3vw;
+  text-align: left;
+}
+.product-detail__lower .comments {
+  width: 60%;
+}
+.product-detail__lower .comments .comments-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+.product-detail__lower .comments .comment-no {
+  padding: 0.5em;
+  color: #C3C3B7;
+  font-weight: 400;
+}
+.product-detail__lower .comments .heading-container {
+  display: flex;
+  align-items: center;
+}
+.product-detail__lower .comments .heading {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 1.6em;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.product-detail__lower .comments .fa-period {
+  color: #EFEFEB;
+  font-size: 2em;
+}
+.product-detail__lower .comments .add-comment-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+.product-detail__lower .comments .comments-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.product-detail__lower .comments .comments-display .comment-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2vw;
+  padding-bottom: 2vw;
+}
+.product-detail__lower .comments .comments-display .comment-container .commenter {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EFEFEB;
+}
+.product-detail__lower .comments .comments-display .comment-container .initials {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1em;
+  color: #4A4F4F;
+  margin-bottom: 0.1em;
+}
+.product-detail__lower .comments .comments-display .comment-container .comment {
+  width: 75%;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size: 1.4em;
+  margin: 0;
+}
+.product-detail__lower .comments .comments-display .reply-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2vw;
+  padding-bottom: 2vw;
+}
+.product-detail__lower .comments .comments-display .reply-container .seller {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D5E0A8;
+}
+.product-detail__lower .comments .comments-display .reply-container .initials {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1em;
+  color: #4A4F4F;
+  margin-bottom: 0.1em;
+}
+.product-detail__lower .comments .comments-display .reply-container .reply {
+  width: 75%;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
+  text-align: right;
+  font-weight: 400;
+  font-size: 1.4em;
+  margin: 0;
+}
+.product-detail__lower .comments .btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.product-detail__lower .comments .btn-container .see-all-btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F4794F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F4794F solid;
+  cursor: pointer;
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -1269,6 +1656,11 @@ li {
   background-color: #D5E0A8;
   color: #4A4F4F;
 }
+@media (min-width: 481px) and (max-width: 768px), (max-width: 480px) {
+  .footer-upper__btn-container .sell-work-btn {
+    font-size: 2em;
+  }
+}
 .footer-lower {
   display: flex;
   justify-content: space-between;
@@ -1298,7 +1690,7 @@ li {
   line-height: 1.6em;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.4em;
   color: #4A4F4F;
 }
 .footer-lower__right .footer-nav__item {
@@ -1306,6 +1698,49 @@ li {
 }
 .footer-lower__right .footer-nav__item:hover {
   font-weight: 600;
+}
+@media (min-width: 481px) and (max-width: 768px), (max-width: 480px) {
+  .footer-lower {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-lower .footer-logo__display {
+    font-family: "Cremona", sans-serif;
+    font-size: 3.75em;
+    font-weight: 400;
+    font-size: 5em;
+    color: #4A4F4F;
+    padding-top: 1em;
+  }
+  .footer-lower .footer-logo__tag {
+    font-family: "Assistant", sans-serif;
+    font-size: 1.8em;
+    font-weight: 400;
+    font-size: 3em;
+    font-weight: 300;
+    color: #4A4F4F;
+  }
+  .footer-lower__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-lower__right {
+    text-align: center;
+    width: 100%;
+    font-size: 1.8em;
+    line-height: 2.2em;
+    color: #4A4F4F;
+    border-bottom: solid 1px #C3C3B7;
+    padding-bottom: 2em;
+  }
+  .footer-lower__right .footer-nav__item {
+    cursor: pointer;
+  }
+  .footer-lower__right .footer-nav__item:hover {
+    font-weight: 600;
+  }
 }
 .footer-bottom {
   background-color: #EFEFEB;
@@ -1316,9 +1751,16 @@ li {
   font-size: 1.5em;
   font-weight: 300;
   line-height: 1.6em;
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #4A4F4F;
   font-weight: 400;
+}
+.footer-bottom .privacy, .footer-bottom .welly-potters {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  line-height: 1em;
+  margin: 0;
 }
 .footer-bottom .socials {
   display: flex;
@@ -1332,4 +1774,32 @@ li {
   border-radius: 2em;
   text-align: center;
   cursor: pointer;
+}
+@media (min-width: 481px) and (max-width: 768px), (max-width: 480px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 3em;
+    padding-top: 2em;
+    padding: 5em 2em;
+  }
+  .footer-bottom .privacy, .footer-bottom .welly-potters {
+    font-size: 0.6em;
+    padding-bottom: 1.5em;
+  }
+  .footer-bottom .socials {
+    display: flex;
+    color: white;
+    padding-bottom: 1em;
+    gap: 1em;
+  }
+  .footer-bottom .socials-container {
+    background-color: #F4794F;
+    margin: 0;
+    line-height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    text-align: center;
+    cursor: pointer;
+  }
 }

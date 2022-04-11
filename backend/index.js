@@ -45,6 +45,7 @@ app.post("/registerUser", (req, res) => {
                 username: req.body.username,
                 email: req.body.password,
                 password: hash,
+                profilePicture: req.body.profilePicture,
                 seller: req.body.seller,
                 storeName: req.body.storeName,
                 storeDescription: req.body.storeDescription,
