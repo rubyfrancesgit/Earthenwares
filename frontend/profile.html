@@ -33,7 +33,7 @@
                 <svg class="svg-curve" viewBox="0 0 425 300">
                     <path id="curve" d="M23.69,.25C15.73,13.79,3.91,38.04,1.37,70.09-.03,87.79-4.15,139.89,33.05,177.37c33.38,33.63,84.16,39.51,123.84,27.36,51.48-15.77,81.13-60.68,90-99.36,4.22-18.43,3.52-34.46,2.16-45.36"/>
                     <text x="65">
-                      <textPath xlink:href="#curve">
+                      <textPath xlink:href="#curve" id="profileCurvedText">
                             SELLER PROFILE.
                       </textPath>
                     </text>
@@ -79,6 +79,66 @@
        
         <!-- end of nav -->
 
+        <!-- Delete Product Modal Flow Begins -->
+
+        <!-- First Modal Starts -->
+        <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal__background">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-heading">
+                        <h3 class="modal-title">Delete Product</h3>
+                        <p class="modal-subtitle">Are you sure you want to delete this product?</p>
+                    </div>
+                    <div class="delete">
+                        <div class="delete__btns">
+                            <button class="delete-btn">No</button>
+                            <button class="delete-btn-alt" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal" id="yesDeleteListing">Yes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Product Deleted Successfully</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle4" role="button">Delete Modal</a> -->
+        <!-- Delete Product Modal Flow Ends -->
+
         <!-- start of profile -->
         <div class="artist-profile">
             <div class="artist-profile__top">
@@ -111,173 +171,6 @@
 
             <div class="artist-profile__bottom">
                 <div class="artist-products" id="profileListings">
-                    <!-- <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27rem;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 27em;">
-                        <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                                <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
-                        <div class="card-body">
-                          <div class="card-body-top">
-                              <p class="card-name">Item Name</p>
-                              <p class="card-price">$34</p>
-                          </div>
-                          <div class="card-body-bottom">
-                              <p class="card-artist">Jane Doe</p>
-                          </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
