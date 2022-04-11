@@ -6,6 +6,10 @@ $(document).ready(function() {
     let url;
     let userId;
 
+    $('#testClick').click(function(){
+        console.log('Clicked');
+    })
+
     $.ajax({
         url: "config.json",
         type: "GET",

@@ -1,0 +1,71 @@
+
+
+.modal{
+
+    &__background{
+        background: url('../img/form-background-crop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &-body{
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+    &-header{
+        border: none;
+    }
+
+    &-header > button{
+        padding: 1em !important;
+        // margin-right: 3em !important;
+    }
+
+    &-heading{
+        @include heading;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        font-size: 5rem;
+        text-align: center;
+    } 
+
+    &-header__back{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        font-size: 0.5em;
+        margin-left: 8em;
+    }
+
+    &-back-btn{
+        @include button-text;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &-subtitle{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    
+    .modal{
+        &-header{
+            font-size: 3rem;
+        }
+
+        &-title{
+            font-size: inherit;
+        }
+
+        &-footer{
+            border: none;
+        }
+    }
+
+}
+

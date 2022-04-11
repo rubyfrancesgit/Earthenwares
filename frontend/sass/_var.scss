@@ -8,3 +8,12 @@ $black: #000;
 
 $displayfont: "Cremona", sans-serif;
 $contentfont: "Assistant", sans-serif;
+
+
+$mobile: "(max-width: 480px)";
+$tablet: "(min-width: 481px) and (max-width: 768px)";
+$smallScreen: "(min-width: 769px) and (max-width: 1024px)";
+$laptop: "(min-width: 1025px) and (max-width: 1200px)";
+$desktop: "(min-width: 1201px)";
+
+

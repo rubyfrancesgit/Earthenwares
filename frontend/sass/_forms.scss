@@ -1,0 +1,173 @@
+.form{
+    @include center-flex;
+
+    &__input{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        @include heading;
+    }
+
+    &__input-box{
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    &__input-alt{
+        width: 95%;
+    }
+
+    &-text-input{
+        border: none;
+        background: $lightgrey;
+        padding: 0.5em;
+        width: 100%;
+    }
+
+    &__btns{
+        width: 80%;
+        @include center-flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    &-btn{
+        @include button-orange;
+        width: 100%;
+    }
+
+    &-btn-alt{
+        @include button-text;
+        color: $black;
+        border-color: $black;
+    }
+
+    &__divider{
+        border-style: solid;
+        border-width: 1px;
+        width: 80%;
+        border-color: $green;
+    }
+
+    &__radio{
+        background: $lightgrey;
+        height: 4.5vh;
+        width: 10vw;
+        // text-align: center;
+        @include center-flex;
+    }
+
+    &__radio:hover{
+        // background: $darkgrey;
+        background: $green;
+        transition: 0.4s ease-in;
+        // color: $green;
+    }
+
+    &-radio{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: absolute;
+        color: $black;
+        cursor: pointer;
+        height: 4.5vh;
+        width: 10vw;
+        z-index: 500;
+    }
+
+    &__radio-all{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__radio-all p{
+        @include heading;
+    }
+
+    &__radio-box{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    &__footer{
+        margin: 4em;
+    }
+
+    &__image-preview-box{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__image-preview{
+        background: $orange;
+        flex-basis: 30%;
+    }
+
+   
+}
+
+
+.login{
+    @include form-center;
+
+    &-signup{
+        @include button-green;
+        margin: 2em;
+    }
+}
+
+
+.signup{
+    @include form-center;
+
+    &__store{
+        @include form-center;
+    }
+
+    &__store-box{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__image-preview{
+        padding: 0em 1em;
+        margin-left: 1em;
+        border: none;
+        background: $green;
+    }
+
+
+}
+
+
+.delete{
+    @include form-center;
+
+    &__btns{
+        @include center-flex;
+        flex-direction: row;
+        gap: 2em;
+        width: 100%;
+    }
+
+    &-btn{
+        @include button-orange;
+        width: 30%;
+    }
+
+    &-btn-alt{
+        @include button-green;
+        width: 30%;
+    }
+}
