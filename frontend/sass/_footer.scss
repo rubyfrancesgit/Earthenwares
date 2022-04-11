@@ -37,11 +37,19 @@
                 justify-self: center;
                 width:fit-content; 
                 @include button-orange;
+                
             }
 
             :hover{
                 background-color: $green;
                 color: $darkgrey;
+            }
+
+            @media #{$tablet, $mobile}{
+                .sell-work-btn{
+                    font-size: 2em;
+                    
+                }
             }
         }
         
@@ -73,7 +81,7 @@
             @include body-text;
             text-transform: uppercase;
             font-weight: 400;
-            font-size: 1.25em;
+            font-size: 1.4em;
             color: $darkgrey;
 
             .footer-nav{
@@ -81,6 +89,55 @@
                     cursor: pointer;
                     &:hover{
                         font-weight: 600;
+                    }
+                }
+            }
+        }
+
+
+        @media #{$tablet, $mobile}{
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        
+
+            .footer-logo__display{
+                @include title;
+                font-size: 5em;
+                color: $darkgrey;
+                padding-top: 1em;
+            }
+            
+            .footer-logo__tag{
+                @include sub-heading;
+                font-size: 3em;
+                font-weight: 300;
+                color: $darkgrey;
+            }
+
+            &__left{
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+    
+            &__right{
+                text-align: center;
+                width: 100%;
+                font-size: 1.8em;
+                line-height: 2.2em;
+                color: $darkgrey;
+                border-bottom: solid 1px $midgrey;
+                padding-bottom: 2em;
+    
+                .footer-nav{
+                    &__item{
+                        cursor: pointer;
+                        &:hover{
+                            font-weight: 600;
+                        }
                     }
                 }
             }
@@ -93,9 +150,17 @@
         justify-content: space-between;
         padding: 5em 8em;
         @include body-text;
-        font-size: 1.5em;
+        font-size: 1.6em;
         color: $darkgrey;
         font-weight: 400;
+
+        .privacy, .welly-potters{
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            line-height: 1em;
+            margin: 0;
+        }
 
         .socials{
             display: flex;
@@ -110,6 +175,37 @@
                 text-align: center;
                 cursor: pointer;
             }
+        }
+
+        @media #{$tablet, $mobile}{
+            flex-direction: column-reverse;
+            align-items: center;
+            font-size: 3em;
+            padding-top: 2em;
+            padding: 5em 2em;
+
+            .privacy, .welly-potters{
+                font-size: .6em;
+                padding-bottom: 1.5em;
+            }
+
+            .socials{
+                display: flex;
+                color: white;
+                padding-bottom: 1em;
+                gap: 1em;
+    
+                &-container{
+                    background-color: $orange;
+                    margin: 0;
+                    line-height: 2em;
+                    width: 2em;
+                    border-radius: 2em;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+    
         }
     }
 }

@@ -117,14 +117,32 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &-box{
+        flex-basis: 40%;
+    }
+
+    &-box:nth-child(1){
+        position: relative;
+        top: 15vh;
+    }
+
+    &-img{
+        width: 100%;
+        height: auto;
+    }
+
+    &-box:nth-child(2){
+        text-align: right;
+    }
+
     &-img:nth-child(1){
         position: relative;
-        top: 10em;
     }
 
     &-img:nth-child(2){
         position: relative;
         z-index: 20;
+        // flex-basis: 50%;
     }
 }
 
@@ -153,23 +171,25 @@
     }
 
     &-image{
-        height: 35em;
-        width: 35em;
+        width: 20vw;
+        height: auto;
         position: relative;
         top: 15vh;
     }
 
-    &-image:nth-child(1){
-        background: url('../img/landing-img-1.png');
-        background-size: cover;
-        background-repeat: no-repeat;
+    &-img{
+        width: 100%;
+        height: auto;
     }
+
+    // &-image:nth-child(1){
+    //     // background: url('../img/landing-img-1.png');
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    // }
 
     
     &-image:nth-child(2){
-        background: url('../img/landing-img-2.png');
-        background-size: cover;
-        background-repeat: no-repeat;
         margin-left: 3em;
     }
 
@@ -190,10 +210,6 @@
         gap: 2em;
     }
 
-    &-img{
-        height: 10%;
-        width: auto;
-    }
 
     &-heading{
         @include title;
@@ -254,4 +270,81 @@
     &-btn{
         @include button-text;
     }
+}
+
+
+@media screen and (min-width: 1201px) and (max-width:1500px) {
+
+
+    .landing__body{
+        height: 160vh;
+    }
+    
+    .landing__content{
+        
+        height: 80vh;
+
+        &-body{
+            font-size: 1.3em;
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .landing__body{
+        height: 200vh;
+    }
+    
+    .landing__content{
+        
+        height: 110vh;
+
+        &-body{
+            font-size: 1.3em;
+        }
+    }
+}
+
+// Large Screens
+
+@media screen and (min-width: 1500px) {
+    
+    .landing__content{
+
+
+        &-img{
+            width: 90%;
+            height: auto;
+        }
+
+        &-body{
+            font-size: 1.7em;
+        }
+    }
+}
+
+// Tablet
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .landing__body{
+        height: 100vh;
+    }
+    
+    .landing__content{
+        
+        height: 110vh;
+
+        &-text{
+            justify-content: center;
+        }
+
+        &-body{
+            font-size: 1.3em;
+        }
+    }
+}
+
+.btn{
+    position: relative;
+    z-index: 9999;
 }
