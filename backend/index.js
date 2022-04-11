@@ -86,7 +86,12 @@ app.post("/addProduct", (req, res) => {
         imgOneUrl: req.body.imgOneUrl,
         imgTwoUrl: req.body.imgTwoUrl,
         imgThreeUrl: req.body.imgThreeUrl,
-        authorId: req.body.authorId
+        authorId: req.body.authorId,
+        category: req.body.category,
+        colour: req.body.colour,
+        dimensions: req.body.dimensions,
+        dishwasherSafe: req.body.dishwasherSafe,
+        microwaveSafe: req.body.microwaveSafe,
     });
 
     dbProduct.save().then(result => {
@@ -100,6 +105,20 @@ app.get("/allProductsFromDB", (req, res) => {
         res.send(result);
     });
 }); // end of get all products from DB
+
+// Delete product from DB
+app.delete("/deleteProduct/:id", (req, res) => {
+    const idParam = req.params.id;
+    Product.findOne({_id: idParam}, (err, product) => {
+        if(product) {
+            Product.deleteOne({_id: idParam}, err => {
+                console.log("Deleted on backend");
+            });
+        } else {
+            alert("Not found");
+        }
+    }).catch(err => res.send(err));
+});
 
 // get all users from DB
 app.get("/allUsersFromDB", (req, res) => {

@@ -187,8 +187,13 @@ $(document).ready(function() {
         let imgTwoUrl = $("#addProductImgTwoUrl").val();
         let imgThreeUrl = $("#addProductImgThreeUrl").val();
         userId = sessionStorage.getItem('userID');
+        let category = $("#addProductCategory").val();
+        let colour = $("#addProductColour").val();
+        let dimensions = $("#addProductDimensions").val();
+        let dishwasherSafe = $("#addProductDishwasherSafe").val();
+        let microwaveSafe = $("#addProductMicrowaveSafe").val();
         
-        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl);
+        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
         if(!userId) {
             alert("Sign in to add product")
         } else {
@@ -208,6 +213,11 @@ $(document).ready(function() {
                             imgOneUrl,
                             imgTwoUrl,
                             imgThreeUrl,
+                            category,
+                            colour,
+                            dimensions,
+                            dishwasherSafe,
+                            microwaveSafe,
                             authorId: userId
                         },
                         success: function(product) {
@@ -384,14 +394,42 @@ $(document).ready(function() {
         console.log("populate profile");
 
         if (sessionStorage.username !== "") {
-            $("#profileName").append(
-                `
-                    <h3 class="artist-name">${sessionStorage.username}</h3>
-                `
-            );
+            
 
             for(let i = 0; i < usersFromMongo.length; i++) {
                 if(sessionStorage.userID === usersFromMongo[i]._id) {
+                    const profileCurvedText = document.getElementById("profileCurvedText");
+
+                    if (usersFromMongo[i].seller === true) {
+                        profileCurvedText.innerHTML = "SELLER PROFILE."
+
+                        $("#cardBottomBody").append(
+                            `
+                            <p class="card-artist" id="">${usersFromMongo[i].storeName}</p>
+                            `
+                        );
+
+                        $("#profileName").append(
+                            `
+                                <h3 class="artist-name">${usersFromMongo[i].storeName}</h3>
+                            `
+                        );
+                    } else {
+                        profileCurvedText.innerHTML = "USER PROFILE."
+
+                        $("#cardBottomBody").append(
+                            `
+                            <p class="card-artist" id="">${usersFromMongo[i].username}</p>
+                            `
+                        );
+
+                        $("#profileName").append(
+                            `
+                                <h3 class="artist-name">${usersFromMongo[i].username}</h3>
+                            `
+                        );
+                    }
+
                     $("#profileDescription").append(
                         `<p class="artist-about">${usersFromMongo[i].storeDescription}</p>`
                     );
@@ -444,39 +482,78 @@ $(document).ready(function() {
         console.log(productsFromMongo[i].productName);
 
         if(sessionStorage.userID === productsFromMongo[i].authorId) {
-            console.log(productsFromMongo[i].productName);
+            console.log(productsFromMongo[i]._id);
 
             $("#profileListings").append(
                 `
-                    <div class="card" style="width: 27rem;">
+                    <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
                         <div class="edit-btns">
                             <span class="fa-stack fa-2x">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
                                 <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
                             </span>
 
-                            <span class="fa-stack fa-2x">
+                            <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="trashIcon" data-bs-toggle="modal" href="#exampleModalToggle4">
                                 <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
                                 <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
                             </span>
                         </div>
-                        <img class="card-img-top" src="./img/landing-img-1.png" alt="Card image cap">
+                        <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap">
                         <div class="card-body">
                         <div class="card-body-top">
                             <p class="card-name">${productsFromMongo[i].productName}</p>
                             <p class="card-price">$${productsFromMongo[i].price}</p>
                         </div>
-                        <div class="card-body-bottom">
-                            <p class="card-artist">Jane Doe</p>
+                        <div class="card-body-bottom" id="cardBottomBody">
+                            <p class="card-artist" id=""></p>
                         </div>
                         </div>
                     </div>
                 `
-            )
+            ); // end of profile listings append
+
+            $("#trashIcon").click(function() {
+                console.log("trash");
+
+                $("#yesDeleteListing").click(function() {
+                    console.log("yes delete");
+                    const id = $("#productID").data("value");
+                    console.log(id)
+
+                    $.ajax({
+                        url: `http://${url}/deleteProduct/${id}`,
+                        type: "DELETE",
+                        success: function() {
+                            alert("Deleted");
+                        },
+                        error: function() {
+                            alert("Error: cannot delete");
+                        }
+                    });
+                });
+            });
         }
-    }
+    } // end of populate listings on profile
+
+    
 
     // ----- profile page end -----
+
+    // $("#deleteProductBtn").click(function() {
+    //     const id = $("#deleteProductId").val();
+    //     console.log(url)
+
+    //     $.ajax({
+    //         url: `http://${url}/deleteProduct/${id}`,
+    //         type: "DELETE",
+    //         success: function() {
+    //             alert("Deleted");
+    //         },
+    //         error: function() {
+    //             alert("Error: cannot delete");
+    //         }
+    //     });
+    // });
 
 }); // end of document.ready
 
