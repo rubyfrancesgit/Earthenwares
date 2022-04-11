@@ -60,12 +60,12 @@
                 <!-- Upload Image Section Begins -->
                 <div class="upload__images">
                     <div class="upload__image-header">
-                        <h4 class="upload__image-heading">Upload Images</h4>
-                        <p class="upload__image-subheading">High quality imagery can make or break a sale, you have three opportunities to blow potential customers away! Try to capture images in high quality, with natural lighting and show multiple angles!</p>
+                        <h4 class="upload-heading">Upload Images</h4>
+                        <p class="upload-subheading">High quality imagery can make or break a sale, you have three opportunities to blow potential customers away! Try to capture images in high quality, with natural lighting and show multiple angles!</p>
                     </div>
                     <div class="upload__image">
                         <div class="upload__image-input-box">
-                            <div class="form__input upload__input">
+                            <div class="form__input upload__image-input">
                                 <label for="imageURL1">Image URL *</label>
                                 <div class="form__image-preview-box">
                                     <input name="imageURL1" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgOneUrl">
@@ -75,7 +75,7 @@
                             <div class="upload__image-box"></div>
                         </div>
                         <div class="upload__image-input-box">
-                            <div class="form__input upload__input">
+                            <div class="form__input upload__image-input">
                                 <label for="imageURL2">Image URL *</label>
                                 <div class="form__image-preview-box">
                                     <input name="imageURL2" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgTwoUrl">
@@ -85,7 +85,7 @@
                             <div class="upload__image-box"></div>
                         </div>
                         <div class="upload__image-input-box">
-                            <div class="form__input upload__input">
+                            <div class="form__input upload__image-input">
                                 <label for="imageURL3">Image URL *</label>
                                 <div class="form__image-preview-box">
                                     <input name="imageURL3" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgThreeUrl">
@@ -100,10 +100,10 @@
 
                 <!-- Upload Listing Details Begins -->
 
-                <div class="upload__listing">
+                <div class="upload__block">
                     <div class="upload__header">
-                        <h4 class="upload__heading">Listing Details</h4>
-                        <p class="upload__subheading">Let potential customers know all about your art and why they'll love it!</p>
+                        <h4 class="upload-heading">Listing Details</h4>
+                        <p class="upload-subheading">Let potential customers know all about your art and why they'll love it!</p>
                     </div>
                     <div class="upload__form">
                         <div class="upload__box">
@@ -111,28 +111,47 @@
                                 <label for="productname" class="upload-label">Title *</label>
                                 <p class="upload-sublabel">The name of your work</p>
                             </div>
-                            <input type="text" name="productname" placeholder="product name..." id="addProductName">
+                            <div class="upload__input">
+                                <input type="text" class="upload-text-input" name="productname" placeholder="product name..." id="addProductName">
+                            </div>
                         </div>
                         <div class="upload__box">
                             <div class="upload__label">
                                 <label for="category" class="upload-label">Category *</label>
                                 <p class="upload-sublabel">What would you best describe this work as? This will help shoppers filter for your work</p>
                             </div>
-                            <input type="text" name="category" placeholder="product name..." id="addProductName">
+                            <div class="upload__input">
+                            <select name="category" id="" class="upload-select-input">
+                                <option value="vases">Vases</option>
+                                <option value="tablewares">Tablewares</option>
+                                <option value="misc">Miscellaneous</option>
+                            </select>
+                        </div>
                         </div>
                         <div class="upload__box">
                             <div class="upload__label">
                                 <label for="colour" class="upload-label">Colour *</label>
                                 <p class="upload-sublabel">Choose a primary colour to define this piece by</p>
                             </div>
-                            <input type="text" name="colour" placeholder="product name..." id="addProductName">
+                            <div class="upload__input">
+                            <select name="colour" id="" class="upload-select-input">
+                                <option value="beige">Beige</option>
+                                <option value="black">Black</option>
+                                <option value="brown">Blue</option>
+                                <option value="brown">Brown</option>
+                                <option value="white">White</option>
+                                <option value="white">Yellow</option>
+                            </select>
+                            </div>
                         </div>
                         <div class="upload__box">
                             <div class="upload__label">
                                 <label for="dimensions" class="upload-label">Dimensions (L x W x H) *</label>
                                 <p class="upload-sublabel">How large is this work approximately?</p>
                             </div>
-                            <input type="text" name="dimensions" placeholder="product name..." id="addProductName">
+                            <div class="upload__input">
+                            <input type="text" class="upload-text-input" name="dimensions" placeholder="product name..." id="addProductName">
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -140,25 +159,35 @@
 
         <!-- Upload Care Instructions Starts -->
 
-        <div class="upload__care">
+        <div class="upload__block">
             <div class="upload__header">
-                <h4 class="upload__heading">Care Instructions</h4>
-                <p class="upload__subheading">Let your customers know how to care for your art, make sure you're certain!</p>
+                <h4 class="upload-heading">Care Instructions</h4>
+                <p class="upload-subheading">Let your customers know how to care for your art, make sure you're certain!</p>
             </div>
             <div class="upload__form">
                 <div class="upload__box">
                     <div class="upload__label">
-                        <label class="upload-label" for="productname">Dishwasher Safe *</label>
+                        <label class="upload-label" for="dishwasher">Dishwasher Safe *</label>
                         <p class="upload-sublabel">Can your work go in the dishwasher?</p>
                     </div>
-                    <input type="text" name="productname" placeholder="product name..." id="addProductName">
+                    <div class="upload__input">
+                    <select name="dishwasher" id="" class="upload-select-input">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    </div>
                 </div>
                 <div class="upload__box">
                     <div class="upload__label">
-                        <label for="category" class="upload-label">Microwave Safe *</label>
+                        <label for="microwave" class="upload-label">Microwave Safe *</label>
                         <p class="upload-sublabel">Can your work go in the microwave?</p>
                     </div>
-                    <input type="text" name="category" placeholder="product name..." id="addProductName">
+                    <div class="upload__input">
+                        <select name="microwave" id="" class="upload-select-input">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,25 +196,20 @@
 
         <!-- Upload Description Starts -->
 
-        <div class="upload__description">
+        <div class="upload__block">
             <div class="upload__header">
-                <h4 class="upload__heading">Description</h4>
-                <p class="upload__subheading">Let customers know all about your work, what inspired you, extra information about the process, or why this piece is dear to you, it also doesn't hurt to include information about the process!</p>
+                <h4 class="upload-heading">Description</h4>
+                <p class="upload-subheading">Let customers know all about your work, what inspired you, extra information about the process, or why this piece is dear to you, it also doesn't hurt to include information about the process!</p>
             </div>
             <div class="upload__form">
                 <div class="upload__box">
                     <div class="upload__label">
-                        <label class="upload-label" for="productname">Description *</label>
+                        <label class="upload-label" for="description">Description *</label>
                         <p class="upload-sublabel">(Max 350 characters)</p>
                     </div>
-                    <input type="text" name="productname" placeholder="product name..." id="addProductName">
+                    <div class="upload__input">
+                    <textarea name="description" class="upload-text-input" id="" cols="30" rows="10"></textarea>
                 </div>
-                <div class="upload__box">
-                    <div class="upload__label">
-                        <label for="category" class="upload-label">Microwave Safe *</label>
-                        <p class="upload-sublabel">Can your work go in the microwave?</p>
-                    </div>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
             </div>
         </div>
