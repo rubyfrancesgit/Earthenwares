@@ -187,8 +187,13 @@ $(document).ready(function() {
         let imgTwoUrl = $("#addProductImgTwoUrl").val();
         let imgThreeUrl = $("#addProductImgThreeUrl").val();
         userId = sessionStorage.getItem('userID');
+        let category = $("#addProductCategory").val();
+        let colour = $("#addProductColour").val();
+        let dimensions = $("#addProductDimensions").val();
+        let dishwasherSafe = $("#addProductDishwasherSafe").val();
+        let microwaveSafe = $("#addProductMicrowaveSafe").val();
         
-        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl);
+        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
         if(!userId) {
             alert("Sign in to add product")
         } else {
@@ -208,6 +213,11 @@ $(document).ready(function() {
                             imgOneUrl,
                             imgTwoUrl,
                             imgThreeUrl,
+                            category,
+                            colour,
+                            dimensions,
+                            dishwasherSafe,
+                            microwaveSafe,
                             authorId: userId
                         },
                         success: function(product) {
