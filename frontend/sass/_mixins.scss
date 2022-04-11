@@ -81,3 +81,11 @@
 
 // END OF FLEX MIXINS
 
+// FORM BASE STYLES
+
+@mixin form-center{
+    @include center-flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4em;
+}

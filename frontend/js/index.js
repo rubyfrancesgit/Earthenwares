@@ -6,6 +6,10 @@ $(document).ready(function() {
     let url;
     let userId;
 
+    $('#testClick').click(function(){
+        console.log('Clicked');
+    })
+
     // start of initial ajax to get url data from local json
     $.ajax({
         url: "config.json",
