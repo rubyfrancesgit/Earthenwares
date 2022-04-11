@@ -86,7 +86,12 @@ app.post("/addProduct", (req, res) => {
         imgOneUrl: req.body.imgOneUrl,
         imgTwoUrl: req.body.imgTwoUrl,
         imgThreeUrl: req.body.imgThreeUrl,
-        authorId: req.body.authorId
+        authorId: req.body.authorId,
+        category: req.body.category,
+        colour: req.body.colour,
+        dimensions: req.body.dimensions,
+        dishwasherSafe: req.body.dishwasherSafe,
+        microwaveSafe: req.body.microwaveSafe,
     });
 
     dbProduct.save().then(result => {

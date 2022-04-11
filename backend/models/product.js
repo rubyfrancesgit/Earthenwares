@@ -11,7 +11,12 @@ const productSchema = new mongoose.Schema({
     authorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    category: String,
+    colour: String,
+    dimensions: String,
+    dishwasherSafe: Boolean,
+    microwaveSafe: Boolean
 });
 
 module.exports = mongoose.model("Product", productSchema);
