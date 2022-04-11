@@ -144,7 +144,9 @@
         @include body-text;
     }
 
-  
+    &__btn {
+        @include button-orange;
+    }
 }
 
 @media screen and (min-width: 1px) and (max-width: 1024px) {

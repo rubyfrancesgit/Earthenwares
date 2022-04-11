@@ -1134,6 +1134,18 @@ li {
   font-weight: 300;
   line-height: 1.6em;
 }
+.upload__btn {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
 
 @media screen and (min-width: 1px) and (max-width: 1024px) {
   .upload__box {
