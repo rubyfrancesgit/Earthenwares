@@ -169,6 +169,7 @@ li {
   display: flex;
   flex-direction: row;
   text-transform: uppercase;
+  z-index: 1000;
 }
 .nav__logo {
   flex-basis: 39.5%;
