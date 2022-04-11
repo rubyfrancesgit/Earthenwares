@@ -1,17 +1,28 @@
 .upload{
     display: flex;
     flex-direction: column;
-    gap: 3em;
-    margin: 0% 10%;
+    gap: 10vh;
+    padding: 10%;
+
+    &-heading{
+        @include heading;
+    }
+
+    &-subheading{
+        @include body-text;
+    }
 
     &__images{
         display: flex;
         flex-direction: column;
+        gap: 3em;
     }
 
     &__image{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 3%;
     }
 
@@ -27,13 +38,14 @@
         height: 50em;
     }
 
-    &__input{
+    &__image-input{
         width: 100%;
     }
 
-    &__listing{
+    &__block{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
     
     &__care{
@@ -52,11 +64,51 @@
 
     &__form{
         flex-basis: 66%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3em;
     }
 
     &__box{
+        width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-text-input{
+        border: none;
+        background: $lightgrey;
+        padding: 0.5em;
+        flex-basis: 60%;
+        width: 100%;
+        padding: 2em
+    }
+
+    &-select-input{
+        border: none;
+        background: $lightgrey;
+        padding: 0.5em;
+        flex-basis: 60%;
+        width: 100%;
+        padding: 2em;
+    }
+
+    &__label{
+        flex-basis: 30%;
+    }
+
+    &-label{
+        @include sub-heading;
+    }
+
+    &-sublabel{
+        @include body-text;
+    }
+
+    &__input{
+        flex-basis: 60%;
     }
 
   
