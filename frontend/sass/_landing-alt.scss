@@ -1,0 +1,128 @@
+.landing-alt{
+    height: 130vh;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+
+    path {
+        fill: transparent;
+        width: 30vw; 
+        height: auto;
+    }
+
+    .svg-curve{
+        width: 45vw;
+        height: auto;
+        position: absolute;
+        bottom: 8.5vw;
+        left: 2.5vw;
+
+        // top: 8.5vw;
+        // right: -11.5vw;
+
+    }
+
+    path {
+        fill: transparent;
+        width: 10vw; 
+        height: auto;
+    }
+
+    // // .curve{
+  
+    // // }
+
+    textPath{                
+        @include title;
+        font-size: 3em;
+        letter-spacing: .15em;
+        white-space: nowrap;
+        fill: $darkgrey;
+
+    }
+
+
+    &__background-box{
+        grid-column: 1/8;
+        grid-row: 1/21;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+
+    &__background-box-right{
+        position: relative;
+        grid-column: 13/21;
+        grid-row: 2/14;
+        @include center-flex;
+        flex-direction: column;
+    }
+
+    &__background-img-right{
+        position: relative;
+        grid-column: 5/11;
+        grid-row: 1/11;
+        height: 100%;
+        width: auto;
+    }
+
+    &__background-img{
+        grid-column: 14/21;
+        grid-row: 2/10;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__heading{
+        grid-column: 4/9;
+        grid-row: 5/7;
+    }
+
+    &__content-images{
+        // display: none;
+        grid-column: 3/11;
+        grid-row: 2/8;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__content-image{
+        // width: 20vw;
+        @include center-flex;
+        position: relative;
+        // top: 15vh;
+    }
+
+    &__content-img{
+        width: 90%;
+        height: auto;
+    }
+
+    &__content-text{
+        grid-column: 12/19;
+        grid-row: 6/12;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4em;
+        // padding-right: 10%;
+        // padding-left: 3%;
+    }
+
+    &__content-textbox{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+
+
+    &__content-heading{
+        @include title;
+        flex-basis: 25%;
+    }
+
+    &__content-body{
+        @include body-text;
+    }
+}

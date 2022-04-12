@@ -14,6 +14,26 @@ li {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit !important;
+}
+
+a:link {
+  text-decoration: none;
+  color: unset;
+}
+
+a:visited {
+  text-decoration: none;
+  color: unset;
+}
+
 @-webkit-keyframes rotateWord {
   0% {
     opacity: 0;
@@ -268,28 +288,35 @@ li {
     flex-basis: 63%;
   }
 }
-.card {
+.cards {
+  width: 18vw;
   border: none;
   background: none;
 }
-.card-body {
+.cards-img {
+  width: 100%;
+  height: 100%;
+}
+.cards__body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 0.5em;
   font-family: "Assistant", sans-serif;
   font-size: 1.5em;
   font-weight: 300;
   line-height: 1.6em;
+  padding: 0.5em;
 }
-.card-body p {
+.cards__body p {
   margin: 0;
 }
-.card-body-top {
+.cards__body-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.card-body-bottom {
+.cards__body-bottom {
   color: #C3C3B7;
   font-style: italic;
 }
@@ -366,6 +393,9 @@ li {
   border-bottom: 2px #F4794F solid;
   cursor: pointer;
   font-size: 1.8em;
+}
+.secondary-nav__back-arrow {
+  display: none;
 }
 .secondary-nav__btn {
   width: fit-content;
@@ -519,7 +549,6 @@ li {
 
 .landing__background {
   width: 100%;
-  height: 130vh;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -584,12 +613,18 @@ li {
 
 .landing__content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  height: 70vh;
+  gap: 10em;
   width: 100%;
   position: relative;
   z-index: 499;
+  height: inherit;
+}
+.landing__content-container {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
 }
 .landing__content-images {
   flex-basis: 50%;
@@ -639,7 +674,6 @@ li {
 }
 
 .landing__products {
-  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -650,14 +684,13 @@ li {
   z-index: 600;
 }
 .landing__products-cards {
-  width: 100%;
-  overflow-x: scroll;
-  display: flex;
+  display: -webkit-inline-box;
   flex-direction: row;
-  flex-wrap: nowrap;
+  width: 100%;
   gap: 4em;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: scroll;
 }
 .landing__products-cards::-webkit-scrollbar {
   display: none;
@@ -690,27 +723,53 @@ li {
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1500px) {
-  .landing__body {
-    height: 160vh;
-  }
-
-  .landing__content {
-    height: 80vh;
-  }
   .landing__content-body {
     font-size: 1.3em;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .landing__hero .landing__intro h1 {
+    font-size: 4rem;
+  }
+
+  .landing__content-container {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: self-start;
+  }
+  .landing__content-images {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2em;
+    padding: 0;
+    flex-basis: 40%;
+  }
+  .landing__content-image {
+    width: 25vw;
+  }
+  .landing__content-image:nth-child(2) {
+    margin: 0;
+  }
+  .landing__content-text {
+    flex-basis: 50%;
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 10vw;
+  }
+  .landing__content .cards {
+    width: 25vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
   .landing__body {
-    height: 200vh;
+    height: 120vh;
   }
 
   .landing__content {
-    height: 110vh;
+    height: 120vh;
   }
-  .landing__content-body {
-    font-size: 1.3em;
+  .landing__content-images {
+    margin-top: 8em;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -722,19 +781,21 @@ li {
     font-size: 1.7em;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .landing__body {
-    height: 100vh;
-  }
-
+@media screen and (min-width: 10px) and (max-width: 768px) {
   .landing__content {
-    height: 110vh;
+    flex-direction: column;
   }
   .landing__content-text {
+    flex-basis: 100%;
+    padding: 0;
+    margin: 0% 10%;
     justify-content: center;
   }
-  .landing__content-body {
-    font-size: 1.3em;
+  .landing__content-images {
+    display: none;
+  }
+  .landing__content .cards {
+    width: 25vw;
   }
 }
 .btn {
@@ -1605,6 +1666,7 @@ li {
 }
 
 .product-detail {
+  display: none;
   padding: 3% 10%;
 }
 .product-detail__upper {
@@ -2135,4 +2197,114 @@ li {
     text-align: center;
     cursor: pointer;
   }
+}
+
+.landing-alt {
+  height: 130vh;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+.landing-alt path {
+  fill: transparent;
+  width: 30vw;
+  height: auto;
+}
+.landing-alt .svg-curve {
+  width: 45vw;
+  height: auto;
+  position: absolute;
+  bottom: 8.5vw;
+  left: 2.5vw;
+}
+.landing-alt path {
+  fill: transparent;
+  width: 10vw;
+  height: auto;
+}
+.landing-alt textPath {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  font-size: 3em;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  fill: #4A4F4F;
+}
+.landing-alt__background-box {
+  grid-column: 1/8;
+  grid-row: 1/21;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+.landing-alt__background-box-right {
+  position: relative;
+  grid-column: 13/21;
+  grid-row: 2/14;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.landing-alt__background-img-right {
+  position: relative;
+  grid-column: 5/11;
+  grid-row: 1/11;
+  height: 100%;
+  width: auto;
+}
+.landing-alt__background-img {
+  grid-column: 14/21;
+  grid-row: 2/10;
+  width: 100%;
+  height: 100%;
+}
+.landing-alt__heading {
+  grid-column: 4/9;
+  grid-row: 5/7;
+}
+.landing-alt__content-images {
+  grid-column: 3/11;
+  grid-row: 2/8;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+.landing-alt__content-image {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+.landing-alt__content-img {
+  width: 90%;
+  height: auto;
+}
+.landing-alt__content-text {
+  grid-column: 12/19;
+  grid-row: 6/12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4em;
+}
+.landing-alt__content-textbox {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.landing-alt__content-heading {
+  font-family: "Cremona", sans-serif;
+  font-size: 3.75em;
+  font-weight: 400;
+  flex-basis: 25%;
+}
+.landing-alt__content-body {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.6em;
 }

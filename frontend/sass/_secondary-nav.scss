@@ -75,6 +75,10 @@
         font-size: 1.8em;
     }
 
+    &__back-arrow {
+        display: none;
+    }
+
     &__btn{
         width: fit-content;
         display: flex;

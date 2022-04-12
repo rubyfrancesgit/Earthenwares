@@ -24,3 +24,23 @@ li {
     list-style: none;
     cursor: pointer;
 }
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit !important;
+}
+
+a:link{
+    text-decoration: none;
+    color: unset;
+}
+
+a:visited{
+    text-decoration: none;
+    color: unset;
+}
