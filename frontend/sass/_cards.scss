@@ -1,26 +1,34 @@
-.card{
-
+.cards{
+    width: 18vw;
     border: none;
     background: none;
 
-    &-body{
+    &-img{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    &__body{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        gap: 0.5em;
         @include body-text;
+        padding: 0.5em;
     }
 
-    &-body p {
+    &__body p {
         margin: 0;
     }
 
-    &-body-top{
+    &__body-top{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    &-body-bottom{
+    &__body-bottom{
         color: $midgrey;
         font-style: italic;
     }
