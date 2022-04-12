@@ -77,6 +77,8 @@
         // color: $green;
     }
 
+
+
     &-radio{
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -87,6 +89,11 @@
         height: 4.5vh;
         width: 10vw;
         z-index: 500;
+    }
+
+        &-radio:checked{
+        border: solid 5px $green;
+        transition: 0.4s;
     }
 
     &__radio-all{

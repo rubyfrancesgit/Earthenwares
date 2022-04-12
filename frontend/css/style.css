@@ -693,11 +693,12 @@ a:visited {
 .landing__products-cards {
   display: -webkit-inline-box;
   flex-direction: row;
+  cursor: grab;
   width: 100%;
   gap: 4em;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow-x: scroll;
+  overflow: auto;
 }
 .landing__products-cards::-webkit-scrollbar {
   display: none;
@@ -1007,6 +1008,10 @@ a:visited {
   width: 10vw;
   z-index: 500;
 }
+.form-radio:checked {
+  border: solid 5px #D5E0A8;
+  transition: 0.4s;
+}
 .form__radio-all {
   width: 80%;
   display: flex;
@@ -1159,6 +1164,11 @@ a:visited {
   font-weight: 600;
   text-transform: uppercase;
 }
+.upload__image-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 .upload__header {
   border-style: solid;
   border-width: 0px 1px 0px 0px;
@@ -1169,6 +1179,14 @@ a:visited {
   font-family: "Assistant", sans-serif;
   font-size: 1.8em;
   font-weight: 400;
+}
+.upload-subheading-alt {
+  padding-left: 1em;
+  border-left: solid 2px #D5E0A8;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-style: italic;
 }
 .upload__images {
   display: flex;
@@ -1282,9 +1300,10 @@ a:visited {
   border-radius: none;
   padding: 0.75em 2em;
   cursor: pointer;
+  width: 100%;
 }
 
-@media screen and (min-width: 1px) and (max-width: 1024px) {
+@media screen and (min-width: 1px) and (max-width: 864px) {
   .upload__box {
     flex-direction: column;
   }
