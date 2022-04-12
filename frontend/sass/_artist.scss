@@ -1,6 +1,7 @@
 .artist{
     min-height: 100vh;
     overflow: hidden;
+    padding-top: 15vw;
 
     &-background{
         width: 100%;
@@ -19,7 +20,9 @@
             left: 3vw;
             position: absolute;
             overflow: hidden;
+            z-index: 100;
 
+           
             .artist-background__right{
                 width: 43vw;
                 position: absolute;
@@ -27,6 +30,8 @@
                 top: -26vw;
                 overflow: hidden;
                 transform: rotate(-9.32deg);
+                z-index: 100;
+
             }
 
             .svg-curve{
@@ -35,6 +40,7 @@
                 position: absolute;
                 top: 8.5vw;
                 right: -11.5vw;
+                z-index: 100;
 
             }
 
