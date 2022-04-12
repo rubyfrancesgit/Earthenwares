@@ -132,7 +132,7 @@ $(document).ready(function() {
     
                 let imgPreviewThree = $("#addProductImgThreeUrl").val();
  
-    
+
                     $("#uploadImageBoxThree").empty().css("background", `url(${imgPreviewThree})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
     
                 })// Image preview in sign up form ends
