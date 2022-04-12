@@ -2,6 +2,53 @@ $(document).ready(function() {
     let url;
     let userId;
 
+        // Start of grab to scroll section home page
+
+        const ele = document.getElementById('landingProductsCards');
+        ele.style.cursor = 'grab';
+
+        let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+        const mouseDownHandler = function (e) {
+            ele.style.cursor = 'grabbing';
+            ele.style.userSelect = 'none';
+
+            pos = {
+                left: ele.scrollLeft,
+                top: ele.scrollTop,
+                // Get the current mouse position
+                x: e.clientX,
+                y: e.clientY,
+            };
+
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+        };
+
+        const mouseMoveHandler = function (e) {
+            // How far the mouse has been moved
+            const dx = e.clientX - pos.x;
+            const dy = e.clientY - pos.y;
+
+            // Scroll the element
+            ele.scrollTop = pos.top - dy;
+            ele.scrollLeft = pos.left - dx;
+        };
+
+        const mouseUpHandler = function () {
+            ele.style.cursor = 'grab';
+            ele.style.removeProperty('user-select');
+
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+        };
+
+        // Attach the handler
+        ele.addEventListener('mousedown', mouseDownHandler);
+
+
+// End of grab to scroll section home page
+ 
     // start of initial ajax to get url data from local json
     $.ajax({
         url: "config.json",
@@ -46,20 +93,48 @@ $(document).ready(function() {
         }
     }); // end of initial ajax to get url data from local json
 
+
+
+
+
+
+    // Beginning of Image Preview
+    function imagePreview(){
+
+        $('#imgPreviewBtn').click(function(event){
+            event.preventDefault();
+
+            let profilePicture = $("#signUpProfilePicture").val();
+            console.log(profilePicture);
+
+                $(".form__image-preview").empty().css("background", `url(${profilePicture})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+
+            } // click event ends
+    )} // function ends
+
+    imagePreview(); // Calling imgPreview fucntions
+    // End of Image Preview
+
     // start of sign up
     $("#signUpBtn").click(function() {
+        
+        
+
         event.preventDefault();
 
         let username = $("#signUpUsername").val();
         let email = $("#signUpEmail").val();
         let password = $("#signUpPassword").val();
         let profilePicture = $("#signUpProfilePicture").val();
-        let seller = document.querySelector('input[name="signUpSeller"]:checked').value;
+        let seller = $('input[name="signUpSeller"]:checked').val();
         let storeName = $("#signUpStoreName").val();
         let storeDescription = $("#signUpStoreDescription").val();
         let instagram = $("#signUpInstagram").val();
         let facebook = $("#signUpFacebook").val();
         let twitter = $("#signUpTwitter").val();
+
+
+        imagePreview();
 
         if (username == "" || email == "" || password == "") {
             alert("Please enter all fields");

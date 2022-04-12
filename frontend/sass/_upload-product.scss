@@ -146,10 +146,11 @@
 
     &__btn {
         @include button-orange;
+        width: 100%;
     }
 }
 
-@media screen and (min-width: 1px) and (max-width: 1024px) {
+@media screen and (min-width: 1px) and (max-width: 864px) {
     
     .upload{
         
