@@ -356,7 +356,9 @@ $(document).ready(function() {
 
     // reusable code for product cards (is called initially from the first successful ajax function)
     function generateShopCard(productsFromMongo) {
+        
         for(let i = 0; i < productsFromMongo.length; i++) {
+            
             $("#shopContainer").append(
                 `
     
@@ -369,13 +371,33 @@ $(document).ready(function() {
                                     <p class="cards__body-name">${productsFromMongo[i].productName}</p>
                                     <p class="cards__body-price">$${productsFromMongo[i].price}</p>
                                 </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
+                                <div class="cards__body-bottom" id="cardBttomBody">
+                                    
                                 </div>
                             </div>
                         </a>
                 `
             );
+
+            // NOT WORKING
+            // start of all users from DB ajax
+            $.ajax({
+                url: `http://${url}/allUsersFromDB`,
+                type: "GET",
+                dataType: "json",
+                success: function(usersFromMongo) {
+                    $("#cardBottomBody").append(
+                        `
+                            <p class="cards__body-artist">${usersFromMongo[i].storeName}</p>
+                        `
+                    )
+                },
+                error: function() {
+                    // alert("Unable to get users");
+                }
+            }); // end of all users from DB ajax
+
+            // shopCardName(i);
 
             // when product card in shop is click, finds the relevant product details
             $(`.${productsFromMongo[i].authorId}`).click(function() {
@@ -446,6 +468,27 @@ $(document).ready(function() {
 
         
     } // end of generateShopCard function
+
+    // function shopCardName(i) {
+    //     // start of all users from DB ajax
+    //     $.ajax({
+    //         url: `http://${url}/allUsersFromDB`,
+    //         type: "GET",
+    //         dataType: "json",
+    //         success: function(usersFromMongo) {
+    //             $("#cardBottomBody").append(
+    //                 `
+    //                     <p class="cards__body-artist">${usersFromMongo[i].storeName}</p>
+    //                 `
+    //             )
+    //         },
+    //         error: function() {
+    //             // alert("Unable to get users");
+    //         }
+    //     }); // end of all users from DB ajax
+
+        
+    // }
 
     // ----- shop page end -----
 
@@ -586,36 +629,15 @@ $(document).ready(function() {
         $("#productImages").append(
             `
                 <div class="images-left">
-                    <img class="product-img-one" id="productImgOne" src=${productsFromMongo[i].imgOneUrl}>
-                    <img class="product-img-two" id="productImgTwo" src=${productsFromMongo[i].imgTwoUrl}>
-                    <img class="product-img-three" id="productImgThree" src=${productsFromMongo[i].imgThreeUrl}>
+                    <img class="product-img-one" src=${productsFromMongo[i].imgOneUrl}>
+                    <img class="product-img-two" src=${productsFromMongo[i].imgTwoUrl}>
+                    <img class="product-img-three" src=${productsFromMongo[i].imgThreeUrl}>
                 </div>
                 <div class="images-right">
                     <img class="main-image" src=${productsFromMongo[i].imgOneUrl}>
                 </div>
-            `        
+            `
         );
-
-        // image selectors 
-
-        $("#productImgOne").on("click", function(){
-            $(".images-right").empty().append(
-                `<img class="main-image" src=${productsFromMongo[i].imgOneUrl}>`
-            )
-        })
-
-        $("#productImgTwo").on("click", function(){
-            $(".images-right").empty().append(
-                `<img class="main-image" src=${productsFromMongo[i].imgTwoUrl}>`
-            )
-        })
-
-        $("#productImgThree").on("click", function(){
-            $(".images-right").empty().append(
-                `<img class="main-image" src=${productsFromMongo[i].imgThreeUrl}>`
-            )
-        })
-
 
         // appending product info on product detail page
         $("#productInfo").append(
@@ -628,25 +650,6 @@ $(document).ready(function() {
                 <p class="info">${productsFromMongo[i].description}</p>
             `
         );
-
-        // drop-downs
-        $("#careDropDown").on("click", function(){
-            $(".care-info").slideToggle(600);
-            $(".care-down").toggle();
-            $(".care-up").toggle();
-        })
-
-        $("#shippingDropDown").on("click", function(){
-            $(".shipping-info").slideToggle(600);
-            $(".shipping-down").toggle();
-            $(".shipping-up").toggle();
-        })
-
-        $("#paymentDropDown").on("click", function(){
-            $(".purchase-info").slideToggle(600);
-            $(".purchase-down").toggle();
-            $(".purchase-up").toggle();
-        })
 
         $("#commentBtnDiv").append(
             `
