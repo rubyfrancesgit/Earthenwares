@@ -54,15 +54,15 @@
                     <p class="landing__intro-subheading">Welcome to Earthenwares, a space designed for potters. A product of Wellington Potters Association and the wellington potters community as a whole. </p> 
                 </div>
                 <div class="landing__intro-proceed">
-                    <button class="landing__intro-btn">Shop Now</button>
-                    <a href="" class="landing__intro-btn-alt">Or scroll to continue</a>
+                    <a class="landing__intro-btn"  href="./shop-products-profile.html">Shop Now</a>
+                    <a href="#landingBody" class="landing__intro-btn-alt">Or continue</a>
                 </div>
             </div>
         </section>
 
         <!-- Content Begins -->
 
-        <section class="landing__body">
+        <section id="landingBody" class="landing__body">
             <div class="landing__background">
             
                 <div class="page-heading__right">
@@ -119,109 +119,11 @@
                 </div>
                 <div class="landing__products">
                     <div id="landingProductsCards" class="landing__products-cards">
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Cards will be appended here -->
                     </div>
                 <div class="landing__products-more">
                     <div class="landing__products-cont">
-                        <button class="landing__products-btn">See all products</button>
+                        <a class="landing__products-btn" href="./shop-products-profile.html">See all products</a>
                         <i class="fa-solid fa-arrow-right-long nav-fa-landing"></i>
                     </div>
                 </div>
@@ -246,20 +148,20 @@
                         <div class="login">        
                             <div class="form__input">
                                 <label for="username">Username *</label>
-                                <input name="username" class="login-input form-text-input" type="text" placeholder="username...">
+                                <input name="username" id="loginUsername" class="login-input form-text-input" type="text" placeholder="username...">
                             </div>
                             <div class="form__input">
                                 <label for="password">Password *</label>
-                                <input name="password" class="login-input form-text-input" type="text"      placeholder="email...">
+                                <input name="password"  id="loginPassword" class="login-input form-text-input" type="text" placeholder="password...">
                             </div>
                             <div class="form__btns">
-                                <button class="login-btn form-btn" >Login</button>
+                                <button class="login-btn form-btn" id="loginBtn">Login</button>
                                 <button class="login-btn form-btn-alt">Forgot your password?</button>
                             </div>
                             <div class="form__divider"></div>
                             <div class="form__alts">
                                 <div class="form__submit">
-                                    <button class="login-signup" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Create New Account</button>
+                                    <button class="login-signup"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Create New Account</button>
                                 </div>
                             </div>
                         </div>
@@ -281,7 +183,7 @@
                 <div class="modal__background">
                 <div class="modal-header">
                     <div class="modal-header__back">
-                        <button class="btn btn-primary modal-back-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                        <button class="modal-back-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
                     </div>
                         <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -341,7 +243,7 @@
                   <div class="modal__background">
                     <div class="modal-header">
                         <div class="modal-header__back">
-                            <button class="btn btn-primary modal-back-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                            <button class="modal-back-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
                         </div>
                             <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

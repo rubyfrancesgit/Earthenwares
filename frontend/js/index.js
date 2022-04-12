@@ -64,6 +64,7 @@ $(document).ready(function() {
                 type: "GET",
                 dataType: "json",
                 success: function(productsFromMongo) {
+                    generateHomeCard(productsFromMongo)
                     generateShopCard(productsFromMongo);
                     populateProfileListings(productsFromMongo);
                 },
@@ -93,53 +94,43 @@ $(document).ready(function() {
     // Beginning of Image Preview
     function imagePreview(){
 
-        // Image preview in sign up form starts
+            // Image preview in sign up form starts
         $('#imgPreviewBtnModal').click(function(event){
             event.preventDefault();
-
             let profilePicture = $("#signUpProfilePicture").val();
- 
-
                 $(".form__image-preview").empty().css("background", `url(${profilePicture})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
-
             })// Image preview in sign up form ends
 
             // Image preview in sign up form starts
-            $('#imgPreviewBtnUploadOne').click(function(event){
+        $('#imgPreviewBtnUploadOne').click(function(event){
             event.preventDefault();
-            console.log('click');
-
             let imgPreviewOne = $("#addProductImgOneUrl").val();
             console.log(imgPreviewOne);
 
-            $("#uploadImageBoxOne").empty().css("background", `url(${imgPreviewOne})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+                $("#uploadImageBoxOne").empty().css("background", `url(${imgPreviewOne})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
 
             })// Image preview in sign up form ends
 
             // Image preview in sign up form starts
-            $('#imgPreviewBtnUploadTwo').click(function(event){
+        $('#imgPreviewBtnUploadTwo').click(function(event){
             event.preventDefault();
-
             let imgPreviewTwo = $("#addProductImgTwoUrl").val();
-
-
                 $("#uploadImageBoxTwo").empty().css("background", `url(${imgPreviewTwo})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
 
             })// Image preview in sign up form ends
 
-            $('#imgPreviewBtnUploadThree').click(function(event){
-                event.preventDefault();
-    
-                let imgPreviewThree = $("#addProductImgThreeUrl").val();
- 
+        $('#imgPreviewBtnUploadThree').click(function(event){
 
-                    $("#uploadImageBoxThree").empty().css("background", `url(${imgPreviewThree})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+            event.preventDefault();
+
+            let imgPreviewThree = $("#addProductImgThreeUrl").val();
+                $("#uploadImageBoxThree").empty().css("background", `url(${imgPreviewThree})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
     
                 })// Image preview in sign up form ends
-    } // function ends
+    } // Imape Preview function ends
 
-    imagePreview(); // Calling imgPreview fucntions
-    // End of Image Preview
+    imagePreview(); // Calling image preview fucntion
+
 
     // start of sign up
     $("#signUpBtn").click(function() {
@@ -215,6 +206,7 @@ $(document).ready(function() {
 
         let username = $("#loginUsername").val();
         let password = $("#loginPassword").val();
+        console.log(username, password);
 
         if (username == "" || password == "") {
             alert("Please enter all details");
@@ -324,6 +316,41 @@ $(document).ready(function() {
             } // end of price is number if/else statement
         } // end of userId if/else statement
     }); // end of add product to DB
+
+    // ----- home page start -----
+    // reusable code for product cards (is called initially from the first successful ajax function)
+    $('#landingProductsCards').empty() //empty the container
+
+    function generateHomeCard(productsFromMongo) {
+        for(let i = 0; i < productsFromMongo.slice(0,8).length; i++) {
+            console.log(productsFromMongo[i]);
+
+            
+
+            $('#landingProductsCards').append(
+                `
+            <div class="cards ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}">
+                <div class="cards__img">
+                    <img src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" class="cards-img">
+                </div>
+                <div class="cards__body">
+                    <div class="cards__body-top">
+                    <p class="cards__body-name">${productsFromMongo[i].productName}</p>
+                    <p class="cards__body-price">$${productsFromMongo[i].price}</p>
+                    </div>
+                    <div class="cards__body-bottom">
+                        <p class="cards__body-artist">Jane Doe</p>
+                    </div>
+                </div>
+            </div>
+                `
+            )
+        }
+    };
+
+
+    // ----- home page end -----
+
 
     // ----- shop page start -----
 
@@ -602,7 +629,6 @@ $(document).ready(function() {
             `
         );
 
-<<<<<<< HEAD
         // drop-downs
         $("#careDropDown").on("click", function(){
             $(".care-info").slideToggle(600);
@@ -622,7 +648,6 @@ $(document).ready(function() {
             $(".purchase-up").toggle();
         })
 
-=======
         $("#commentBtnDiv").append(
             `
                 <button class="login-btn form-btn ${productsFromMongo[i]._id} ${productsFromMongo[i].authorId}" id="submitComment">Post Comment</button>
@@ -635,7 +660,6 @@ $(document).ready(function() {
             let authorId = this.classList[3];
             commentsFunction(thisProductId, authorId);
         });
->>>>>>> c1b7f46c7bd88028b2d169ed1f87d06636ff0fc5
 
         // THIS CODE ONLY ADDS SELECTED PRODUCT - needs fixing
         $("#artistProfileListings").append(

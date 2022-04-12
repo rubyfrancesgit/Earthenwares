@@ -2,14 +2,15 @@
     width: 18vw;
     border: none;
     background: none;
+    border-radius: 0;
+    cursor: pointer;
 
     &-img{
         width: 100%;
         height: 100%;
     }
 
-    border-radius: 0;
-    cursor: pointer;
+
 
     &__img:hover{
         outline: solid 8px $green;
