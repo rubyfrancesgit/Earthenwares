@@ -333,7 +333,7 @@ $(document).ready(function() {
                 <img class="artist-img" src=${usersFromMongo[i].profilePicture}>
                 <div class="artist-detail">
                     <h3 class="artist-name">${usersFromMongo[i].storeName}</h3>
-                    <button class="view-profile">VIEW SELLER PROFILE<i class="fa-solid fa-arrow-right-long"></i></button>
+                    <button class="view-profile" id="viewSellerProfile">VIEW SELLER PROFILE<i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
             `
         );
@@ -342,7 +342,102 @@ $(document).ready(function() {
             `
                 <p>${usersFromMongo[i].storeDescription}</p>
             `
-        )
+        );
+
+        if(usersFromMongo[i].instagram !== "") {
+            $("#productDetailsInstaDiv").append(
+                `
+                    <a class="fa-stack fa-2x" href=${usersFromMongo[i].instagram} target="_blank">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                    </a>
+                `
+            );
+        }
+
+        if(usersFromMongo[i].facebook !== "") {
+            $("#productDetailsFacebookDiv").append(
+                `
+                    <a class="fa-stack fa-2x" href=${usersFromMongo[i].facebook} target="_blank">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </a>
+                `
+            );
+        }
+
+        if(usersFromMongo[i].twitter !== "") {
+            $("#productDetailsTwitterDiv").append(
+                `
+                    <a class="fa-stack fa-2x" href=${usersFromMongo[i].twitter} target="_blank">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+                    </a>
+                `
+            );
+        }
+
+        $("#viewSellerProfile").click(function() {
+            console.log('clicked');
+            document.getElementById("productDetails").style.display = "none";
+            document.getElementById("artistProfile").style.display = "block";
+            const profileCurvedText = document.getElementById("artistProfileCurvedText");
+
+            $("#cardBottomBody").append(
+                `
+                <p class="card-artist" id="">${usersFromMongo[i].storeName}</p>
+                `
+            );
+
+            $("#artistProfileName").append(
+                `
+                    <h3 class="artist-name">${usersFromMongo[i].storeName}</h3>
+                `
+            );
+
+            $("#artistProfileDescription").append(
+                `<p class="artist-about">${usersFromMongo[i].storeDescription}</p>`
+            );
+
+            $("#artistProfileImgDiv").append(
+                `
+                    <img class="artist-img" src=${usersFromMongo[i].profilePicture} alt="store image">
+                `
+            );
+
+            if(usersFromMongo[i].instagram !== "") {
+                $("#artistProfileInstaDiv").append(
+                    `
+                        <a class="fa-stack fa-2x" href=${usersFromMongo[i].instagram} target="_blank">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                        </a>
+                    `
+                );
+            }
+
+            if(usersFromMongo[i].facebook !== "") {
+                $("#artistProfileFacebookDiv").append(
+                    `
+                        <a class="fa-stack fa-2x" href=${usersFromMongo[i].facebook} target="_blank">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </a>
+                    `
+                );
+            }
+
+            if(usersFromMongo[i].twitter !== "") {
+                $("#artistProfileTwitterDiv").append(
+                    `
+                        <a class="fa-stack fa-2x" href=${usersFromMongo[i].twitter} target="_blank">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+                        </a>
+                    `
+                );
+            }
+        });
     }
 
     function generateProductSection(productsFromMongo, i) {
@@ -351,6 +446,7 @@ $(document).ready(function() {
         $("#commentContainer").empty();
         $("#productImages").empty();
         $("#productInfo").empty();
+        $("#artistProfileListings").empty();
 
         // appending images on product detail page
         $("#productImages").append(
@@ -376,24 +472,39 @@ $(document).ready(function() {
 
                 <p class="info">${productsFromMongo[i].description}</p>
             `
-        )
+        );
 
-        // reusable code creates the product section of the product details page
-        
-        // $("#productContainer").append(
-        //     `
-        //         <div class="card" href="./product-page.html">
-        //             <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 10rem;">
-        //             <div class="card-body">
-        //                 <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
-        //                 <p class="card__p">$${productsFromMongo[i].price}</p>
-        //             </div>
-        //         </div>
+        // THIS CODE ONLY ADDS SELECTED PRODUCT - needs fixing
+        $("#artistProfileListings").append(
+            `
+                <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
+                    <div class="edit-btns">
+                        <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="editIcon" href="./update-product.html">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
+                        </span>
 
-        //         <input type="text" id="commentField">
-        //         <button id="submitComment" onclick="" value="${productsFromMongo[i]._id}">Submit comment</button>
-        //     `
-        // );
+                        <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="trashIcon" data-bs-toggle="modal" href="#exampleModalToggle4">
+                            <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
+                            <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap">
+                    <div class="card-body">
+                    <div class="card-body-top">
+                        <p class="card-name">${productsFromMongo[i].productName}</p>
+                        <p class="card-price">$${productsFromMongo[i].price}</p>
+                    </div>
+                    <div class="card-body-bottom" id="cardBottomBody">
+                        <p class="card-artist" id=""></p>
+                    </div>
+                    </div>
+                </div>
+            `
+        ); // end of profile listings append
+
+        //---------------------------------- new code ends ----------------------------
+        //---------------------------------- old code starts ----------------------------
 
         // ----- comments start -----
 
