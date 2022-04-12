@@ -246,11 +246,16 @@ $(document).ready(function() {
     function generateShopCard(productsFromMongo, i) {
         $("#shopContainer").append(
             `
-                <a class="shop-card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
-                    <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
+                <a class="card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
+                    <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
                     <div class="card-body">
-                        <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
-                        <p class="card__p">$${productsFromMongo[i].price}</p>
+                        <div class="card-body-top">
+                            <p class="card-name">${productsFromMongo[i].productName}</p>
+                            <p class="card-price">$${productsFromMongo[i].price}</p>
+                        </div>
+                        <div class="card-body-bottom">
+                            <p class="card-artist">Jane Doe</p>
+                        </div>
                     </div>
                 </a>
             `
