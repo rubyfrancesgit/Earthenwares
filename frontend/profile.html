@@ -49,7 +49,7 @@
             </div>
             <div class="secondary-nav__navigation">
                 <div class="secondary-nav__top"> <!-- Remember display none on this -->
-                    <div class="secondary-nav__btn">
+                    <div class="secondary-nav__btn secondary-nav__go-back" id="goBackProfileBtn">
                         <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
                         <button class="secondary-nav-back">Go Back</button>
                     </div>
@@ -140,7 +140,7 @@
         <!-- Delete Product Modal Flow Ends -->
 
         <!-- start of profile -->
-        <div class="artist-profile">
+        <div class="artist-profile" id="userProfileSection">
             <div class="artist-profile__top">
                 <div class="top-left">
                     <div class="top-left__left">
@@ -175,6 +175,167 @@
             </div>
         </div>
         <!-- end of profile -->
+
+        <!-- start of edit listing -->
+        <div class="update" id="editListingSection">
+            <div class="update__images">
+                <div class="update__image-header">
+                    <h4 class="update-heading">Update Images</h4>
+                    <p class="update-subheading">High quality imagery can make or break a sale, you have three opportunities to blow potential customers away! Try to capture images in high quality, with natural lighting and show multiple angles!</p>
+                </div>
+                <div class="update__image">
+                    <div class="update__image-input-box">
+                        <div class="form__input update__image-input">
+                            <label for="imageURL1">Image URL *</label>
+                            <div class="form__image-preview-box">
+                                <input name="imageURL1" class="login-input form-text-input" type="text"      placeholder="Image..." id="updateProductImgOneUrl">
+                                <button class="update__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="update__image-box"></div>
+                    </div>
+                    <div class="update__image-input-box">
+                        <div class="form__input update__image-input">
+                            <label for="imageURL2">Image URL *</label>
+                            <div class="form__image-preview-box">
+                                <input name="imageURL2" class="login-input form-text-input" type="text"      placeholder="Image..." id="updateProductImgTwoUrl">
+                                <button class="update__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="update__image-box"></div>
+                    </div>
+                    <div class="update__image-input-box">
+                        <div class="form__input update__image-input">
+                            <label for="imageURL3">Image URL *</label>
+                            <div class="form__image-preview-box">
+                                <input name="imageURL3" class="login-input form-text-input" type="text"      placeholder="Image..." id="updateProductImgThreeUrl">
+                                <button class="update__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="update__image-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="update__block">
+                <div class="update__header">
+                    <h4 class="update-heading">Listing Details</h4>
+                    <p class="update-subheading">Let potential customers know all about your art and why they'll love it!</p>
+                </div>
+                <div class="update__form">
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="productname" class="update-label">Title *</label>
+                            <p class="update-sublabel">The name of your work</p>
+                        </div>
+                        <div class="update__input">
+                            <input type="text" class="update-text-input" name="productname" placeholder="product name..." id="updateProductName">
+                        </div>
+                    </div>
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="productprice" class="update-label">Price *</label>
+                            <p class="update-sublabel">The price of your work</p>
+                        </div>
+                        <div class="update__input">
+                            <input type="text" class="update-text-input" name="productprice" placeholder="price..." id="updateProductPrice">
+                        </div>
+                    </div>
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="category" class="update-label">Category *</label>
+                            <p class="update-sublabel">What would you best describe this work as? This will help shoppers filter for your work</p>
+                        </div>
+                        <div class="update__input">
+                        <select name="category" id="updateProductCategory" class="update-select-input">
+                            <option value="vases">Vases</option>
+                            <option value="tablewares">Tablewares</option>
+                            <option value="misc">Miscellaneous</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="colour" class="update-label">Colour *</label>
+                            <p class="update-sublabel">Choose a primary colour to define this piece by</p>
+                        </div>
+                        <div class="update__input">
+                        <select name="colour" id="updateProductColour" class="update-select-input">
+                            <option value="beige">Beige</option>
+                            <option value="black">Black</option>
+                            <option value="brown">Blue</option>
+                            <option value="brown">Brown</option>
+                            <option value="white">White</option>
+                            <option value="white">Yellow</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="dimensions" class="update-label">Dimensions (L x W x H) *</label>
+                            <p class="update-sublabel">How large is this work approximately?</p>
+                        </div>
+                        <div class="update__input">
+                        <input type="text" class="update-text-input" name="dimensions" placeholder="product name..." id="updateProductDimensions">
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="update__block">
+                <div class="update__header">
+                    <h4 class="update-heading">Care Instructions</h4>
+                    <p class="update-subheading">Let your customers know how to care for your art, make sure you're certain!</p>
+                </div>
+                <div class="update__form">
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label class="update-label" for="dishwasher">Dishwasher Safe *</label>
+                            <p class="update-sublabel">Can your work go in the dishwasher?</p>
+                        </div>
+                        <div class="update__input">
+                        <select name="dishwasher" id="updateProductDishwasherSafe" class="update-select-input">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label for="microwave" class="update-label">Microwave Safe *</label>
+                            <p class="update-sublabel">Can your work go in the microwave?</p>
+                        </div>
+                        <div class="update__input">
+                            <select name="microwave" id="updateProductMicrowaveSafe" class="update-select-input">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="update__block">
+                <div class="update__header">
+                    <h4 class="update-heading">Description</h4>
+                    <p class="update-subheading">Let customers know all about your work, what inspired you, extra information about the process, or why this piece is dear to you, it also doesn't hurt to include information about the process!</p>
+                </div>
+                <div class="update__form">
+                    <div class="update__box">
+                        <div class="update__label">
+                            <label class="update-label" for="description">Description *</label>
+                            <p class="update-sublabel">(Max 350 characters)</p>
+                        </div>
+                        <div class="update__input">
+                            <textarea name="description" class="update-text-input" id="updateProductDescription" cols="30" rows="10"></textarea>
+                            <button class="update__btn" id="updateProductBtn">Update product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of edit listing -->
+
     </section>
 
         <!-- footer -->
