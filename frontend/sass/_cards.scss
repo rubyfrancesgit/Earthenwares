@@ -8,6 +8,16 @@
         height: 100%;
     }
 
+    border-radius: 0;
+    cursor: pointer;
+
+    &__img:hover{
+        outline: solid 8px $green;
+        outline-offset: -4px;
+        outline-style: solid;
+        transition: 0.4s;
+        
+    }
 
     &__body{
         display: flex;

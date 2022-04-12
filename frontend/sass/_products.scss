@@ -28,12 +28,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 6.666%;
+        row-gap: 26.664%;
         // justify-content: space-between;
 
-        .card{
+        .cards{
             width: 20%;
 
-            &-img-top{
+            &-img{
 
                 border-radius: 0;
                 cursor: pointer;
@@ -42,6 +43,7 @@
                     outline: solid 8px $green;
                     outline-offset: -4px;
                     outline-style: solid;
+                    transition: 0.4s;
                     
                 }
             }

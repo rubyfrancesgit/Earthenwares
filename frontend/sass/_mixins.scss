@@ -68,6 +68,23 @@
     border-bottom: 2px $orange solid;
     cursor: pointer;
 }
+
+@mixin button-orange-hover{
+    background-color: $green;
+    transition: 0.4s;
+}
+
+@mixin button-orange-green{
+    background-color: $orange;
+    transition: 0.4s;
+}
+
+@mixin button-text-hover {
+    color: $green;
+    border-bottom: 2px $green solid;
+    transform: 0.4s;
+}
+
 // END OF BUTTON MIXINS
 
 // BEGINNING OF FLEX MIXINS

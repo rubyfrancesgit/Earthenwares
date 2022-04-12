@@ -39,11 +39,21 @@
         width: 100%;
     }
 
+    &-btn:hover{
+        @include button-orange-hover;
+    }
+
+
+
     &-btn-alt{
         @include button-text;
-        color: $black;
-        border-color: $black;
     }
+
+    &-btn-alt:hover{
+        @include button-text-hover;
+    }
+
+    
 
     &__divider{
         border-style: solid;
