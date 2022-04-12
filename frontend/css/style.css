@@ -292,10 +292,18 @@ a:visited {
   width: 18vw;
   border: none;
   background: none;
+  border-radius: 0;
+  cursor: pointer;
 }
 .cards-img {
   width: 100%;
   height: 100%;
+}
+.cards__img:hover {
+  outline: solid 8px #D5E0A8;
+  outline-offset: -4px;
+  outline-style: solid;
+  transition: 0.4s;
 }
 .cards__body {
   display: flex;
