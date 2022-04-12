@@ -367,6 +367,9 @@ li {
   cursor: pointer;
   font-size: 1.8em;
 }
+.secondary-nav__back-arrow {
+  display: none;
+}
 .secondary-nav__btn {
   width: fit-content;
   display: flex;
