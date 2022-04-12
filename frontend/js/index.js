@@ -602,7 +602,6 @@ $(document).ready(function() {
             `
         );
 
-<<<<<<< HEAD
         // drop-downs
         $("#careDropDown").on("click", function(){
             $(".care-info").slideToggle(600);
@@ -622,20 +621,6 @@ $(document).ready(function() {
             $(".purchase-up").toggle();
         })
 
-=======
-        $("#commentBtnDiv").append(
-            `
-                <button class="login-btn form-btn ${productsFromMongo[i]._id} ${productsFromMongo[i].authorId}" id="submitComment">Post Comment</button>
-                <button class="cancel-button form-btn-alt">Cancel</button>
-            `
-        )
-
-        $("#submitComment").click(function() {
-            let thisProductId = this.classList[2];
-            let authorId = this.classList[3];
-            commentsFunction(thisProductId, authorId);
-        });
->>>>>>> c1b7f46c7bd88028b2d169ed1f87d06636ff0fc5
 
         // THIS CODE ONLY ADDS SELECTED PRODUCT - needs fixing
         $("#artistProfileListings").append(
