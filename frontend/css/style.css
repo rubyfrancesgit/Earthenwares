@@ -575,15 +575,22 @@ a:visited {
   width: 48vw;
   position: absolute;
   right: -25vw;
-  top: -32vw;
+  top: -40vw;
   overflow: hidden;
   transform: rotate(-9.32deg);
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__background .page-heading__right .landing-background__right {
+    width: 52vw;
+    right: -25vw;
+    top: -42vw;
+  }
 }
 .landing__background .page-heading__right .svg-curve-right {
   width: 40vw;
   height: auto;
   position: absolute;
-  top: 8.5vw;
+  top: 1vw;
   right: -12vw;
 }
 .landing__background .page-heading__right .svg-curve-right .path-right {
@@ -599,6 +606,13 @@ a:visited {
   letter-spacing: 0.15em;
   white-space: nowrap;
   fill: #4A4F4F;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__background .page-heading__right .svg-curve-right {
+    width: 45vw;
+    top: 2vw;
+    right: -12vw;
+  }
 }
 .landing__background .page-heading__left {
   height: 100%;
@@ -656,11 +670,23 @@ a:visited {
   flex-direction: row;
   flex-basis: 50%;
 }
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__content-container {
+    padding: 0 10%;
+    gap: 5vw;
+  }
+}
 .landing__content-images {
   flex-basis: 50%;
   display: flex;
   flex-direction: row;
   padding-left: 10vw;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__content-images {
+    margin-top: 22vw;
+    flex-basis: 30% !important;
+  }
 }
 .landing__content-image {
   width: 20vw;
@@ -668,9 +694,22 @@ a:visited {
   position: relative;
   top: 15vh;
 }
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__content-image {
+    top: 5vw;
+    width: 20vw;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .landing__content-img {
   width: 100%;
   height: auto;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__content-img {
+    width: 20vw;
+  }
 }
 .landing__content-image:nth-child(2) {
   margin-left: 3em;
@@ -683,7 +722,14 @@ a:visited {
   gap: 4em;
   padding-right: 10%;
   padding-left: 3%;
-  margin-top: 20vw;
+  margin-top: 22vw;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__content-text {
+    flex-basis: 70% !important;
+    margin-top: 5vw;
+    padding-right: 5vw;
+  }
 }
 .landing__content-textbox {
   display: flex;

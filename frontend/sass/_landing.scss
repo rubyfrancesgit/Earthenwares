@@ -130,16 +130,22 @@
                 width: 48vw;
                 position: absolute;
                 right: -25vw;
-                top: -32vw;
+                top: -40vw;
                 overflow: hidden;
                 transform: rotate(-9.32deg);
+
+                @media #{$laptop, $smallScreen}{
+                    width: 52vw;
+                    right: -25vw;
+                    top: -42vw;
+                }
             }
 
             .svg-curve-right{
                 width: 40vw;
                 height: auto;
                 position: absolute;
-                top: 8.5vw;
+                top: 1vw;
                 right: -12vw;
 
                 .path-right{
@@ -157,6 +163,13 @@
                     fill: $darkgrey;
                 
                  
+                }
+
+                @media #{$laptop, $smallScreen}{
+                    width: 45vw;
+                    top: 2vw;
+                    right: -12vw;
+    
                 }
 
             }        
@@ -307,7 +320,11 @@
         display: flex;
         flex-direction: row;
         flex-basis: 50%;
-        // height: 100vh;
+        
+        @media #{$laptop, $smallScreen} {
+            padding: 0 10%;
+            gap: 5vw;
+        }
     }
     
     &-images{
@@ -316,6 +333,11 @@
         flex-direction: row;
         padding-left: 10vw;
         // justify-content: center;
+
+        @media #{$laptop, $smallScreen} {
+            margin-top: 22vw;
+            flex-basis: 30% !important;
+        }
     }
 
     &-image{
@@ -323,11 +345,24 @@
         height: auto;
         position: relative;
         top: 15vh;
+
+        @media #{$laptop, $smallScreen} {
+            top: 5vw;
+            width: 20vw;
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     &-img{
         width: 100%;
         height: auto;
+
+        
+        @media #{$laptop, $smallScreen} {
+            width: 20vw;
+        }
+
     }
 
     // &-image:nth-child(1){
@@ -350,7 +385,13 @@
         gap: 4em;
         padding-right: 10%;
         padding-left: 3%;
-        margin-top: 20vw;
+        margin-top: 22vw;
+
+        @media #{$laptop, $smallScreen} {
+            flex-basis: 70% !important;
+            margin-top: 5vw;
+            padding-right: 5vw;
+        }
         
     }
 
@@ -359,6 +400,8 @@
         display: flex;
         flex-direction: row;
         gap: 2em;
+
+        
  
     }
 
