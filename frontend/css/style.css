@@ -1465,6 +1465,7 @@ a:visited {
   bottom: 20%;
 }
 .artist-profile {
+  display: none;
   padding: 3% 10%;
   width: 100%;
   position: relative;
