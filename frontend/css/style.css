@@ -1597,6 +1597,7 @@ a:visited {
 }
 
 .product-detail {
+  display: none;
   padding: 3% 10%;
 }
 .product-detail__upper {

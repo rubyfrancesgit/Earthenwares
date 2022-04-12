@@ -1,14 +1,6 @@
-console.log("linked");
-
 $(document).ready(function() {
-    console.log("document ready");
-
     let url;
     let userId;
-
-    $('#testClick').click(function(){
-        console.log('Clicked');
-    })
 
     // start of initial ajax to get url data from local json
     $.ajax({
@@ -25,8 +17,6 @@ $(document).ready(function() {
                 type: "GET",
                 dataType: "json",
                 success: function(productsFromMongo) {
-                    console.log(productsFromMongo);
-    
                     for(let i = 0; i < productsFromMongo.length; i++) {
                         generateShopCard(productsFromMongo, i)
 
@@ -44,7 +34,6 @@ $(document).ready(function() {
                 type: "GET",
                 dataType: "json",
                 success: function(usersFromMongo) {
-                    console.log(usersFromMongo);
                     populateProfile(usersFromMongo);
                 },
                 error: function() {
@@ -72,8 +61,6 @@ $(document).ready(function() {
         let facebook = $("#signUpFacebook").val();
         let twitter = $("#signUpTwitter").val();
 
-        console.log(username, email, password, seller, storeName, storeDescription, instagram, facebook, twitter);
-
         if (username == "" || email == "" || password == "") {
             alert("Please enter all fields");
         } else if ((seller == "yes") && (username == "" || email == "" || profilePicture == "" || password == "" || storeName == "" || storeDescription == "")) {
@@ -98,7 +85,6 @@ $(document).ready(function() {
                     twitter
                 },
                 success: function(user) {
-                    console.log(user); // remove later
                     if (user !== "Username already taken. Please try another name") {
                         alert("Thanks for signing up! Please login.");
 
@@ -130,8 +116,6 @@ $(document).ready(function() {
         let username = $("#loginUsername").val();
         let password = $("#loginPassword").val();
 
-        console.log(username, password);
-
         if (username == "" || password == "") {
             alert("Please enter all details");
         } else {
@@ -143,7 +127,6 @@ $(document).ready(function() {
                     password
                 },
                 success: function(user) {
-                    console.log(user) // remove later
                     if (user == "User not found. Please register") {
                         alert("User not found. Please register");
                     } else if (user == "Not authorized") {
@@ -268,11 +251,19 @@ $(document).ready(function() {
 
             let thisUserId = this.classList[1];
 
-            if(this.classList.contains("624e8fcd78f43bdfe0524c8e")) {
-                console.log("yes")
-            } else {
-                console.log("no")
-            }
+            document.getElementById("productSection").style.display = "none";
+            document.getElementById("productDetails").style.display = "block";
+
+            $("#productBackBtn").click(function() {
+                document.getElementById("productSection").style.display = "block";
+                document.getElementById("productDetails").style.display = "none";
+            })
+
+            // if(this.classList.contains("624e8fcd78f43bdfe0524c8e")) {
+            //     console.log("yes")
+            // } else {
+            //     console.log("no")
+            // }
 
             for(let i = 0; i < productsFromMongo.length; i++) {
                 if(productsFromMongo[i]._id === this.id) {
@@ -291,13 +282,13 @@ $(document).ready(function() {
                 success: function(usersFromMongo) {
                     for(let i = 0; i < usersFromMongo.length; i++) {
                         if(thisUserId === usersFromMongo[i]._id) {
-                            console.log("equal");
-                            $("#authorContainer").empty();
-                            $("#authorContainer").append(
-                                `
-                                    <p>Store name: ${usersFromMongo[i].storeName}</p>
-                                `
-                            );
+                            generateAuthorProductSection(usersFromMongo, i);
+                            // $("#authorContainer").empty();
+                            // $("#authorContainer").append(
+                            //     `
+                            //         <p>Store name: ${usersFromMongo[i].storeName}</p>
+                            //     `
+                            // );
                         }
                     }
                 },
@@ -313,26 +304,76 @@ $(document).ready(function() {
 
     // ----- product page start -----
 
+    function generateAuthorProductSection(usersFromMongo, i) {
+        $("#artistUpper").empty();
+        $("#artistBio").empty();
+
+        $("#artistUpper").append(
+            `
+                <img class="artist-img" src=${usersFromMongo[i].profilePicture}>
+                <div class="artist-detail">
+                    <h3 class="artist-name">${usersFromMongo[i].storeName}</h3>
+                    <button class="view-profile">VIEW SELLER PROFILE<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            `
+        );
+
+        $("#artistBio").append(
+            `
+                <p>${usersFromMongo[i].storeDescription}</p>
+            `
+        )
+    }
+
     function generateProductSection(productsFromMongo, i) {
         let productId = productsFromMongo[i]._id;
         
         $("#commentContainer").empty();
+        $("#productImages").empty();
+        $("#productInfo").empty();
 
-        // reusable code creates the product section of the product details page
-        $("#productContainer").append(
+        // appending images on product detail page
+        $("#productImages").append(
             `
-                <div class="card" href="./product-page.html">
-                    <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 10rem;">
-                    <div class="card-body">
-                        <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
-                        <p class="card__p">$${productsFromMongo[i].price}</p>
-                    </div>
+                <div class="images-left">
+                    <img class="product-img-one" src=${productsFromMongo[i].imgOneUrl}>
+                    <img class="product-img-two" src=${productsFromMongo[i].imgTwoUrl}>
+                    <img class="product-img-three" src=${productsFromMongo[i].imgThreeUrl}>
                 </div>
-
-                <input type="text" id="commentField">
-                <button id="submitComment" onclick="" value="${productsFromMongo[i]._id}">Submit comment</button>
+                <div class="images-right">
+                    <img class="main-image" src=${productsFromMongo[i].imgOneUrl}>
+                </div>
             `
         );
+
+        // appending product info on product detail page
+        $("#productInfo").append(
+            `
+                <h6 class="type">${productsFromMongo[i].category}</h6>
+                <h3 class="product-name">${productsFromMongo[i].productName}</h3>
+                <h6 class="artist-name">Artist Name</h6>
+                <h6 class="price">$${productsFromMongo[i].price}</h6>
+
+                <p class="info">${productsFromMongo[i].description}</p>
+            `
+        )
+
+        // reusable code creates the product section of the product details page
+        
+        // $("#productContainer").append(
+        //     `
+        //         <div class="card" href="./product-page.html">
+        //             <img class="card__img" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 10rem;">
+        //             <div class="card-body">
+        //                 <h5 class="card__heading">${productsFromMongo[i].productName}</h5>
+        //                 <p class="card__p">$${productsFromMongo[i].price}</p>
+        //             </div>
+        //         </div>
+
+        //         <input type="text" id="commentField">
+        //         <button id="submitComment" onclick="" value="${productsFromMongo[i]._id}">Submit comment</button>
+        //     `
+        // );
 
         // ----- comments start -----
 
@@ -355,7 +396,6 @@ $(document).ready(function() {
                     },
                     success: function(comment) {
                         alert("Comment posted");
-                        console.log(comment);
                     },
                     error: function() {
                         alert("Unable to post comment");
@@ -369,7 +409,6 @@ $(document).ready(function() {
             url: `http://${url}/seeComments/${productId}`,
             type: "GET",
             success: function(commentsFromMongo) {
-                console.log(commentsFromMongo);
                 for (let i = 0; i < commentsFromMongo.length; i++) {
                     if (commentsFromMongo[i].productId === productId) {
                         $("#commentContainer").append(
@@ -381,7 +420,6 @@ $(document).ready(function() {
                 }
             },
             error: function() {
-                console.log(productId);
                 console.log("Error: cannot retrieve comments");
             } // end of error
         }); // end of ajax
@@ -396,8 +434,6 @@ $(document).ready(function() {
     // ----- profile page start -----
 
     function populateProfile(usersFromMongo) {
-        console.log("populate profile");
-
         if (sessionStorage.username !== "") {
             
 
@@ -482,27 +518,10 @@ $(document).ready(function() {
         } // end of if statement checking user is logged in
     } // end of populateProfile function
 
-    
-
-    // $("#signUpBtnCont").click(function() {
-    //     event.preventDefault();
-
-    //     let imageUrl = $('').val();
-
-    //     console.log(imageUrl);
-
-    //     $(".form__image-preview").empty().css("background", `url(${imageUrl})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
-    // });
-
-
-
     // populate listings on profile
     function populateProfileListings(productsFromMongo, i) {
-        console.log(productsFromMongo[i].productName);
 
         if(sessionStorage.userID === productsFromMongo[i].authorId) {
-            console.log(productsFromMongo[i]._id);
-
             $("#profileListings").append(
                 `
                     <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
@@ -533,12 +552,8 @@ $(document).ready(function() {
 
             // delete listing function
             $("#trashIcon").click(function() {
-                console.log("trash");
-
                 $("#yesDeleteListing").click(function() {
-                    console.log("yes delete");
                     const id = $("#productID").data("value");
-                    console.log(id)
 
                     $.ajax({
                         url: `http://${url}/deleteProduct/${id}`,
@@ -555,7 +570,6 @@ $(document).ready(function() {
 
             // edit listing function
             $("#editIcon").click(function() {
-                console.log("edit click");
 
                 document.getElementById("userProfileSection").style.display = "none";
                 document.getElementById("editListingSection").style.display = "block";
@@ -586,7 +600,6 @@ $(document).ready(function() {
                 document.getElementById("updateProductDescription").value = `${productsFromMongo[i].description}`;
 
                 $("#updateProductBtn").click(function() {
-                    console.log("update product");
                     event.preventDefault();
 
                     const id = $("#productID").data("value");
@@ -602,8 +615,6 @@ $(document).ready(function() {
                     let dimensions = $("#updateProductDimensions").val();
                     let dishwasherSafe = $("#updateProductDishwasherSafe").val();
                     let microwaveSafe = $("#updateProductMicrowaveSafe").val();
-                    
-                    console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
 
                     $.ajax({
                         url:`http://${url}/updateProduct/${id}`,
@@ -622,7 +633,6 @@ $(document).ready(function() {
                             microwaveSafe
                         },
                         success: function(updatedProduct) {
-                            console.log(updatedProduct);
                             $("#updateModal").modal("show");
 
                             $("#updateOkay").click(function() {
