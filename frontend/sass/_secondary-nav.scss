@@ -19,6 +19,27 @@
         }
     }
 
+    .secondary-nav__back{
+        display: flex;
+        gap: 2em;
+        font-family: $contentfont;
+        font-size: 1.6em;
+        font-weight: 300;
+        cursor: pointer;
+    
+        .secondary-nav-back{
+            border: none;
+            background-color: transparent;
+            color: $orange;
+            text-transform: uppercase;
+        }
+
+        .nav-fa-landing{
+            color: $orange;
+            font-size: 1.8em;
+        }
+    }
+
     a{
         color: $darkgrey;
         text-decoration: none;
