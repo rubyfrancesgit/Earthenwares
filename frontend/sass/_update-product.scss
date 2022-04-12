@@ -9,13 +9,14 @@
 }
 
 
-.upload{
+.update{
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 10vh;
     padding: 10%;
     z-index: 20;
+    display: none;
 
     &-heading{
         @include heading;
@@ -151,7 +152,7 @@
 
 @media screen and (min-width: 1px) and (max-width: 1024px) {
     
-    .upload{
+    .update{
         
         &__box{
             flex-direction: column;
@@ -160,7 +161,7 @@
 }
 
 @media screen and (min-width: 1px) and (max-width: 1024px) {
-    .upload{
+    .update{
         
         &__block{
             flex-direction: column;

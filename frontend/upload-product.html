@@ -20,6 +20,7 @@
     </head>
 
     <body>
+        <div class="add-product__background"></div>
         <!-- Nav Begins -->
         <div class="nav">
             <div class="nav__logo">
@@ -56,6 +57,8 @@
         <!-- Nav Ends -->
         <!-- Dummy comment -->
         <!-- Product Form Begins -->
+
+
             <div class="upload">
                 <!-- Upload Image Section Begins -->
                 <div class="upload__images">
@@ -68,7 +71,7 @@
                             <div class="form__input upload__image-input">
                                 <label for="imageURL1">Image URL *</label>
                                 <div class="form__image-preview-box">
-                                    <input name="imageURL1" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgOneUrl">
+                                    <input name="imageURL1" class="login-input form-text-input" type="text"      placeholder="Image..." id="addProductImgOneUrl">
                                     <button class="upload__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
@@ -78,7 +81,7 @@
                             <div class="form__input upload__image-input">
                                 <label for="imageURL2">Image URL *</label>
                                 <div class="form__image-preview-box">
-                                    <input name="imageURL2" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgTwoUrl">
+                                    <input name="imageURL2" class="login-input form-text-input" type="text"      placeholder="Image..." id="addProductImgTwoUrl">
                                     <button class="upload__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
@@ -88,7 +91,7 @@
                             <div class="form__input upload__image-input">
                                 <label for="imageURL3">Image URL *</label>
                                 <div class="form__image-preview-box">
-                                    <input name="imageURL3" class="login-input form-text-input" type="text"      placeholder="email..." id="addProductImgThreeUrl">
+                                    <input name="imageURL3" class="login-input form-text-input" type="text"      placeholder="Image..." id="addProductImgThreeUrl">
                                     <button class="upload__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
@@ -117,11 +120,20 @@
                         </div>
                         <div class="upload__box">
                             <div class="upload__label">
+                                <label for="productprice" class="upload-label">Price *</label>
+                                <p class="upload-sublabel">The price of your work</p>
+                            </div>
+                            <div class="upload__input">
+                                <input type="text" class="upload-text-input" name="productprice" placeholder="price..." id="addProductPrice">
+                            </div>
+                        </div>
+                        <div class="upload__box">
+                            <div class="upload__label">
                                 <label for="category" class="upload-label">Category *</label>
                                 <p class="upload-sublabel">What would you best describe this work as? This will help shoppers filter for your work</p>
                             </div>
                             <div class="upload__input">
-                            <select name="category" id="" class="upload-select-input">
+                            <select name="category" id="addProductCategory" class="upload-select-input">
                                 <option value="vases">Vases</option>
                                 <option value="tablewares">Tablewares</option>
                                 <option value="misc">Miscellaneous</option>
@@ -134,7 +146,7 @@
                                 <p class="upload-sublabel">Choose a primary colour to define this piece by</p>
                             </div>
                             <div class="upload__input">
-                            <select name="colour" id="" class="upload-select-input">
+                            <select name="colour" id="addProductColour" class="upload-select-input">
                                 <option value="beige">Beige</option>
                                 <option value="black">Black</option>
                                 <option value="brown">Blue</option>
@@ -150,7 +162,7 @@
                                 <p class="upload-sublabel">How large is this work approximately?</p>
                             </div>
                             <div class="upload__input">
-                            <input type="text" class="upload-text-input" name="dimensions" placeholder="product name..." id="addProductName">
+                            <input type="text" class="upload-text-input" name="dimensions" placeholder="product name..." id="addProductDimensions">
                         </div>
                         </div>
                     </div>
@@ -171,7 +183,7 @@
                         <p class="upload-sublabel">Can your work go in the dishwasher?</p>
                     </div>
                     <div class="upload__input">
-                    <select name="dishwasher" id="" class="upload-select-input">
+                    <select name="dishwasher" id="addProductDishwasherSafe" class="upload-select-input">
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>
@@ -183,7 +195,7 @@
                         <p class="upload-sublabel">Can your work go in the microwave?</p>
                     </div>
                     <div class="upload__input">
-                        <select name="microwave" id="" class="upload-select-input">
+                        <select name="microwave" id="addProductMicrowaveSafe" class="upload-select-input">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -208,8 +220,9 @@
                         <p class="upload-sublabel">(Max 350 characters)</p>
                     </div>
                     <div class="upload__input">
-                    <textarea name="description" class="upload-text-input" id="" cols="30" rows="10"></textarea>
-                </div>
+                        <textarea name="description" class="upload-text-input" id="addProductDescription" cols="30" rows="10"></textarea>
+                        <button class="upload__btn" id="addProductBtn">Add product</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,5 +275,11 @@
         </footer>
         <!-- end of footer -->
 
+        <!-- jQuery through node -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- local script -->
+        <script src="./js/index.js"></script>
     </body>
 </html>

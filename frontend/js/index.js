@@ -488,7 +488,7 @@ $(document).ready(function() {
                 `
                     <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
                         <div class="edit-btns">
-                            <span class="fa-stack fa-2x">
+                            <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="editIcon" href="./update-product.html">
                                 <i class="fa-solid fa-circle fa-stack-2x"></i>
                                 <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
                             </span>
@@ -512,6 +512,7 @@ $(document).ready(function() {
                 `
             ); // end of profile listings append
 
+            // delete listing function
             $("#trashIcon").click(function() {
                 console.log("trash");
 
@@ -524,14 +525,70 @@ $(document).ready(function() {
                         url: `http://${url}/deleteProduct/${id}`,
                         type: "DELETE",
                         success: function() {
-                            alert("Deleted");
+                            console.log("Deleted");
                         },
                         error: function() {
                             alert("Error: cannot delete");
                         }
                     });
                 });
-            });
+            }); // end of delete listing function
+
+            // edit listing function
+            $("#editIcon").click(function() {
+                console.log("edit click");
+
+                document.getElementById("userProfileSection").style.display = "none";
+                document.getElementById("editListingSection").style.display = "block";
+
+                document.getElementById("updateProductImgOneUrl").placeholder = `${productsFromMongo[i].imgOneUrl}`;
+                document.getElementById("updateProductImgTwoUrl").placeholder = `${productsFromMongo[i].imgTwoUrl}`;
+                document.getElementById("updateProductImgThreeUrl").placeholder = `${productsFromMongo[i].imgThreeUrl}`;
+
+                document.getElementById("updateProductName").placeholder = `${productsFromMongo[i].productName}`;
+
+                document.getElementById("updateProductPrice").placeholder = `${productsFromMongo[i].price}`;
+
+                document.getElementById("updateProductImgThreeUrl").placeholder = `${productsFromMongo[i].imgThreeUrl}`;
+
+                document.getElementById("updateProductCategory").value = `${productsFromMongo[i].category}`;
+
+                document.getElementById("updateProductColour").value = `${productsFromMongo[i].colour}`;
+
+                document.getElementById("updateProductDimensions").placeholder = `${productsFromMongo[i].dimensions}`;
+
+                document.getElementById("updateProductDishwasherSafe").value = `${productsFromMongo[i].dishwasherSafe}`;
+
+                document.getElementById("updateProductMicrowaveSafe").value = `${productsFromMongo[i].microwaveSafe}`;
+
+                document.getElementById("updateProductDescription").placeholder = `${productsFromMongo[i].description}`;
+
+                $("#updateProductBtn").click(function() {
+                    console.log("update product");
+                    event.preventDefault();
+
+                    let productName = $("#updateProductName").val();
+                    let description = $("#updateProductDescription").val();
+                    let price = $("#updateProductPrice").val();
+                    let imgOneUrl = $("#updateProductImgOneUrl").val();
+                    let imgTwoUrl = $("#updateProductImgTwoUrl").val();
+                    let imgThreeUrl = $("#updateProductImgThreeUrl").val();
+                    userId = sessionStorage.getItem('userID');
+                    let category = $("#updateProductCategory").val();
+                    let colour = $("#updateProductColour").val();
+                    let dimensions = $("#updateProductDimensions").val();
+                    let dishwasherSafe = $("#updateProductDishwasherSafe").val();
+                    let microwaveSafe = $("#updateProductMicrowaveSafe").val();
+                    
+                    console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
+                });
+            }); // end of edit listing function
+
+            // exit edit listing function, back to user profile
+            $("#goBackProfileBtn").click(function() {
+                document.getElementById("userProfileSection").style.display = "block";
+                document.getElementById("editListingSection").style.display = "none";
+            }); // end of exit edit listing function
         }
     } // end of populate listings on profile
 
@@ -539,21 +596,6 @@ $(document).ready(function() {
 
     // ----- profile page end -----
 
-    // $("#deleteProductBtn").click(function() {
-    //     const id = $("#deleteProductId").val();
-    //     console.log(url)
-
-    //     $.ajax({
-    //         url: `http://${url}/deleteProduct/${id}`,
-    //         type: "DELETE",
-    //         success: function() {
-    //             alert("Deleted");
-    //         },
-    //         error: function() {
-    //             alert("Error: cannot delete");
-    //         }
-    //     });
-    // });
 
 }); // end of document.ready
 
