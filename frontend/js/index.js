@@ -477,6 +477,20 @@ $(document).ready(function() {
         } // end of if statement checking user is logged in
     } // end of populateProfile function
 
+    
+
+    // $("#signUpBtnCont").click(function() {
+    //     event.preventDefault();
+
+    //     let imageUrl = $('').val();
+
+    //     console.log(imageUrl);
+
+    //     $(".form__image-preview").empty().css("background", `url(${imageUrl})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+    // });
+
+
+
     // populate listings on profile
     function populateProfileListings(productsFromMongo, i) {
         console.log(productsFromMongo[i].productName);
@@ -541,32 +555,36 @@ $(document).ready(function() {
                 document.getElementById("userProfileSection").style.display = "none";
                 document.getElementById("editListingSection").style.display = "block";
 
-                document.getElementById("updateProductImgOneUrl").placeholder = `${productsFromMongo[i].imgOneUrl}`;
-                document.getElementById("updateProductImgTwoUrl").placeholder = `${productsFromMongo[i].imgTwoUrl}`;
-                document.getElementById("updateProductImgThreeUrl").placeholder = `${productsFromMongo[i].imgThreeUrl}`;
-
-                document.getElementById("updateProductName").placeholder = `${productsFromMongo[i].productName}`;
-
-                document.getElementById("updateProductPrice").placeholder = `${productsFromMongo[i].price}`;
-
-                document.getElementById("updateProductImgThreeUrl").placeholder = `${productsFromMongo[i].imgThreeUrl}`;
-
+                // setting form details to relevant product details
+                document.getElementById("updateProductImgOneUrl").value = `${productsFromMongo[i].imgOneUrl}`;
+                document.getElementById("updateProductImgTwoUrl").value = `${productsFromMongo[i].imgTwoUrl}`;
+                document.getElementById("updateProductImgThreeUrl").value = `${productsFromMongo[i].imgThreeUrl}`;
+                document.getElementById("updateProductName").value = `${productsFromMongo[i].productName}`;
+                document.getElementById("updateProductPrice").value = `${productsFromMongo[i].price}`;
+                document.getElementById("updateProductImgThreeUrl").value = `${productsFromMongo[i].imgThreeUrl}`;
                 document.getElementById("updateProductCategory").value = `${productsFromMongo[i].category}`;
-
                 document.getElementById("updateProductColour").value = `${productsFromMongo[i].colour}`;
+                document.getElementById("updateProductDimensions").value = `${productsFromMongo[i].dimensions}`;
+                
+                if (productsFromMongo[i].dishwasherSafe === true) {
+                    document.getElementById("updateProductDishwasherSafe").value = "yes";
+                } else {
+                    document.getElementById("updateProductDishwasherSafe").value = "no";
+                }
 
-                document.getElementById("updateProductDimensions").placeholder = `${productsFromMongo[i].dimensions}`;
+                if (productsFromMongo[i].microwaveSafe === true) {
+                    document.getElementById("updateProductMicrowaveSafe").value = "yes";
+                } else {
+                    document.getElementById("updateProductMicrowaveSafe").value = "no";
+                }
 
-                document.getElementById("updateProductDishwasherSafe").value = `${productsFromMongo[i].dishwasherSafe}`;
-
-                document.getElementById("updateProductMicrowaveSafe").value = `${productsFromMongo[i].microwaveSafe}`;
-
-                document.getElementById("updateProductDescription").placeholder = `${productsFromMongo[i].description}`;
+                document.getElementById("updateProductDescription").value = `${productsFromMongo[i].description}`;
 
                 $("#updateProductBtn").click(function() {
                     console.log("update product");
                     event.preventDefault();
 
+                    const id = $("#productID").data("value");
                     let productName = $("#updateProductName").val();
                     let description = $("#updateProductDescription").val();
                     let price = $("#updateProductPrice").val();
@@ -581,6 +599,38 @@ $(document).ready(function() {
                     let microwaveSafe = $("#updateProductMicrowaveSafe").val();
                     
                     console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
+
+                    $.ajax({
+                        url:`http://${url}/updateProduct/${id}`,
+                        type: "PATCH",
+                        data: {
+                            productName,
+                            description,
+                            price,
+                            imgOneUrl,
+                            imgTwoUrl,
+                            imgThreeUrl,
+                            category,
+                            colour,
+                            dimensions,
+                            dishwasherSafe,
+                            microwaveSafe
+                        },
+                        success: function(updatedProduct) {
+                            console.log(updatedProduct);
+                            $("#updateModal").modal("show");
+
+                            $("#updateOkay").click(function() {
+                                document.getElementById("userProfileSection").style.display = "block";
+                                document.getElementById("editListingSection").style.display = "none";
+                                $("#updateModal").modal("hide");
+                                $(window).scrollTop(0);
+                            })
+                        },
+                        error: function() {
+                            alert("Error: cannot update");
+                        }
+                    }); // end of ajax
                 });
             }); // end of edit listing function
 

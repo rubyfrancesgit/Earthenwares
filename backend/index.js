@@ -99,6 +99,31 @@ app.post("/addProduct", (req, res) => {
     }).catch(err => res.send(err));
 }); // end of add product to DB
 
+// update product
+app.patch("/updateProduct/:id", (req, res) => {
+    const idParam = req.params.id;
+    Product.findById(idParam, (err, product) => {
+        const updatedProduct = {
+            productName: req.body.productName,
+            description: req.body.description,
+            price: req.body.price,
+            imgOneUrl: req.body.imgOneUrl,
+            imgTwoUrl: req.body.imgTwoUrl,
+            imgThreeUrl: req.body.imgThreeUrl,
+            authorId: req.body.authorId,
+            category: req.body.category,
+            colour: req.body.colour,
+            dimensions: req.body.dimensions,
+            dishwasherSafe: req.body.dishwasherSafe,
+            microwaveSafe: req.body.microwaveSafe,
+        }
+        Product.updateOne({_id:idParam}, updatedProduct)
+            .then(result => {
+                res.send(result);
+            }).catch(err => res.send(err));
+    }); // end of find by id
+}); // end of update product
+
 // get all products from DB
 app.get("/allProductsFromDB", (req, res) => {
     Product.find().then(result => {
@@ -151,19 +176,6 @@ app.post("/createComment", (req, res) => {
         });
     });
 }); // Post comment end
-
-// // View comments
-// app.get("/seeComments/:productId", (req, res) => {
-//     const productId = req.params.productId;
-//     Product.findById(productId, function (err, product) {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log("Result:", product.comment);
-//             res.send(product.comment);
-//         } // end of if/else statement
-//     }); // end of find by id
-// }); // end of view comments
 
 // View comments
 app.get("/seeComments/:productId", (req, res) => {

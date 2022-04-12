@@ -49,10 +49,10 @@
             </div>
             <div class="secondary-nav__navigation">
                 <div class="secondary-nav__top"> <!-- Remember display none on this -->
-                    <div class="secondary-nav__btn secondary-nav__go-back" id="goBackProfileBtn">
+                    <!-- <div class="secondary-nav__btn secondary-nav__go-back" id="goBackProfileBtn">
                         <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
                         <button class="secondary-nav-back">Go Back</button>
-                    </div>
+                    </div> -->
                     <div class="secondary-nav__btn">
                         <button class="secondary-nav-back">Post a Listing</button>
                         <i class="fa-solid fa-circle-plus nav-fa-landing"></i>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="secondary-nav__bottom">
                     <ul class="secondary-nav__ul">
-                        <div class="secondary-nav__back">
+                        <div class="secondary-nav__back secondary-nav__back-arrow" id="goBackProfileBtn">
                             <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
                             <button class="secondary-nav-back">Go Back</button>
                         </div>
@@ -138,6 +138,35 @@
           </div>
           <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle4" role="button">Delete Modal</a> -->
         <!-- Delete Product Modal Flow Ends -->
+
+        <!-- update complete modal start -->
+        <div class="modal fade" id="updateModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Product Update Successfully</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" id="updateOkay">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+        <!-- update complete modal end -->
 
         <!-- start of profile -->
         <div class="artist-profile" id="userProfileSection">
