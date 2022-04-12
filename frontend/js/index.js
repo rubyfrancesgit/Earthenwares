@@ -4,47 +4,47 @@ $(document).ready(function() {
 
         // Start of grab to scroll section home page
 
-        const ele = document.getElementById('landingProductsCards');
-        ele.style.cursor = 'grab';
+            // const ele = document.getElementById('landingProductsCards');
+            // ele.style.cursor = 'grab';
 
-        let pos = { top: 0, left: 0, x: 0, y: 0 };
+            // let pos = { top: 0, left: 0, x: 0, y: 0 };
 
-        const mouseDownHandler = function (e) {
-            ele.style.cursor = 'grabbing';
-            ele.style.userSelect = 'none';
+            // const mouseDownHandler = function (e) {
+            //     ele.style.cursor = 'grabbing';
+            //     ele.style.userSelect = 'none';
 
-            pos = {
-                left: ele.scrollLeft,
-                top: ele.scrollTop,
-                // Get the current mouse position
-                x: e.clientX,
-                y: e.clientY,
-            };
+            //     pos = {
+            //         left: ele.scrollLeft,
+            //         top: ele.scrollTop,
+            //         // Get the current mouse position
+            //         x: e.clientX,
+            //         y: e.clientY,
+            //     };
 
-            document.addEventListener('mousemove', mouseMoveHandler);
-            document.addEventListener('mouseup', mouseUpHandler);
-        };
+            //     document.addEventListener('mousemove', mouseMoveHandler);
+            //     document.addEventListener('mouseup', mouseUpHandler);
+            // };
 
-        const mouseMoveHandler = function (e) {
-            // How far the mouse has been moved
-            const dx = e.clientX - pos.x;
-            const dy = e.clientY - pos.y;
+            // const mouseMoveHandler = function (e) {
+            //     // How far the mouse has been moved
+            //     const dx = e.clientX - pos.x;
+            //     const dy = e.clientY - pos.y;
 
-            // Scroll the element
-            ele.scrollTop = pos.top - dy;
-            ele.scrollLeft = pos.left - dx;
-        };
+            //     // Scroll the element
+            //     ele.scrollTop = pos.top - dy;
+            //     ele.scrollLeft = pos.left - dx;
+            // };
 
-        const mouseUpHandler = function () {
-            ele.style.cursor = 'grab';
-            ele.style.removeProperty('user-select');
+            // const mouseUpHandler = function () {
+            //     ele.style.cursor = 'grab';
+            //     ele.style.removeProperty('user-select');
 
-            document.removeEventListener('mousemove', mouseMoveHandler);
-            document.removeEventListener('mouseup', mouseUpHandler);
-        };
+            //     document.removeEventListener('mousemove', mouseMoveHandler);
+            //     document.removeEventListener('mouseup', mouseUpHandler);
+            // };
 
-        // Attach the handler
-        ele.addEventListener('mousedown', mouseDownHandler);
+            // // Attach the handler
+            // ele.addEventListener('mousedown', mouseDownHandler);
 
 
 // End of grab to scroll section home page
@@ -93,24 +93,53 @@ $(document).ready(function() {
         }
     }); // end of initial ajax to get url data from local json
 
-
-
-
-
-
     // Beginning of Image Preview
     function imagePreview(){
 
-        $('#imgPreviewBtn').click(function(event){
+        // Image preview in sign up form starts
+        $('#imgPreviewBtnModal').click(function(event){
             event.preventDefault();
 
             let profilePicture = $("#signUpProfilePicture").val();
-            console.log(profilePicture);
+ 
 
                 $(".form__image-preview").empty().css("background", `url(${profilePicture})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
 
-            } // click event ends
-    )} // function ends
+            })// Image preview in sign up form ends
+
+            // Image preview in sign up form starts
+            $('#imgPreviewBtnUploadOne').click(function(event){
+            event.preventDefault();
+            console.log('click');
+
+            let imgPreviewOne = $("#addProductImgOneUrl").val();
+            console.log(imgPreviewOne);
+
+            $("#uploadImageBoxOne").empty().css("background", `url(${imgPreviewOne})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+
+            })// Image preview in sign up form ends
+
+            // Image preview in sign up form starts
+            $('#imgPreviewBtnUploadTwo').click(function(event){
+            event.preventDefault();
+
+            let imgPreviewTwo = $("#addProductImgTwoUrl").val();
+
+
+                $("#uploadImageBoxTwo").empty().css("background", `url(${imgPreviewTwo})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+
+            })// Image preview in sign up form ends
+
+            $('#imgPreviewBtnUploadThree').click(function(event){
+                event.preventDefault();
+    
+                let imgPreviewThree = $("#addProductImgThreeUrl").val();
+ 
+    
+                    $("#uploadImageBoxThree").empty().css("background", `url(${imgPreviewThree})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
+    
+                })// Image preview in sign up form ends
+    } // function ends
 
     imagePreview(); // Calling imgPreview fucntions
     // End of Image Preview
@@ -118,8 +147,7 @@ $(document).ready(function() {
     // start of sign up
     $("#signUpBtn").click(function() {
         
-        
-
+    
         event.preventDefault();
 
         let username = $("#signUpUsername").val();
@@ -250,6 +278,8 @@ $(document).ready(function() {
         let dimensions = $("#addProductDimensions").val();
         let dishwasherSafe = $("#addProductDishwasherSafe").val();
         let microwaveSafe = $("#addProductMicrowaveSafe").val();
+
+        imagePreview();
         
         console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
         if(!userId) {

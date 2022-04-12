@@ -21,6 +21,12 @@
         @include heading;
     }
 
+    &__image-header{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
     &__header{
         border-style: solid;
         border-width: 0px 1px 0px 0px;
@@ -30,6 +36,13 @@
 
     &-subheading{
         @include sub-heading;
+    }
+
+    &-subheading-alt{
+        padding-left: 1em;
+        border-left: solid 2px $green;
+        @include sub-heading;
+        font-style: italic;
     }
 
     &__images{

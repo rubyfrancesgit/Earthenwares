@@ -1233,6 +1233,11 @@ a:visited {
   font-weight: 600;
   text-transform: uppercase;
 }
+.upload__image-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 .upload__header {
   border-style: solid;
   border-width: 0px 1px 0px 0px;
@@ -1243,6 +1248,14 @@ a:visited {
   font-family: "Assistant", sans-serif;
   font-size: 1.8em;
   font-weight: 400;
+}
+.upload-subheading-alt {
+  padding-left: 1em;
+  border-left: solid 2px #D5E0A8;
+  font-family: "Assistant", sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  font-style: italic;
 }
 .upload__images {
   display: flex;
