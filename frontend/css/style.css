@@ -185,86 +185,51 @@ a:visited {
 
 .nav {
   width: 100%;
-  height: 30vh;
-  position: relative;
+  height: 15vw;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   text-transform: uppercase;
   z-index: 100;
 }
 .nav__logo {
-  flex-basis: 39.5%;
+  min-width: 20vw;
+  max-width: 20vw;
+  object-fit: contain;
   z-index: 51;
 }
-.nav-logo {
-  width: 20vw;
-}
-.nav__navigation {
-  flex-basis: 60.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5em;
-}
-.nav__top {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  margin-right: 10vw;
-  display: none;
-}
-.nav__bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  margin-right: 10vw;
+.nav .nav-logo {
+  object-fit: contain;
 }
 .nav__ul {
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 9em;
   color: #fff;
   margin-bottom: 0;
+  padding: 0;
 }
 .nav-li {
   font-family: "Assistant", sans-serif;
   font-size: 1.6em;
   font-weight: 200;
+  padding-left: none;
 }
 .nav-li:hover {
   color: #D5E0A8;
 }
-.nav-back {
-  font-family: "Assistant", sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #F4794F;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px #F4794F solid;
-  cursor: pointer;
-}
 .nav__btn {
+  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 3em;
   align-items: center;
-}
-.nav__back {
-  display: flex;
-  flex-direction: row;
-  gap: 3em;
-  align-items: center;
-  display: none;
+  padding-right: 10vw;
 }
 .nav-fa-landing {
-  color: #F4794F;
+  color: #EFEFEB;
   font-size: 3em;
 }
 .nav-btn {
@@ -280,14 +245,6 @@ a:visited {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1201px) and (max-width: 1500px) {
-  .nav__logo {
-    flex-basis: 37%;
-  }
-  .nav__navigation {
-    flex-basis: 63%;
-  }
-}
 .cards {
   width: 18vw;
   border: none;
@@ -332,93 +289,52 @@ a:visited {
 .secondary-nav {
   width: 100%;
   height: 15vw;
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  justify-content: spa;
+  justify-content: space-between;
+  align-items: flex-start;
   text-transform: uppercase;
-  position: relative;
-  z-index: 5000;
+  z-index: 1000;
 }
 .secondary-nav__logo {
-  flex-basis: 25%;
+  min-width: 15vw;
+  max-width: 15vw;
+  object-fit: contain;
   z-index: 51;
 }
 .secondary-nav__logo .secondary-nav-logo {
-  width: 17vw;
+  object-fit: contain;
 }
 .secondary-nav a {
   color: #4A4F4F;
   text-decoration: none;
 }
-.secondary-nav__navigation {
-  flex-basis: 68vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5em;
-}
-.secondary-nav__top {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  margin-right: 10vw;
-  display: none;
-}
-.secondary-nav__bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-}
 .secondary-nav__ul {
-  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 9em;
   color: #4A4F4F;
-  padding-right: 15vw;
+  margin-bottom: 0;
+  padding: 0;
 }
 .secondary-nav-li {
   font-family: "Assistant", sans-serif;
-  font-size: 1.8em;
-  font-weight: 500;
+  font-size: 1.6em;
+  font-weight: 300;
+  padding-left: none;
 }
 .secondary-nav-li:hover {
   color: #D5E0A8;
 }
-.secondary-nav-back {
-  font-family: "Assistant", sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #F4794F;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px #F4794F solid;
-  cursor: pointer;
-  font-size: 1.8em;
-}
-.secondary-nav__back-arrow {
-  display: none;
-}
 .secondary-nav__btn {
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  gap: 3em;
-  align-items: center;
-  white-space: nowrap;
-}
-.secondary-nav__back {
+  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 3em;
   align-items: center;
+  padding-right: 10vw;
 }
 .secondary-nav-fa-landing {
   color: #4A4F4F;
@@ -627,6 +543,13 @@ a:visited {
   top: -4vw;
   transform: rotate(10.32deg);
 }
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__background .page-heading__left .landing-background__left {
+    width: 45vw;
+    left: -12vw;
+    top: -4vw;
+  }
+}
 .landing__background .page-heading__left .svg-curve-left {
   width: 26vw;
   height: fit-content;
@@ -648,6 +571,13 @@ a:visited {
   letter-spacing: 0.15em;
   white-space: nowrap;
   fill: #4A4F4F;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
+  .landing__background .page-heading__left .svg-curve-left {
+    width: 32vw;
+    top: 39.5vw;
+    left: 12.5vw;
+  }
 }
 
 .landing__body {
@@ -681,15 +611,16 @@ a:visited {
   display: flex;
   flex-direction: row;
   padding-left: 10vw;
+  gap: 1.6rem;
 }
 @media (min-width: 1025px) and (max-width: 1200px), (min-width: 769px) and (max-width: 1024px) {
   .landing__content-images {
-    margin-top: 22vw;
+    margin-top: 20vw !important;
     flex-basis: 30% !important;
   }
 }
 .landing__content-image {
-  width: 20vw;
+  width: 18vw;
   height: auto;
   position: relative;
   top: 15vh;
@@ -1558,6 +1489,7 @@ a:visited {
 .artist {
   min-height: 100vh;
   overflow: hidden;
+  padding-top: 15vw;
 }
 .artist-background {
   width: 100%;
@@ -1575,6 +1507,7 @@ a:visited {
   left: 3vw;
   position: absolute;
   overflow: hidden;
+  z-index: 100;
 }
 .artist-background .page-heading .artist-background__right {
   width: 43vw;
@@ -1583,6 +1516,7 @@ a:visited {
   top: -26vw;
   overflow: hidden;
   transform: rotate(-9.32deg);
+  z-index: 100;
 }
 .artist-background .page-heading .svg-curve {
   width: 35vw;
@@ -1590,6 +1524,7 @@ a:visited {
   position: absolute;
   top: 8.5vw;
   right: -11.5vw;
+  z-index: 100;
 }
 .artist-background .page-heading path {
   fill: transparent;
@@ -1730,7 +1665,7 @@ a:visited {
 
 .products {
   padding: 3vw 10vw;
-  padding-top: 0;
+  padding-top: 18vw;
 }
 .products-title {
   width: 100%;
@@ -1755,6 +1690,7 @@ a:visited {
 }
 .products-container .cards {
   width: 20%;
+  margin-bottom: 4em;
 }
 .products-container .cards-img {
   border-radius: 0;
@@ -1785,10 +1721,17 @@ a:visited {
 .product-detail {
   display: none;
   padding: 3% 10%;
+  width: 100%;
+  padding-top: 18vw;
 }
 .product-detail__upper {
   display: flex;
+  justify-content: space-between;
   gap: 5vw;
+  width: 100%;
+}
+.product-detail__upper .product-description {
+  width: 100%;
 }
 .product-detail__upper .type {
   font-family: "Assistant", sans-serif;
@@ -1828,6 +1771,7 @@ a:visited {
   line-height: 1.6em;
   color: #4A4F4F;
   font-size: 1.4em;
+  width: 100%;
 }
 .product-detail__upper .product-btns {
   display: flex;
@@ -1893,6 +1837,15 @@ a:visited {
   border: none;
   background-color: #EFEFEB;
 }
+.product-detail__upper .product-dropdowns .care-drop-down .care-up, .product-detail__upper .product-dropdowns .shipping-drop-down .care-up, .product-detail__upper .product-dropdowns .purchase-drop-down .care-up {
+  display: none;
+}
+.product-detail__upper .product-dropdowns .care-drop-down .shipping-up, .product-detail__upper .product-dropdowns .shipping-drop-down .shipping-up, .product-detail__upper .product-dropdowns .purchase-drop-down .shipping-up {
+  display: none;
+}
+.product-detail__upper .product-dropdowns .care-drop-down .purchase-up, .product-detail__upper .product-dropdowns .shipping-drop-down .purchase-up, .product-detail__upper .product-dropdowns .purchase-drop-down .purchase-up {
+  display: none;
+}
 
 .product-images {
   display: flex;
@@ -1908,6 +1861,13 @@ a:visited {
 .product-img-one, .product-img-two, .product-img-three {
   width: 8vw;
   height: 8vw;
+}
+.product-img-one:hover, .product-img-two:hover, .product-img-three:hover {
+  outline: solid 8px #D5E0A8;
+  outline-offset: -4px;
+  outline-style: solid;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .main-image {
@@ -1970,6 +1930,10 @@ a:visited {
   line-height: 1.6em;
   font-size: 1.4em;
   padding-bottom: 2vw;
+}
+.product-detail__lower .artist-socials {
+  display: flex;
+  gap: 1em;
 }
 .product-detail__lower .artist-socials .fa-circle {
   color: #F4794F;
