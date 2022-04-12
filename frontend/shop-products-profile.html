@@ -128,14 +128,14 @@
                 <div class="comments">
                     <div class="comments-heading">
                         <div class="heading-container">
-                            <h4 class="heading">Questions & Comments</h4> 
-                            <h4 class="comment-no">(5 comments)</h4>
+                            <h4 class="heading">Questions & Comments</h4>
                         </div>
-                        <button class="add-comment-btn" data-bs-toggle="modal" href="#exampleModalToggle7" role="button">ADD COMMENT OR QUESTION</button>
+                        <button class="add-comment-btn" id="addCommentBtn">ADD COMMENT OR QUESTION</button>
+                        <!-- <button class="add-comment-btn" data-bs-toggle="modal" href="#exampleModalToggle7" role="button" id="addCommentBtn">ADD COMMENT OR QUESTION</button> -->
                         
                     </div>
-                    <div class="comments-display">
-                        <div class="comment-container">
+                    <div class="comments-display" id="commentContainer">
+                        <!-- <div class="comment-container">
 
                             <div class="rounded-circle commenter">
                                 <p class="initials">JD</p>
@@ -173,17 +173,13 @@
                             <div class="reply">
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi quisquam nobis fugiat natus saepe aspernatur excepturi cum esse ducimus repudiandae?</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="btn-container">
-                        <button class="see-all-btn">SEE ALL COMMENTS <i class="fa-solid fa-arrow-right-long"></i></button>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
             <!-- Modal for comments starts -->
-
-            <div class="modal fade" id="exampleModalToggle7" aria-hidden="true" aria-labelledby="exampleModalToggleLabel7" tabindex="-1">
+            <div class="modal fade" id="commentModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel7" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                   <div class="modal-content">
                       <div class="modal__background">
@@ -199,11 +195,11 @@
                             <div class="signup__store">      
                                 <div class="form__input">
                                     <label for="comments">Comment/question</label>
-                                    <textarea name="comments" class="login-input form-text-input" type="text" placeholder="Have something to say?"></textarea>
+                                    <textarea name="comments" class="login-input form-text-input"  id="commentField" type="text" placeholder="Have something to say?"></textarea>
                                 </div>
-                                <div class="form__btns">
-                                    <button class="login-btn form-btn">Post Comment</button>
-                                    <button class="cancel-button form-btn-alt">Cancel</button>
+                                <div class="form__btns" id="commentBtnDiv">
+                                    <!-- <button class="login-btn form-btn" id="submitComment">Post Comment</button>
+                                    <button class="cancel-button form-btn-alt">Cancel</button> -->
                                 </div>
                             </div>
                         </div>
@@ -215,7 +211,6 @@
                 </div>
                 </div>
               </div>
-              <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle7" role="button">Add Modal</a> -->
 
             <!-- Modal for comments ends -->
 

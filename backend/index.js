@@ -160,9 +160,11 @@ app.post("/createComment", (req, res) => {
     const newComment = new Comment({
         _id: new mongoose.Types.ObjectId,
         comment: req.body.comment,
+        initial: req.body.initial,
         date: new Date(),
         authorId: req.body.authorId,
-        productId: req.body.productId
+        productId: req.body.productId,
+        isArtist: req.body.isArtist
     });
     newComment.save()
     .then(result => {
