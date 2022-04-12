@@ -229,20 +229,40 @@ $(document).ready(function() {
     function generateShopCard(productsFromMongo, i) {
         $("#shopContainer").append(
             `
-                <a class="card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
-                    <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
-                    <div class="card-body">
-                        <div class="card-body-top">
-                            <p class="card-name">${productsFromMongo[i].productName}</p>
-                            <p class="card-price">$${productsFromMongo[i].price}</p>
+
+                <a class="cards ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}">
+                        <div class="cards__img">
+                            <img src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" class="cards-img">
                         </div>
-                        <div class="card-body-bottom">
-                            <p class="card-artist">Jane Doe</p>
+                        <div class="cards__body">
+                            <div class="cards__body-top">
+                                <p class="cards__body-name">${productsFromMongo[i].productName}</p>
+                                <p class="cards__body-price">$${productsFromMongo[i].price}</p>
+                            </div>
+                            <div class="cards__body-bottom">
+                                <p class="cards__body-artist">Jane Doe</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
             `
         );
+
+        // THE FOLLOWING COMMENTS CONTAINS THE OLD CARD DESIGN IN CASE IT'S  NEEDED
+
+                //         <a class="card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
+                //     <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
+                //     <div class="card-body">
+                //         <div class="card-body-top">
+                //             <p class="card-name">${productsFromMongo[i].productName}</p>
+                //             <p class="card-price">$${productsFromMongo[i].price}</p>
+                //         </div>
+                //         <div class="card-body-bottom">
+                //             <p class="card-artist">Jane Doe</p>
+                //         </div>
+                //     </div>
+                // </a>
+                
+        // END OF OLD CARD DESIGN
 
         // when product card in shop is click, finds the relevant product details
         $(`.${productsFromMongo[i].authorId}`).click(function() {

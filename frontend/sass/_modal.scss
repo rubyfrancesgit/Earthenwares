@@ -2,6 +2,9 @@
 
 .modal{
 
+    // position: relative;
+    z-index: 100000;
+
     &__background{
         background: url('../img/form-background-crop.png');
         background-size: cover;
@@ -11,6 +14,7 @@
     &-body{
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 3em;
     }
     &-header{
@@ -29,6 +33,8 @@
         gap: 0.5em;
         font-size: 5rem;
         text-align: center;
+        align-self: center;
+        width: 80%;
     } 
 
     &-header__back{
@@ -44,10 +50,23 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        gap: 2em;
+        border: none;
+    }
+
+    &-back-btn:hover{
+        @include button-text-hover;
+        border: none;
+    }
+
+    &-back-btn i:hover{
+        @include button-text-hover;
+        border: none;
     }
 
     &-subtitle{
         font-size: 2rem;
+        // width: 80%;
     }
 }
 
@@ -68,4 +87,23 @@
     }
 
 }
+
+@media screen and (min-width: 1500px) {
+    
+    .modal{
+        &-header{
+            font-size: 3rem;
+        }
+
+        &-title{
+            font-size: inherit;
+        }
+
+        &-footer{
+            border: none;
+        }
+    }
+
+}
+
 
