@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Earthenwares</title>
 
         <!-- Font Awesome CDN -->
@@ -81,16 +81,34 @@
 
         <section class="landing__body">
             <div class="landing__background">
-                <div class="landing__background-box">
-                    <!-- <img src="./img/landing-background-left-merged.png" alt="" class="landing__background-img"> -->
-                    
+            
+                <div class="page-heading__right">
+                    <img class="landing-background__right" src="/frontend/img/Asset 46squig.svg">
+                    <svg class="svg-curve-right" viewBox="0 0 500 500">
+                        <path id="curveRight" class="path-right" d="M23.69,.25C15.73,13.79,3.91,38.04,1.37,70.09-.03,87.79-4.15,139.89,33.05,177.37c33.38,33.63,84.16,39.51,123.84,27.36,51.48-15.77,81.13-60.68,90-99.36,4.22-18.43,3.52-34.46,2.16-45.36"/>
+                        <text x="65">
+                          <textPath xlink:href="#curveRight">
+                                HOW IT WORKS.
+                          </textPath>
+                        </text>
+                    </svg>
                 </div>
-                <div class="landing__background-box">
-                    <!-- <img src="./img/landing-background-right-merged.png" alt="" class="landing__background-img"> -->
+
+
+                <div class="page-heading__left">
+                    <img class="landing-background__left" src="/frontend/img/Asset 48home-sqig.svg">
+                    <svg class="svg-curve-left" viewBox="0 0 500 500">
+                        <path id="curveLeft" class="path-left" d="M.49,190.44c2.48,15.23,14.26,76.56,70.2,120.96,46.7,37.07,111.28,52.1,168.48,34.56,101.65-31.17,150.87-156.27,127.44-250.56-11.32-45.57-37.95-77.23-56.16-95.04"/>
+                        <text x="0">
+                          <textPath xlink:href="#curveLeft">
+                                FEATURED PRODUCTS.
+                          </textPath>
+                        </text>
+                    </svg>
                 </div>
-                <!-- <img src="./img/landing-background-left-img-ext.png" alt="" class="landing__background-img">
-                <img src="./img/landing-background-right-img-ext.png" alt="" class="landing__background-img"> -->
+                
             </div>
+
             <div class="landing__content">
                 <div class="landing__content-container"> 
                     <div class="landing__content-images">
@@ -578,7 +596,7 @@
                     Join our marketplace and start selling today!
                 </h4>
                 <div class="footer-upper__btn-container">
-                    <button class="sell-work-btn">Sell your work</button>
+                    <a href="upload-product.html"><button class="sell-work-btn">Sell your work</button></a>
                 </div>
                 
             </div>
