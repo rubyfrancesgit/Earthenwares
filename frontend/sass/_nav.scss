@@ -13,6 +13,16 @@
         max-width: 20vw;
         object-fit: contain;
         z-index: 51;
+
+        @media #{$tablet}{
+            min-width: 40vw;
+            max-width: 0vw;
+        }
+
+        @media #{$mobile}{
+            min-width: 60vw;
+            max-width: 60vw;
+        }
     }
 
     .nav-logo{
@@ -28,6 +38,14 @@
         color: $white;
         margin-bottom: 0;
         padding: 0;
+
+        @media #{$laptop, $smallScreen}{
+            gap: 5em;
+        }
+
+        @media #{$tablet, $mobile}{
+            display: none;
+        }
     }
 
     &-li{
@@ -47,17 +65,94 @@
         flex-direction: row;
         gap: 3em;
         align-items: center;
-        padding-right: 10vw;
+        // padding-right: 10vw;
+
+        @media #{$laptop, $smallScreen}{
+            padding-right: 5vw;
+        }
+
+        @media #{$tablet, $mobile}{
+            display: none;
+        }
     }
 
     &-fa-landing{
         color: $lightgrey;
         font-size: 3em;
+
+        @media #{$laptop, $smallScreen}{
+            font-size: 2.5em;
+        }
     }
 
     &-btn{
         @include button-orange;
         
+        @media #{$laptop, $smallScreen}{
+            padding: .5em 1.5em;
+        }
+
+    }
+
+    .mobile-menu{
+        display: flex;
+        padding-top: 5vw;
+        gap: 2vw;
+    }
+
+    .hamburger-nav{
+        display: none;
+        color: $lightgrey;
+        font-size: 3em;
+        padding-right: 2vw;
+
+        @media #{$tablet, $mobile}{
+            display: block;
+        }
+
+
+    }
+
+    .hamburger-bag{
+        display: none;
+
+        @media #{$tablet, $mobile}{
+            display: block;
+            padding-right: 5vw;
+            font-size: 3em;
+        }
+    }
+
+    .hamburger-menu{
+        width: 100%;
+        position: absolute;
+        margin-top: 20vw;
+        background-color: $lightgrey;
+        padding: 5vw;
+        z-index: 600;
+        display: none;
+
+        .hamburger__ul{
+            width: 100%;
+            padding: 0;
+            font-size: 1.2em;
+            font-weight: 300;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger__btn{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 

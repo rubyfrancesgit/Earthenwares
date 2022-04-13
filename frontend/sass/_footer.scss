@@ -16,6 +16,12 @@
         flex-direction: column;
         justify-content: center;
 
+        @media #{$tablet, $mobile}{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;;
+        }
+
         &__cta{
             color: $lightgrey;
             font-family: $contentfont;
@@ -25,6 +31,10 @@
             letter-spacing: .05em;
             text-align: center;
             padding-bottom: 1.5em;
+
+            @media #{$tablet, $mobile}{
+                font-size: 1.8em;
+            }
             
         }
 
@@ -38,6 +48,7 @@
                 width:fit-content; 
                 @include button-orange;
                 
+                
             }
 
             :hover{
@@ -47,7 +58,8 @@
 
             @media #{$tablet, $mobile}{
                 .sell-work-btn{
-                    font-size: 2em;
+                    font-size: 1.5em;
+                    padding: 0.5 1em;
                     
                 }
             }
@@ -66,7 +78,7 @@
             .footer-logo__display{
                 @include title;
                 font-size: 3em;
-                color: $darkgrey;
+                color: $darkgrey;               
             }
             
             .footer-logo__tag{
@@ -106,6 +118,10 @@
                 font-size: 5em;
                 color: $darkgrey;
                 padding-top: 1em;
+
+                @media #{$mobile} {
+                    font-size: 3em;
+                }
             }
             
             .footer-logo__tag{
@@ -113,6 +129,10 @@
                 font-size: 3em;
                 font-weight: 300;
                 color: $darkgrey;
+
+                @media #{$mobile} {
+                    font-size: 1.5em;
+                }
             }
 
             &__left{
@@ -154,6 +174,10 @@
         color: $darkgrey;
         font-weight: 400;
 
+        @media #{$mobile} {
+            padding: 5em;
+        }
+
         .privacy, .welly-potters{
             display: flex;
             align-items: center;
@@ -174,6 +198,12 @@
                 border-radius: 2em;
                 text-align: center;
                 cursor: pointer;
+
+                @media #{$mobile} {
+                    line-height: 1.5em;
+                    width: 1.5em;
+                }
+                
             }
         }
 

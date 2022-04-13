@@ -37,6 +37,23 @@
                     <button class="nav-btn">User Profile</button>
                     <i class="fa-solid fa-bag-shopping nav-fa-landing"></i>
                 </a>
+
+                <div class="mobile-menu">
+                    <i class="fa-solid fa-bars hamburger-nav" id="hamburgerNav"></i>
+                    <i class="fa-solid fa-bag-shopping nav-fa-landing hamburger-bag"></i>
+                </div>
+                
+                <div class="hamburger-menu">
+                    <ul class="hamburger__ul">
+                        <a href="index.html"><li class="nav-li">Home</li></a>
+                        <a href="shop-products-profile.html"><li class="nav-li">Collection</li></a>
+                        <li class="nav-li">About Us</li>
+                    </ul>
+                    <a class="hamburger__btn" href="./profile.html">
+                        <button class="nav-btn">User Profile</button>
+                    </a>
+                </div>
+
             </div>
 
             <div class="landing__intro">
@@ -122,10 +139,10 @@
                         <!-- Cards will be appended here -->
                     </div>
                 <div class="landing__products-more">
-                    <div class="landing__products-cont">
-                        <a class="landing__products-btn" href="./shop-products-profile.html">See all products</a>
+                    <a href="shop-products-profile.html"><div class="landing__products-cont">
+                        <button class="landing__products-btn">See all products</button>
                         <i class="fa-solid fa-arrow-right-long nav-fa-landing"></i>
-                    </div>
+                    </div></a>
                 </div>
             </div>
     </div>
@@ -301,7 +318,7 @@
             </div>
             </div>
           </div>
-          <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a> -->
      
         <!-- Third Modal Ends -->
 
@@ -338,7 +355,7 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a> -->
 
           <!-- Product Added Modal Ends -->
 
@@ -449,10 +466,10 @@
             <input type="text" placeholder="twitter..." id="signUpTwitter">
 
         --> 
-        <!-- <button id="signUpBtn">Sign up</button> -->
+        <!-- <button id="signUpBtn">Sign up</button>
         </div>
 
-        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
+        <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Login</h1>
 
             <input type="text" placeholder="username..." id="loginUsername">
@@ -540,7 +557,7 @@
 
 
 
-        <div style="padding-left: 10rem; padding-top: 10rem;">
+        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Delete product</h1>
 
             <input type="text" placeholder="product id..." id="deleteProductId">
@@ -552,7 +569,7 @@
             <h1>View products</h1>
 
             <button id="viewProductsBtn">View products</button>
-        </div>
+        </div> -->
         <!-- Testing backend functionality end -->
 
         <!-- setting up mixins -->
@@ -587,7 +604,7 @@
                 <div class="footer-lower__left">
                     <h3 class="footer-logo__display">EARTHENWARES</h3>
                     <h5 class="footer-logo__tag">quality local ceramics</h5>
-                </div>+
+                </div>
                 <div class="footer-lower__right">
                     <ul class="footer-nav">
                         <li class="footer-nav__item">home</li>
@@ -603,13 +620,13 @@
                 <h6>In collaboration with Wellington Potters Association</h6>
                 <div class="socials">
                     <div class="socials-container">
-                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/wellingtonpottersassociation/?hl=en"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <div class="socials-container">
-                        <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/wellingtonpottersassociation/"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                     <div class="socials-container">
-                        <i class="fa-brands fa-twitter"></i>
+                        <a href="https://wellingtonpotters.org.nz/"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
