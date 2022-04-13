@@ -2569,6 +2569,19 @@ a:visited {
   line-height: 1.6em;
   color: #4A4F4F;
 }
+.user-profile .user-profile__sign-out {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #F4794F;
+  color: white;
+  border: none;
+  border-radius: none;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  width: 15rem;
+}
 .user-profile .user-profile__bottom {
   margin-top: 7em;
   width: 100%;

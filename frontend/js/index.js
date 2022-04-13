@@ -156,6 +156,24 @@ $(document).ready(function() {
     imagePreview(); // Calling imgPreview fucntions
     // End of Image Preview
 
+    // start of hiding and showing sign-up buttons depending on whether user is seller
+    $("#yesSellerRadio").click(function() {
+        let signUpBtnCont = document.getElementById("signUpBtnCont");
+        signUpBtnCont.classList.remove("hide");
+
+        let signUpBtn = document.getElementById("signUpBtn");
+        signUpBtn.classList.add("hide");
+    });
+
+    $("#noSellerRadio").click(function() {
+        let signUpBtn = document.getElementById("signUpBtn");
+        signUpBtn.classList.remove("hide");
+
+        let signUpBtnCont = document.getElementById("signUpBtnCont");
+        signUpBtnCont.classList.add("hide");
+    });
+    // start of hiding and showing sign-up buttons
+
     $("#createAccountBtn").click(function() {
         signUpFunction();
     });
@@ -280,7 +298,7 @@ $(document).ready(function() {
     $("#signOutBtn").click(function() {
         sessionStorage.clear();
         alert('You have logged out');
-        console.log(sessionStorage);
+        window.location = "./index.html";
     }); // end of sign out
 
     // add product to DB
