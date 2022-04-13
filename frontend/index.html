@@ -37,6 +37,23 @@
                     <button class="nav-btn">User Profile</button>
                     <i class="fa-solid fa-bag-shopping nav-fa-landing"></i>
                 </a>
+
+                <div class="mobile-menu">
+                    <i class="fa-solid fa-bars hamburger-nav" id="hamburgerNav"></i>
+                    <i class="fa-solid fa-bag-shopping nav-fa-landing hamburger-bag"></i>
+                </div>
+                
+                <div class="hamburger-menu">
+                    <ul class="hamburger__ul">
+                        <a href="index.html"><li class="nav-li">Home</li></a>
+                        <a href="shop-products-profile.html"><li class="nav-li">Collection</li></a>
+                        <li class="nav-li">About Us</li>
+                    </ul>
+                    <a class="hamburger__btn" href="./profile.html">
+                        <button class="nav-btn">User Profile</button>
+                    </a>
+                </div>
+
             </div>
 
             <div class="landing__intro">
@@ -54,15 +71,15 @@
                     <p class="landing__intro-subheading">Welcome to Earthenwares, a space designed for potters. A product of Wellington Potters Association and the wellington potters community as a whole. </p> 
                 </div>
                 <div class="landing__intro-proceed">
-                    <button class="landing__intro-btn">Shop Now</button>
-                    <a href="" class="landing__intro-btn-alt">Or scroll to continue</a>
+                    <a class="landing__intro-btn"  href="./shop-products-profile.html">Shop Now</a>
+                    <a href="#landingBody" class="landing__intro-btn-alt">Or continue</a>
                 </div>
             </div>
         </section>
 
         <!-- Content Begins -->
 
-        <section class="landing__body">
+        <section id="landingBody" class="landing__body">
             <div class="landing__background">
             
                 <div class="page-heading__right">
@@ -119,111 +136,13 @@
                 </div>
                 <div class="landing__products">
                     <div id="landingProductsCards" class="landing__products-cards">
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <div class="cards__img">
-                                <img src="./img/landing-img-1.png" alt="" class="cards-img">
-                            </div>
-                            <div class="cards__body">
-                                <div class="cards__body-top">
-                                    <p class="cards__body-name">Product Name</p>
-                                    <p class="cards__body-price">$34</p>
-                                </div>
-                                <div class="cards__body-bottom">
-                                    <p class="cards__body-artist">Jane Doe</p>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Cards will be appended here -->
                     </div>
                 <div class="landing__products-more">
-                    <div class="landing__products-cont">
+                    <a href="shop-products-profile.html"><div class="landing__products-cont">
                         <button class="landing__products-btn">See all products</button>
                         <i class="fa-solid fa-arrow-right-long nav-fa-landing"></i>
-                    </div>
+                    </div></a>
                 </div>
             </div>
     </div>
@@ -259,7 +178,7 @@
                             <div class="form__divider"></div>
                             <div class="form__alts">
                                 <div class="form__submit">
-                                    <button class="login-signup" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Create New Account</button>
+                                    <button class="login-signup"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Create New Account</button>
                                 </div>
                             </div>
                         </div>
@@ -281,7 +200,7 @@
                 <div class="modal__background">
                 <div class="modal-header">
                     <div class="modal-header__back">
-                        <button class="btn btn-primary modal-back-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                        <button class="modal-back-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
                     </div>
                         <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -341,7 +260,7 @@
                   <div class="modal__background">
                     <div class="modal-header">
                         <div class="modal-header__back">
-                            <button class="btn btn-primary modal-back-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                            <button class="modal-back-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
                         </div>
                             <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -399,7 +318,7 @@
             </div>
             </div>
           </div>
-          <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a> -->
      
         <!-- Third Modal Ends -->
 
@@ -436,9 +355,76 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a> -->
 
           <!-- Product Added Modal Ends -->
+
+          <!-- Comment added Successfully Modal Starts -->
+
+          <div class="modal fade" id="exampleModalToggle8" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Comment Added Successfully</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle8" role="button">Add Comment</a>
+
+          <!-- Comment added successfully Modal Ends -->
+
+
+        <!-- Alert Modal Starts -->
+
+        <div class="modal fade" id="exampleModalToggle9" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal__background">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Please enter all details</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form__footer"></div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle9" role="button">Alert</a>
+
+        <!-- Alert Modal Ends -->
         
         <!-- Testing backend functionality start -->
         <!-- <div style="padding-left: 10rem; padding-top: 10rem;" id="profileDivNav">
@@ -480,10 +466,10 @@
             <input type="text" placeholder="twitter..." id="signUpTwitter">
 
         --> 
-        <!-- <button id="signUpBtn">Sign up</button> -->
+        <!-- <button id="signUpBtn">Sign up</button>
         </div>
 
-        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
+        <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Login</h1>
 
             <input type="text" placeholder="username..." id="loginUsername">
@@ -571,7 +557,7 @@
 
 
 
-        <div style="padding-left: 10rem; padding-top: 10rem;">
+        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Delete product</h1>
 
             <input type="text" placeholder="product id..." id="deleteProductId">
@@ -583,7 +569,7 @@
             <h1>View products</h1>
 
             <button id="viewProductsBtn">View products</button>
-        </div>
+        </div> -->
         <!-- Testing backend functionality end -->
 
         <!-- setting up mixins -->
@@ -618,7 +604,7 @@
                 <div class="footer-lower__left">
                     <h3 class="footer-logo__display">EARTHENWARES</h3>
                     <h5 class="footer-logo__tag">quality local ceramics</h5>
-                </div>+
+                </div>
                 <div class="footer-lower__right">
                     <ul class="footer-nav">
                         <li class="footer-nav__item">home</li>
@@ -634,13 +620,13 @@
                 <h6>In collaboration with Wellington Potters Association</h6>
                 <div class="socials">
                     <div class="socials-container">
-                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/wellingtonpottersassociation/?hl=en"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <div class="socials-container">
-                        <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/wellingtonpottersassociation/"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                     <div class="socials-container">
-                        <i class="fa-brands fa-twitter"></i>
+                        <a href="https://wellingtonpotters.org.nz/"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
