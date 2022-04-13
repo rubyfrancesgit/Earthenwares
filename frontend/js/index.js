@@ -211,6 +211,24 @@ $(document).ready(function() {
     imagePreview(); // Calling image preview fucntion
 
 
+    // start of hiding and showing sign-up buttons depending on whether user is seller
+    $("#yesSellerRadio").click(function() {
+        let signUpBtnCont = document.getElementById("signUpBtnCont");
+        signUpBtnCont.classList.remove("hide");
+
+        let signUpBtn = document.getElementById("signUpBtn");
+        signUpBtn.classList.add("hide");
+    });
+
+    $("#noSellerRadio").click(function() {
+        let signUpBtn = document.getElementById("signUpBtn");
+        signUpBtn.classList.remove("hide");
+
+        let signUpBtnCont = document.getElementById("signUpBtnCont");
+        signUpBtnCont.classList.add("hide");
+    });
+    // start of hiding and showing sign-up buttons
+
     $("#createAccountBtn").click(function() {
         signUpFunction();
     });
@@ -351,6 +369,8 @@ $(document).ready(function() {
     // Start of sign out
     $("#signOutBtn").click(function() {
         sessionStorage.clear();
+        alert('You have logged out');
+        window.location = "./index.html";
         // alert('You have logged out');
         let message = "You have logged out!" 
         alertModal(message); 

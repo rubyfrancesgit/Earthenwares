@@ -164,6 +164,10 @@
 
         }
 
+        .user-profile__sign-out {
+            @include button-orange;
+            width: 15rem;
+        }
     
         .user-profile__bottom{
             margin-top: 7em;
