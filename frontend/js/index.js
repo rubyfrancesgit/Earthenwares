@@ -819,6 +819,26 @@ $(document).ready(function() {
             `
         );
 
+        // drop-downs
+        $("#careDropDown").on("click", function(){
+            $(".care-info").slideToggle(600);
+            $(".care-down").toggle();
+            $(".care-up").toggle();
+        })
+
+        $("#shippingDropDown").on("click", function(){
+            $(".shipping-info").slideToggle(600);
+            $(".shipping-down").toggle();
+            $(".shipping-up").toggle();
+        })
+
+        $("#paymentDropDown").on("click", function(){
+            $(".purchase-info").slideToggle(600);
+            $(".purchase-down").toggle();
+            $(".purchase-up").toggle();
+        })
+
+
         $("#commentBtnDiv").append(
             `
                 <button class="login-btn form-btn ${productsFromMongo[i]._id} ${productsFromMongo[i].authorId}" id="submitComment">Post Comment</button>
