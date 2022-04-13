@@ -127,6 +127,21 @@ $(document).ready(function() {
         }
     }); // end of initial ajax to get url data from local json
 
+    // start of user profile btn click
+    $("#indexUserProfile").click(function() {
+        console.log("clic");
+        let userId = sessionStorage.getItem('userID');
+
+        if(!userId) {
+            $("#indexLoginModal").modal("show");
+        } else {
+            window.location = "./profile.html";
+        }
+    });
+
+
+    // end of user profile btn click
+
     // Beginning of Image Preview
     function imagePreview(){
 
@@ -168,10 +183,17 @@ $(document).ready(function() {
     imagePreview(); // Calling image preview fucntion
 
 
+    $("#createAccountBtn").click(function() {
+        signUpFunction();
+    });
+
     // start of sign up
     $("#signUpBtn").click(function() {
-        
-    
+        signUpFunction();
+
+    }); // end of sign up
+
+    function signUpFunction() {
         event.preventDefault();
 
         let username = $("#signUpUsername").val();
@@ -214,6 +236,7 @@ $(document).ready(function() {
                 success: function(user) {
                     if (user !== "Username already taken. Please try another name") {
                         alert("Thanks for signing up! Please login.");
+                        $("#exampleModalToggle3").modal("hide");
 
                         // clearning inputs
                         $("#signUpUsername").val("");
@@ -233,7 +256,7 @@ $(document).ready(function() {
                 }
             }); // end of register user ajax
         } // end of if/else checking register form details
-    }); // end of sign up
+    }
 
     // start of login
     $("#loginBtn").click(function() {
@@ -267,6 +290,7 @@ $(document).ready(function() {
                         $("#loginPassword").val("");
                     } else {
                         alert("Logged in");
+                        $("#indexLoginModal").modal("hide");
 
                         // storing logged-in user's details
                         sessionStorage.setItem("userID", user["_id"]);
@@ -398,6 +422,17 @@ $(document).ready(function() {
 
     // ----- shop page start -----
 
+    $("#profileBackBtn").click(function() {
+        let profileBackBtn = document.getElementById("profileBackBtn");
+        profileBackBtn.classList.add("hide");
+        
+        let productBackBtn = document.getElementById("productBackBtn");
+        productBackBtn.classList.remove("hide");
+
+        document.getElementById("productSection").style.display = "none";
+        document.getElementById("productDetails").style.display = "block";
+    });
+
     // reusable code for product cards (is called initially from the first successful ajax function)
     function generateShopCard(productsFromMongo) {
         
@@ -449,12 +484,18 @@ $(document).ready(function() {
                 console.log(this.id);
                 console.log(this.classList[1]);
 
+                let productBackBtn = document.getElementById("productBackBtn");
+                productBackBtn.classList.remove("hide");
+
                 let thisUserId = this.classList[1];
 
                 document.getElementById("productSection").style.display = "none";
                 document.getElementById("productDetails").style.display = "block";
 
                 $("#productBackBtn").click(function() {
+                    
+                    let productBackBtn = document.getElementById("productBackBtn");
+                    productBackBtn.classList.add("hide");
                     document.getElementById("productSection").style.display = "block";
                     document.getElementById("productDetails").style.display = "none";
                 });
@@ -605,6 +646,20 @@ $(document).ready(function() {
             document.getElementById("artistProfile").style.display = "block";
             const profileCurvedText = document.getElementById("artistProfileCurvedText");
 
+            let profileBackBtn = document.getElementById("profileBackBtn");
+            profileBackBtn.classList.remove("hide");
+            
+            let productBackBtn = document.getElementById("productBackBtn");
+            productBackBtn.classList.add("hide");
+
+            $("#cardBottomBody").empty();
+            $("#artistProfileName").empty();
+            $("#artistProfileDescription").empty();
+            $("#artistProfileImgDiv").empty();
+            $("#artistProfileInstaDiv").empty();
+            $("#artistProfileFacebookDiv").empty();
+            $("#artistProfileTwitterDiv").empty();
+
             $("#cardBottomBody").append(
                 `
                 <p class="card-artist" id="">${usersFromMongo[i].storeName}</p>
@@ -666,6 +721,7 @@ $(document).ready(function() {
         let productId = productsFromMongo[i]._id;
         viewComments(productId);
         
+        
         $("#commentContainer").empty();
         $("#productImages").empty();
         $("#productInfo").empty();
@@ -715,17 +771,6 @@ $(document).ready(function() {
         $("#artistProfileListings").append(
             `
                 <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
-                    <div class="edit-btns">
-                        <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="editIcon" href="./update-product.html">
-                            <i class="fa-solid fa-circle fa-stack-2x"></i>
-                            <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                        </span>
-
-                        <span class="fa-stack fa-2x" value=${productsFromMongo[i]._id} id="trashIcon" data-bs-toggle="modal" href="#exampleModalToggle4">
-                            <i class="fa-solid fa-circle circle-trash fa-stack-2x"></i>
-                            <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
                     <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap">
                     <div class="card-body">
                     <div class="card-body-top">
@@ -879,7 +924,7 @@ $(document).ready(function() {
 
                         $("#profileName").append(
                             `
-                                <h3 class="artist-name">${usersFromMongo[i].storeName}</h3>
+                                <h3 class="user-name">${usersFromMongo[i].storeName}</h3>
                             `
                         );
                     } else {
@@ -893,18 +938,18 @@ $(document).ready(function() {
 
                         $("#profileName").append(
                             `
-                                <h3 class="artist-name">${usersFromMongo[i].username}</h3>
+                                <h3 class="user-name">${usersFromMongo[i].username}</h3>
                             `
                         );
                     }
 
                     $("#profileDescription").append(
-                        `<p class="artist-about">${usersFromMongo[i].storeDescription}</p>`
+                        `<p class="user-about">${usersFromMongo[i].storeDescription}</p>`
                     );
 
                     $("#profileImgDiv").append(
                         `
-                            <img class="artist-img" src=${usersFromMongo[i].profilePicture} alt="store image">
+                            <img class="user-img" src=${usersFromMongo[i].profilePicture} alt="store image">
                         `
                     )
 
