@@ -21,15 +21,15 @@
 
     <body>
 
-        <section class="artist">
+        <section class="user">
         <!-- start of nav -->
 
-        <div class="artist-background">
+        <div class="user-background">
 
-            <img class="artist-background__left" src="/frontend/img/Frame 204.png">
+            <img class="user-background__left" src="/frontend/img/Frame 204.png">
         
             <div class="page-heading">
-                <img class="artist-background__right" src="/frontend/img/Asset 46squig.svg">
+                <img class="user-background__right" src="/frontend/img/Asset 46squig.svg">
                 <svg class="svg-curve" viewBox="0 0 425 300">
                     <path id="curve" d="M23.69,.25C15.73,13.79,3.91,38.04,1.37,70.09-.03,87.79-4.15,139.89,33.05,177.37c33.38,33.63,84.16,39.51,123.84,27.36,51.48-15.77,81.13-60.68,90-99.36,4.22-18.43,3.52-34.46,2.16-45.36"/>
                     <text x="65">
@@ -65,12 +65,10 @@
                             <button class="secondary-nav-back">Go Back</button>
                         </div> -->
                         <a href="index.html"><li class="secondary-nav-li">Home</li></a>
-                        <li class="secondary-nav-li">Collection</li>
+                        <a class="secondary-nav-li" href="./shop-products-profile.html">Collection</a>
                         <li class="secondary-nav-li">About Us</li>
                     </ul>
                     <div class="secondary-nav__btn">
-                        <button class="secondary-nav-btn">User Profile</button>
-                        <i class="fa-solid fa-bag-shopping secondary-nav-fa-landing"></i>
                     </div>
                 <!-- </div>
             </div> -->
@@ -168,8 +166,8 @@
         <!-- update complete modal end -->
 
         <!-- start of profile -->
-        <div class="artist-profile" id="userProfileSection">
-            <div class="artist-profile__top">
+        <div class="user-profile" id="userProfileSection">
+            <div class="user-profile__top">
                 <div class="top-left">
                     <div class="top-left__left">
                         <div id="profileImgDiv"></div>
@@ -189,7 +187,7 @@
                             </span>
                         </button>
                         
-                        <div class="artist-info">
+                        <div class="user-info">
                             <div id="profileName"></div>
                             <div id="profileDescription"></div>
                         </div>
@@ -197,8 +195,8 @@
                 </div>
             </div>
 
-            <div class="artist-profile__bottom">
-                <div class="artist-products" id="profileListings">
+            <div class="user-profile__bottom">
+                <div class="user-products" id="profileListings">
                 </div>
             </div>
         </div>
