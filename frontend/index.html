@@ -33,7 +33,7 @@
                     <a href="shop-products-profile.html"><li class="nav-li">Collection</li></a>
                     <li class="nav-li">About Us</li>
                 </ul>
-                <a class="nav__btn" href="./profile.html">
+                <a class="nav__btn" id="indexUserProfile">
                     <button class="nav-btn">User Profile</button>
                     <i class="fa-solid fa-bag-shopping nav-fa-landing"></i>
                 </a>
@@ -248,7 +248,7 @@
 
         <!-- Login/Signup Modal Flow Begins-->
 
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal fade" id="indexLoginModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-xl">
               <div class="modal-content">
                   <div class="modal__background">
@@ -263,14 +263,14 @@
                         <div class="login">        
                             <div class="form__input">
                                 <label for="username">Username *</label>
-                                <input name="username" class="login-input form-text-input" type="text" placeholder="username...">
+                                <input name="username" class="login-input form-text-input" type="text" placeholder="username..." id="loginUsername">
                             </div>
                             <div class="form__input">
                                 <label for="password">Password *</label>
-                                <input name="password" class="login-input form-text-input" type="text"      placeholder="email...">
+                                <input name="password" class="login-input form-text-input" type="text"      placeholder="email..." id="loginPassword">
                             </div>
                             <div class="form__btns">
-                                <button class="login-btn form-btn" >Login</button>
+                                <button class="login-btn form-btn" id="loginBtn">Login</button>
                                 <button class="login-btn form-btn-alt">Forgot your password?</button>
                             </div>
                             <div class="form__divider"></div>
@@ -334,7 +334,7 @@
                             </div>
                             </div>
                             <div class="form__btns">
-                                <button class="signup-btn form-btn">Sign Up</button>
+                                <button class="signup-btn form-btn" id="signUpBtn">Sign Up</button>
                                 <button class="signup-btn form-btn" id="signUpBtnCont" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Proceed to Store Registration</button>
                             </div>
                         </div>
@@ -404,7 +404,7 @@
                                 <input name="twitter" id="signUpTwitter" class="login-input form-text-input" type="text" placeholder="@wellingtonPottersAssociation">
                             </div>
                             <div class="form__btns">
-                                <button class="login-btn form-btn" id="signUpBtn">Create Account</button>
+                                <button class="login-btn form-btn" id="createAccountBtn">Create Account</button>
                             </div>
                         </div>
                     </div>
@@ -508,7 +508,7 @@
             <input type="text" placeholder="password..." id="loginPassword">
 
             <button id="loginBtn">Login</button>
-        </div>
+        </div> -->
 
         <div style="padding-left: 10rem; padding-top: 10rem;">
             <h1>Sign out</h1>
