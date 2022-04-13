@@ -2,6 +2,13 @@ $(document).ready(function() {
     let url;
     let userId;
 
+        // mobile nav
+
+        $("#hamburgerNav").on("click", function(){
+            $(".hamburger-menu").toggle()
+        })
+
+
         // Start of grab to scroll section home page
 
             // const ele = document.getElementById('landingProductsCards');
