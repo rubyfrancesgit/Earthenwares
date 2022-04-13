@@ -2,6 +2,34 @@ $(document).ready(function() {
     let url;
     let userId;
 
+        // mobile nav
+
+        $("#hamburgerNav").on("click", function(){
+            $(".hamburger-menu").toggle()
+        })
+
+        // product-drop-downs
+        $("#careDropDown").on("click", function(){
+            $(".care-info").toggle(600);
+            $(".care-up").toggle();
+            $(".care-down").toggle();
+            
+        })
+
+        $("#shippingDropDown").on("click", function(){
+            $(".shipping-info").toggle(600)
+            $(".shipping-up").toggle();
+            $(".shipping-down").toggle();
+        })
+
+
+        $("#paymentDropDown").on("click", function(){
+            $(".purchase-info").toggle(600)
+            $(".purchase-up").toggle();
+            $(".purchase-down").toggle();
+        })
+
+
         // Start of grab to scroll section home page
 
             // const ele = document.getElementById('landingProductsCards');
@@ -667,6 +695,25 @@ $(document).ready(function() {
                 </div>
             `
         );
+
+        $(".product-img-one").on("click", function(){
+            $(".images-right").empty().append(
+                `<img class="main-image" src=${productsFromMongo[i].imgOneUrl}>`
+            )
+        })
+
+        $(".product-img-two").on("click", function(){
+            $(".images-right").empty().append(
+                `<img class="main-image" src=${productsFromMongo[i].imgTwoUrl}>`
+            )
+        })
+
+        $(".product-img-three").on("click", function(){
+            $(".images-right").empty().append(
+                `<img class="main-image" src=${productsFromMongo[i].imgThreeUrl}>`
+            )
+        })
+
 
         // appending product info on product detail page
         $("#productInfo").append(
