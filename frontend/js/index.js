@@ -48,6 +48,42 @@ $(document).ready(function() {
 
 
 // End of grab to scroll section home page
+
+    // Alert Modal Function Begins
+
+    function alertModal(message){
+        $("#exampleModalToggle9").modal("show").empty().append(
+            `
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal__background">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="modal-heading">
+                        <p class="modal-subtitle">${message}</p>
+                    </div>
+                    <div class="delete">
+                        <div class="delete__btns">
+                            <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form__footer"></div>
+            </div>
+            </div>
+            </div>
+        </div>
+            `
+        );
+    }
+
+    // Alert Modal Function Ends
  
     // start of initial ajax to get url data from local json
     $.ajax({
@@ -209,7 +245,9 @@ $(document).ready(function() {
         console.log(username, password);
 
         if (username == "" || password == "") {
-            alert("Please enter all details");
+            // alert("Please enter all details");
+            let message = "Please enter all details!" 
+            alertModal(message);
         } else {
             $.ajax({
                 url: `http://${url}/loginUser`,
@@ -272,10 +310,14 @@ $(document).ready(function() {
         
         console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
         if(!userId) {
-            alert("Sign in to add product")
+            // alert("Sign in to add product")
+           let message = "Sign in to add product!" 
+            alertModal(message); 
         } else {
             if(isNaN(price) == true) {
-                alert("Price must be a number");
+                // alert("Price must be a number");
+                let message = "Price must be a number!" 
+                alertModal(message); 
             } else if (isNaN(price) == false) {
                 if (productName == "" || description == "" || price == "" && (imgOneUrl == "" && imgTwoUrl == "" && imgThreeUrl == "")) {
                     alert("Please login and enter all fields");
@@ -299,7 +341,9 @@ $(document).ready(function() {
                         },
                         success: function(product) {
                             console.log(product);
-                            alert("Product added");
+                            // alert("Product added");
+                            let message = "Product added!" 
+                            alertModal(message); 
         
                             $("#addProductName").val("");
                             $("#addProductDescription").val("");
@@ -323,7 +367,7 @@ $(document).ready(function() {
 
     function generateHomeCard(productsFromMongo) {
         for(let i = 0; i < productsFromMongo.slice(0,8).length; i++) {
-            console.log(productsFromMongo[i]);
+            // console.log(productsFromMongo[i]);
 
             
 
@@ -338,7 +382,7 @@ $(document).ready(function() {
                     <p class="cards__body-name">${productsFromMongo[i].productName}</p>
                     <p class="cards__body-price">$${productsFromMongo[i].price}</p>
                     </div>
-                    <div class="cards__body-bottom">
+                    <div class="cards__body-bottom" id="cardBottomBody">
                         <p class="cards__body-artist">Jane Doe</p>
                     </div>
                 </div>
@@ -371,7 +415,7 @@ $(document).ready(function() {
                                     <p class="cards__body-name">${productsFromMongo[i].productName}</p>
                                     <p class="cards__body-price">$${productsFromMongo[i].price}</p>
                                 </div>
-                                <div class="cards__body-bottom" id="cardBttomBody">
+                                <div class="cards__body-bottom" id="cardBottomBody">
                                     
                                 </div>
                             </div>
@@ -386,11 +430,12 @@ $(document).ready(function() {
                 type: "GET",
                 dataType: "json",
                 success: function(usersFromMongo) {
-                    $("#cardBottomBody").append(
-                        `
-                            <p class="cards__body-artist">${usersFromMongo[i].storeName}</p>
-                        `
-                    )
+                    // console.log(usersFromMongo);
+                    // $("#cardBottomBody").append(
+                    //     `
+                    //         <p class="cards__body-artist">${usersFromMongo.storeName}</p>
+                    //     `
+                    // )
                 },
                 error: function() {
                     // alert("Unable to get users");
@@ -442,7 +487,9 @@ $(document).ready(function() {
                         }
                     },
                     error: function() {
-                        alert("Unable to get users");
+                        // alert("Unable to get users");
+                        let message = "Unable to get users!" 
+                        alertModal(message); 
                     }
                 }); // end of get users ajax
             }); // end of product detail appending
@@ -705,7 +752,9 @@ $(document).ready(function() {
         userId = sessionStorage.getItem('userID');
 
         if (!userId) {
-            alert("Please login to comment");
+            // alert("Please login to comment");
+            let message = "Please log in to comment!" 
+            alertModal(message); 
         } else {
             $("#commentModal").modal("show");
         }
@@ -727,7 +776,9 @@ $(document).ready(function() {
             }
             
             if (!userId) {
-                alert("Please login to comment");
+                // alert("Please login to comment");
+                let message = "Please login to comment!" 
+                alertModal(message); 
             } else {
                 $.ajax({
                     url: `http://${url}/createComment`,
@@ -741,7 +792,9 @@ $(document).ready(function() {
                     },
                     success: function(comment) {
                         console.log(comment);
-                        alert("Comment posted");
+                        // alert("Comment posted");
+                        let message = "Comment posted!!" 
+                        alertModal(message); 
                         document.querySelector("#commentField").value = "";
                         $("#commentModal").modal("hide");
                     },
