@@ -769,7 +769,7 @@ $(document).ready(function() {
         // THIS CODE ONLY ADDS SELECTED PRODUCT - needs fixing
         $("#artistProfileListings").append(
             `
-                <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
+                <div class="cards" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
                     <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap">
                     <div class="card-body">
                     <div class="card-body-top">
@@ -904,6 +904,9 @@ $(document).ready(function() {
                     const profileCurvedText = document.getElementById("profileCurvedText");
 
                     if (usersFromMongo[i].seller === true) {
+
+                        $("#postListing").css("display", "block");
+                        
                         profileCurvedText.innerHTML = "SELLER PROFILE."
 
                         $("#cardBottomBody").append(

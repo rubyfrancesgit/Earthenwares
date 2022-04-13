@@ -4,9 +4,40 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
     text-transform: uppercase;
     z-index: 1000;
+
+    &__top{
+        width: 100%;
+        position: absolute;
+        display: none;
+        padding: 2vw 13vw;
+        z-index: 5000;
+
+
+        .secondary-nav__btn{
+            width: 100%;
+            gap: 1em;
+            display: none;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+
+        }
+
+        .secondary-nav-post{
+            @include button-text;
+            margin-right: 1em;
+        }
+
+        .fa-circle-plus{
+            font-size: 3em;
+            color: $orange;
+        }
+     
+
+    }
     
     &__logo{
         min-width: 18vw;
