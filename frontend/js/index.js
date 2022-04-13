@@ -211,9 +211,13 @@ $(document).ready(function() {
         imagePreview();
 
         if (username == "" || email == "" || password == "") {
-            alert("Please enter all fields");
+            // alert("Please enter all fields");
+            let message = "Please enter all fields!" 
+            alertModal(message); 
         } else if ((seller == "yes") && (username == "" || email == "" || profilePicture == "" || password == "" || storeName == "" || storeDescription == "")) {
-            alert("Please enter all fields, including store fields");
+            // alert("Please enter all fields, including store fields");
+            let message = "Please enter all fields, including store fields!" 
+            alertModal(message); 
         } else {
             console.log("Form complete");
 
@@ -235,7 +239,9 @@ $(document).ready(function() {
                 },
                 success: function(user) {
                     if (user !== "Username already taken. Please try another name") {
-                        alert("Thanks for signing up! Please login.");
+                        // alert("Thanks for signing up! Please login.");
+                        let message = "Thanks for signing up! Please login!" 
+                        alertModal(message); 
                         $("#exampleModalToggle3").modal("hide");
 
                         // clearning inputs
@@ -243,7 +249,9 @@ $(document).ready(function() {
                         $("#signUpEmail").val("");
                         $("#signUpPassword").val("");
                     } else {
-                        alert('Username already taken. Please use a different username');
+                        // alert('Username already taken. Please use a different username');
+                        let message = "Username already taken. Please use a different username!" 
+                        alertModal(message); 
 
                         // clearning inputs
                         $("#signUpUsername").val("");
@@ -281,15 +289,21 @@ $(document).ready(function() {
                 },
                 success: function(user) {
                     if (user == "User not found. Please register") {
-                        alert("User not found. Please register");
+                        // alert("User not found. Please register");
+                        let message = "User not found. Please register!" 
+                        alertModal(message); 
                     } else if (user == "Not authorized") {
-                        alert("Please try again with the correct details");
+                        // alert("Please try again with the correct details");
+                        let message = "Please try again with the correct details!" 
+                        alertModal(message); 
 
                         // clearing inputs
                         $("#loginUsername").val("");
                         $("#loginPassword").val("");
                     } else {
-                        alert("Logged in");
+                        // alert("Logged in");
+                        let message = "Logged In!" 
+                        alertModal(message); 
                         $("#indexLoginModal").modal("hide");
 
                         // storing logged-in user's details
@@ -309,7 +323,9 @@ $(document).ready(function() {
     // Start of sign out
     $("#signOutBtn").click(function() {
         sessionStorage.clear();
-        alert('You have logged out');
+        // alert('You have logged out');
+        let message = "You have logged out!" 
+        alertModal(message); 
         console.log(sessionStorage);
     }); // end of sign out
 
@@ -344,7 +360,9 @@ $(document).ready(function() {
                 alertModal(message); 
             } else if (isNaN(price) == false) {
                 if (productName == "" || description == "" || price == "" && (imgOneUrl == "" && imgTwoUrl == "" && imgThreeUrl == "")) {
-                    alert("Please login and enter all fields");
+                    // alert("Please login and enter all fields");
+                    let message = "Please login and enter all fields!" 
+                    alertModal(message); 
                 } else {
                     $.ajax({
                         url: `http://${url}/addProduct`,
@@ -844,7 +862,9 @@ $(document).ready(function() {
                         $("#commentModal").modal("hide");
                     },
                     error: function() {
-                        alert("Unable to post comment");
+                        // alert("Unable to post comment");
+                        let message = "Unable to post comment!" 
+                        alertModal(message); 
                     }
                 }); // end of ajax
             } // end of if/else statement
@@ -1037,7 +1057,9 @@ $(document).ready(function() {
                             console.log("Deleted");
                         },
                         error: function() {
-                            alert("Error: cannot delete");
+                            // alert("Error: cannot delete");
+                            let message = "Cannot Delete!" 
+                            alertModal(message); 
                         }
                     });
                 });
@@ -1118,7 +1140,9 @@ $(document).ready(function() {
                             })
                         },
                         error: function() {
-                            alert("Error: cannot update");
+                            // alert("Error: cannot update");
+                            let message = "Error: Cannot update!" 
+                            alertModal(message); 
                         }
                     }); // end of ajax
                 });
