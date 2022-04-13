@@ -8,26 +8,6 @@ $(document).ready(function() {
             $(".hamburger-menu").toggle()
         })
 
-        // product-drop-downs
-        $("#careDropDown").on("click", function(){
-            $(".care-info").toggle(600);
-            $(".care-up").toggle();
-            $(".care-down").toggle();
-            
-        })
-
-        $("#shippingDropDown").on("click", function(){
-            $(".shipping-info").toggle(600)
-            $(".shipping-up").toggle();
-            $(".shipping-down").toggle();
-        })
-
-
-        $("#paymentDropDown").on("click", function(){
-            $(".purchase-info").toggle(600)
-            $(".purchase-up").toggle();
-            $(".purchase-down").toggle();
-        })
 
 
         // Start of grab to scroll section home page
