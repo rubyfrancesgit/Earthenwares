@@ -191,6 +191,32 @@
 .product-images{
     display: flex;
 
+    @media #{$laptop}{
+        flex-basis: 40%;
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    @media #{$smallScreen}{
+        flex-basis: 40%;
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    @media #{$tablet}{
+        flex-basis: 40%;
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    @media #{$mobile}{
+        // flex-basis: 40%;
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+ 
+
 }
 
 .images-left{
@@ -198,6 +224,22 @@
     flex-direction: column;
     gap: 1vw;
     padding-right: 1vw;
+
+    @media #{$laptop}{
+        flex-direction: row;
+    }
+
+    @media #{$smallScreen}{
+        flex-direction: row;
+    }
+
+    @media #{$tablet}{
+        flex-direction: row;
+    }
+
+    @media #{$mobile}{
+        flex-direction: row;
+    }
 }
 
 .product-img-one, .product-img-two, .product-img-three{
@@ -211,10 +253,50 @@
         transition: 0.4s;
         cursor: pointer;
     }
+
+    @media #{$laptop}{
+        height: 11vw; 
+        width: 11vw;  
+    }
+
+    @media #{$smallScreen}{
+        height: 11vw;
+        width: 11vw;  
+    }
+
+    @media #{$tablet}{
+        height: 11vw;
+        width: 11vw;  
+    }
+
+    @media #{$mobile}{
+        height: 11vw;
+        width: 11vw;  
+    }
 }
 
 .main-image{
     height: 26vw;
+
+    @media #{$laptop}{
+        height: 35vw;
+        width: 35vw;
+    }
+
+    @media #{$smallScreen}{
+        height: 35vw;
+        width: 35vw;
+    }
+
+    @media #{$tablet}{
+        height: 35vw;
+        width: 35vw;
+    }
+
+    @media #{$mobile}{
+        height: 35vw;
+        width: 35vw;
+    }
 }
 
 .product-description{
@@ -424,3 +506,4 @@
         }
     }
 }
+

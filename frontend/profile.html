@@ -76,6 +76,180 @@
         </div>
         <!-- end of nav -->
 
+        <div class="modal fade" id="indexLoginModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-heading">
+                        <h3 class="modal-title">Login</h3>
+                    </div>
+                    <div class="form"> 
+                        <div class="login">        
+                            <div class="form__input">
+                                <label for="username">Username *</label>
+                                <input name="username" class="login-input form-text-input" type="text" placeholder="username..." id="loginUsername">
+                            </div>
+                            <div class="form__input">
+                                <label for="password">Password *</label>
+                                <input name="password" class="login-input form-text-input" type="text"      placeholder="email..." id="loginPassword">
+                            </div>
+                            <div class="form__btns">
+                                <button class="login-btn form-btn" id="loginBtn">Login</button>
+                                <button class="login-btn form-btn-alt">Forgot your password?</button>
+                            </div>
+                            <div class="form__divider"></div>
+                            <div class="form__alts">
+                                <div class="form__submit">
+                                    <button class="login-signup"data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Create New Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Second Modal Begins -->
+
+          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"       aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal__background">
+                <div class="modal-header">
+                    <div class="modal-header__back">
+                        <button class="modal-back-btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                    </div>
+                        <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-heading">
+                        <h3 class="modal-title">Sign Up</h3>
+                    </div>
+                    <div class="form"> 
+                        <div class="signup">      
+                            <div class="form__input">
+                                <label for="email">Email *</label>
+                                <input id="signUpEmail" name="email" class="signup-input form-text-input" type="text"      placeholder="email...">
+                            </div>  
+                            <div class="form__input">
+                                <label for="username">Username *</label>
+                                <input id="signUpUsername" name="username" class="signup-input form-text-input" type="text" placeholder="username...">
+                            </div>
+                            <div class="form__input">
+                                <label for="password">Password *</label>
+                                <input id="signUpPassword" name="password" class="signup-input form-text-input" type="text"      placeholder="password...">
+                            </div>
+                            <div class="form__radio-all">
+                            <p for="">Will you be selling your work?</p>
+                            <div class="form__input form__radio-box">
+                                <div class="form__radio">
+                                    <input class="form-radio" type="radio" name="signUpSeller" value="yes" id="yesSellerRadio">
+                                    <label class="form__radio-header" for="yes">yes</label>
+                                </div>                    
+                                <div class="form__radio">
+                                    <input class="form-radio" type="radio" name="signUpSeller" value="no" id="noSellerRadio">
+                                    <label class="form__radio-header" for="no">no</label>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="form__btns">
+                                <button class="signup-btn form-btn hide" id="signUpBtn">Sign Up</button>
+                                <button class="signup-btn form-btn hide" id="signUpBtnCont" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Proceed to Store Registration</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Modal Ends -->
+
+          <!-- Third Modal Begins -->
+
+          <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                    <div class="modal-header">
+                        <div class="modal-header__back">
+                            <button class="modal-back-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>Go back</button>
+                        </div>
+                            <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="modal-heading">
+                        <h3 class="modal-title">Sign Up</h3>
+                    </div>
+                    <div class="form"> 
+                        <div class="signup__store">
+                            <div class="signup__store-box">
+                                <div class="form__input-box">
+                                    <div class="form__input form__input-alt">
+                                        <label for="storeName">Store Name *</label>
+                                        <input name="storeName" id="signUpStoreName" class="signup-input form-text-input" type="text" placeholder="Enter store name here">
+                                    </div>
+                                    <div class="form__image-preview-box">
+                                        <div class="form__input form__input-alt">
+                                            <label for="imageURL">Image URL *</label>
+                                            <div class="form__image-preview-box">
+                                                <input name="imageURL" id="signUpProfilePicture" class="login-input form-text-input" type="text"      placeholder="image url">
+                                                <button class="signup__image-preview" id="imgPreviewBtnModal" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__image-preview"></div>
+                            </div>
+                         
+                            <div class="form__input">
+                                <label for="description">Store Description *</label>
+                                <textarea name="description" id="signUpStoreDescription" class="login-input form-text-input" type="text" placeholder="store description"></textarea>
+                            </div>
+                            <div class="form__input">
+                                <label for="instagram">Instagram</label>
+                                <input name="instagram" id="signUpInstagram" class="login-input form-text-input signup-description" type="text" placeholder="@wellingtonPottersAssociation">
+                            </div>
+                            <div class="form__input">
+                                <label for="facebook">Facebook</label>
+                                <input name="facebook" id="signUpFacebook" class="login-input form-text-input" type="text" placeholder="facebook.com/wellingtonPotters">
+                            </div>
+                            <div class="form__input">
+                                <label for="twitter">Twitter</label>
+                                <input name="twitter" id="signUpTwitter" class="login-input form-text-input" type="text" placeholder="@wellingtonPottersAssociation">
+                            </div>
+                            <div class="form__btns">
+                                <button class="login-btn form-btn" id="createAccountBtn">Create Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form__footer"></div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a> -->
+     
+        <!-- Third Modal Ends -->
+
+        <!-- Login/Signup Modal Flow Ends-->
+
         <!-- Delete Product Modal Flow Begins -->
 
         <!-- First Modal Starts -->
@@ -164,6 +338,72 @@
             </div>
         </div>
         <!-- update complete modal end -->
+
+         <!-- Product Added Modal Begins -->
+        
+         <div class="modal fade" id="exampleModalToggle6" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Product Added Successfully</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a> -->
+
+          <!-- Product Added Modal Ends -->
+
+
+         <!-- Alert Modal Starts -->
+
+         <div class="modal fade" id="exampleModalToggle9" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal__background">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Please enter all details</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form__footer"></div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Modal Ends -->
 
         <!-- start of profile -->
         <div class="user-profile" id="userProfileSection">
