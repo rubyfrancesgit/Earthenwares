@@ -4,18 +4,59 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
     text-transform: uppercase;
     z-index: 1000;
+
+    &__top{
+        width: 100%;
+        position: absolute;
+        display: none;
+        padding: 2vw 13vw;
+        z-index: 5000;
+
+
+        .secondary-nav__btn{
+            width: 100%;
+            gap: 1em;
+            display: none;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+
+        }
+
+        .secondary-nav-post{
+            @include button-text;
+            margin-right: 1em;
+        }
+
+        .fa-circle-plus{
+            font-size: 3em;
+            color: $orange;
+        }
+     
+
+    }
     
     &__logo{
-        min-width: 15vw;
-        max-width: 15vw;
+        min-width: 18vw;
+        max-width: 18vw;
         object-fit: contain;
         z-index: 51;
 
         .secondary-nav-logo{
             object-fit: contain;
+        }
+
+        @media #{$tablet}{
+            min-width: 40vw;
+            max-width: 40vw;
+        }
+
+        @media #{$mobile}{
+            min-width: 60vw;
+            max-width: 60vw;
         }
     }
 
@@ -54,6 +95,14 @@
         color: $darkgrey;
         margin-bottom: 0;
         padding: 0;
+
+        @media #{$laptop, $smallScreen}{
+            gap: 5em;
+        }
+
+        @media #{$tablet, $mobile}{
+            display: none;
+        }
     }
 
     &-li{
@@ -73,17 +122,95 @@
         flex-direction: row;
         gap: 3em;
         align-items: center;
-        padding-right: 10vw;
+        // padding-right: 10vw;
+
+        @media #{$laptop, $smallScreen}{
+            padding-right: 5vw;
+        }
+
+        @media #{$tablet, $mobile}{
+            display: none;
+        }
     }
 
 
     &-fa-landing{
         color: $darkgrey;
         font-size: 3em;
+
+        @media #{$laptop, $smallScreen}{
+            font-size: 2.5em;
+        }
     }
 
     &-btn{
         @include button-orange;
         font-size: 1.8em;
+
+        @media #{$laptop, $smallScreen}{
+            padding: .5em 1.5em;
+        }
+    }
+
+    .mobile-menu{
+        display: flex;
+        padding-top: 5vw;
+        gap: 2vw;
+    }
+
+    .hamburger-nav{
+        display: none;
+        color: $darkgrey;
+        font-size: 3em;
+        padding-right: 2vw;
+
+        @media #{$tablet, $mobile}{
+            display: block;
+        }
+
+
+    }
+
+    .hamburger-bag{
+        display: none;
+        color: $darkgrey;
+
+        @media #{$tablet, $mobile}{
+            display: block;
+            padding-right: 5vw;
+            font-size: 3em;
+        }
+    }
+
+    .hamburger-menu{
+        width: 100%;
+        position: absolute;
+        margin-top: 20vw;
+        background-color: $lightgrey;
+        padding: 5vw;
+        z-index: 600;
+        display: none;
+
+        .hamburger__ul{
+            width: 100%;
+            padding: 0;
+            font-size: 1.2em;
+            font-weight: 300;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger__btn{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

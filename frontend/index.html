@@ -24,6 +24,14 @@
 
         <section class="landing__hero">
             <div class="landing__hero-overlay"></div>
+
+            <div class="secondary-nav__top" id="postListing">
+                <a href="upload-product.html"><div class="secondary-nav__btn" >
+                    <button class="secondary-nav-post">Post a Listing</button>
+                    <i class="fa-solid fa-circle-plus nav-fa-landing"></i>
+                </div></a>
+            </div>
+
             <div class="nav">
                 <div class="nav__logo">
                     <img src="./img/LOGO-SVG.svg" alt="" class="nav-logo">
@@ -185,7 +193,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button> -->
                 </div>
               </div>
             </div>
@@ -318,7 +325,6 @@
             </div>
             </div>
           </div>
-          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login Modal</a> -->
      
         <!-- Third Modal Ends -->
 
@@ -355,11 +361,40 @@
               </div>
             </div>
           </div>
-          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle6" role="button">Add Modal</a> -->
 
           <!-- Product Added Modal Ends -->
 
-         
+          <!-- Comment added Successfully Modal Starts -->
+
+          <div class="modal fade" id="exampleModalToggle8" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                  <div class="modal__background">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            <p class="modal-subtitle">Comment Added Successfully</p>
+                        </div>
+                        <div class="delete">
+                            <div class="delete__btns">
+                                <button class="delete-btn-alt" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="form__footer"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment added successfully Modal Ends -->
 
 
         <!-- Alert Modal Starts -->
@@ -452,109 +487,7 @@
 
             <button id="signOutBtn">Sign out</button>
 
-        </div> -->
-
-        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
-            <h1>Add product</h1>
-
-            <input type="text" placeholder="product name..." id="addProductName">
-
-            <input type="text" placeholder="description..." id="addProductDescription">
-
-            <input type="text" placeholder="price..." id="addProductPrice">
-
-            <input type="text" placeholder="Image url..." id="addProductImgOneUrl">
-
-            <input type="text" placeholder="Image url..." id="addProductImgTwoUrl">
-
-            <input type="text" placeholder="Image url..." id="addProductImgThreeUrl">
-
-            <input type="text" placeholder="Category..." id="addProductCategory">
-
-            <select id="addProductColour">
-                <option value="beige">Beige</option>
-                <option value="black">Black</option>
-                <option value="blue">Blue</option>
-                <option value="brown">Brown</option>
-                <option value="white">White</option>
-                <option value="yellow">Yellow</option>
-            </select>
-
-            <input type="text" placeholder="Dimensions.." id="addProductDimensions">
-
-            <select id="addProductDishwasherSafe">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-
-            <select id="addProductMicrowaveSafe">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-
-            <button id="addProductBtn">Add product</button>
-        </div> -->
-
-
-
-
-
-
-        <!-- <div class="signup__store-box">
-            <div class="form__input-box">
-                <div class="form__input form__input-alt">
-                    <label for="storeName">Store Name *</label>
-                    <input name="storeName" id="signUpStoreName" class="signup-input form-text-input" type="text" placeholder="Enter store name here">
-                </div>
-                <div class="form__image-preview-box">
-                    <div class="form__input form__input-alt">
-                        <label for="imageURL">Image URL *</label>
-                        <div class="form__image-preview-box">
-                            <input name="imageURL" id="signUpProfilePicture" class="login-input form-text-input" type="text"      placeholder="image url">
-                            <button class="signup__image-preview" id="imgPreviewBtn" class="modal-btn"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form__image-preview"></div>
-        </div> -->
-
-
-
-
-
-
-
-        <!-- <div style="padding-left: 10rem; padding-top: 10rem;">
-            <h1>Delete product</h1>
-
-            <input type="text" placeholder="product id..." id="deleteProductId">
-
-            <button id="deleteProductBtn">Delete product</button>
         </div>
-
-        <div style="padding-left: 10rem; padding-top: 10rem;">
-            <h1>View products</h1>
-
-            <button id="viewProductsBtn">View products</button>
-        </div> -->
-        <!-- Testing backend functionality end -->
-
-        <!-- setting up mixins -->
-        <!-- <div class="test">
-            <button class="btn-one">Button 1</button>
-            <button class="btn-two">Button 2</button>
-            <button class="btn-three">Button 3</button>
-
-            <h1 class="title">Title</h1>
-            <h3 class="heading">Heading</h3>
-            <h6 class="sub-heading">Subheading</h6>
-            <p class="body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem ipsa cumque eius aperiam doloremque ducimus cum beatae corporis assumenda iusto quis illo omnis repudiandae, magni quasi pariatur est! Hic perferendis explicabo ipsum officia incidunt veritatis qui fugiat alias adipisci corrupti nesciunt, aliquid voluptatem expedita! Voluptate non sed tenetur repellat?</p>
-
-        </div> -->
-
-           
-        <!-- end of mixins --> 
 
         <!-- footer -->
         <footer class="footer">

@@ -8,26 +8,6 @@ $(document).ready(function() {
             $(".hamburger-menu").toggle()
         })
 
-        // product-drop-downs
-        $("#careDropDown").on("click", function(){
-            $(".care-info").toggle(600);
-            $(".care-up").toggle();
-            $(".care-down").toggle();
-            
-        })
-
-        $("#shippingDropDown").on("click", function(){
-            $(".shipping-info").toggle(600)
-            $(".shipping-up").toggle();
-            $(".shipping-down").toggle();
-        })
-
-
-        $("#paymentDropDown").on("click", function(){
-            $(".purchase-info").toggle(600)
-            $(".purchase-up").toggle();
-            $(".purchase-down").toggle();
-        })
 
 
         // Start of grab to scroll section home page
@@ -151,13 +131,13 @@ $(document).ready(function() {
             }); // end of all users from DB ajax
         },
         error: function(error) {
-            console.log(error);
+            let message = error; 
+            alertModal(message); 
         }
     }); // end of initial ajax to get url data from local json
 
     // start of user profile btn click
     $("#indexUserProfile").click(function() {
-        console.log("clic");
         let userId = sessionStorage.getItem('userID');
 
         if(!userId) {
@@ -165,10 +145,7 @@ $(document).ready(function() {
         } else {
             window.location = "./profile.html";
         }
-    });
-
-
-    // end of user profile btn click
+    }); // end of user profile btn click
 
     // Beginning of Image Preview
     function imagePreview(){
@@ -184,7 +161,6 @@ $(document).ready(function() {
         $('#imgPreviewBtnUploadOne').click(function(event){
             event.preventDefault();
             let imgPreviewOne = $("#addProductImgOneUrl").val();
-            console.log(imgPreviewOne);
 
                 $("#uploadImageBoxOne").empty().css("background", `url(${imgPreviewOne})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center");
 
@@ -227,17 +203,18 @@ $(document).ready(function() {
         let signUpBtnCont = document.getElementById("signUpBtnCont");
         signUpBtnCont.classList.add("hide");
     });
-    // start of hiding and showing sign-up buttons
+    // end of hiding and showing sign-up buttons depending on whether user is seller
 
+    // --- start of sign up ---
     $("#createAccountBtn").click(function() {
         signUpFunction();
     });
 
-    // start of sign up
+    
     $("#signUpBtn").click(function() {
         signUpFunction();
 
-    }); // end of sign up
+    });
 
     function signUpFunction() {
         event.preventDefault();
@@ -258,15 +235,12 @@ $(document).ready(function() {
 
         if (username == "" || email == "" || password == "") {
             // alert("Please enter all fields");
-            let message = "Please enter all fields!" 
+            let message = "Please enter all fields!" ;
             alertModal(message); 
         } else if ((seller == "yes") && (username == "" || email == "" || profilePicture == "" || password == "" || storeName == "" || storeDescription == "")) {
-            // alert("Please enter all fields, including store fields");
-            let message = "Please enter all fields, including store fields!" 
+            let message = "Please enter all fields, including store fields!" ;
             alertModal(message); 
         } else {
-            console.log("Form complete");
-
             // start of register user ajax
             $.ajax({
                 url: `http://${url}/registerUser`,
@@ -285,8 +259,7 @@ $(document).ready(function() {
                 },
                 success: function(user) {
                     if (user !== "Username already taken. Please try another name") {
-                        // alert("Thanks for signing up! Please login.");
-                        let message = "Thanks for signing up! Please login!" 
+                        let message = "Thanks for signing up! Please login!";
                         alertModal(message); 
                         $("#exampleModalToggle3").modal("hide");
 
@@ -295,8 +268,7 @@ $(document).ready(function() {
                         $("#signUpEmail").val("");
                         $("#signUpPassword").val("");
                     } else {
-                        // alert('Username already taken. Please use a different username');
-                        let message = "Username already taken. Please use a different username!" 
+                        let message = "Username already taken. Please use a different username!";
                         alertModal(message); 
 
                         // clearning inputs
@@ -306,26 +278,26 @@ $(document).ready(function() {
                     } // end of if/else
                 }, // end of success
                 error: function() {
-                    console.log("Cannot call api");
+                    let message = "Cannot call api";
+                    alertModal(message); 
                 }
             }); // end of register user ajax
         } // end of if/else checking register form details
-    }
+    } // --- end of sign up ---
 
     // start of login
     $("#loginBtn").click(function() {
-        console.log("login")
         event.preventDefault();
 
         let username = $("#loginUsername").val();
         let password = $("#loginPassword").val();
-        console.log(username, password);
 
         if (username == "" || password == "") {
             // alert("Please enter all details");
-            let message = "Please enter all details!" 
+            let message = "Please enter all details!";
             alertModal(message);
         } else {
+            // start of login user ajax
             $.ajax({
                 url: `http://${url}/loginUser`,
                 type: "POST",
@@ -336,11 +308,11 @@ $(document).ready(function() {
                 success: function(user) {
                     if (user == "User not found. Please register") {
                         // alert("User not found. Please register");
-                        let message = "User not found. Please register!" 
+                        let message = "User not found. Please register!";
                         alertModal(message); 
                     } else if (user == "Not authorized") {
                         // alert("Please try again with the correct details");
-                        let message = "Please try again with the correct details!" 
+                        let message = "Please try again with the correct details!";
                         alertModal(message); 
 
                         // clearing inputs
@@ -348,7 +320,7 @@ $(document).ready(function() {
                         $("#loginPassword").val("");
                     } else {
                         // alert("Logged in");
-                        let message = "Logged In!" 
+                        let message = "Logged In!";
                         alertModal(message); 
                         $("#indexLoginModal").modal("hide");
 
@@ -362,7 +334,7 @@ $(document).ready(function() {
                         $("#loginPassword").val("");
                     } // end of inner if/else
                 } // end of success
-            }); // end of ajax
+            }); // end of login user ajax
         } // end of outer if/else
     }); // end of login
 
@@ -372,9 +344,8 @@ $(document).ready(function() {
         alert('You have logged out');
         window.location = "./index.html";
         // alert('You have logged out');
-        let message = "You have logged out!" 
+        let message = "You have logged out!";
         alertModal(message); 
-        console.log(sessionStorage);
     }); // end of sign out
 
     // add product to DB
@@ -396,20 +367,16 @@ $(document).ready(function() {
 
         imagePreview();
         
-        console.log(productName, description, price, imgOneUrl, imgTwoUrl, imgThreeUrl, category, colour, dimensions, dishwasherSafe, microwaveSafe);
         if(!userId) {
-            // alert("Sign in to add product")
-           let message = "Sign in to add product!" 
+           let message = "Sign in to add product!";
             alertModal(message); 
         } else {
             if(isNaN(price) == true) {
-                // alert("Price must be a number");
-                let message = "Price must be a number!" 
+                let message = "Price must be a number!";
                 alertModal(message); 
             } else if (isNaN(price) == false) {
                 if (productName == "" || description == "" || price == "" && (imgOneUrl == "" && imgTwoUrl == "" && imgThreeUrl == "")) {
-                    // alert("Please login and enter all fields");
-                    let message = "Please login and enter all fields!" 
+                    let message = "Please login and enter all fields!";
                     alertModal(message); 
                 } else {
                     $.ajax({
@@ -430,9 +397,7 @@ $(document).ready(function() {
                             authorId: userId
                         },
                         success: function(product) {
-                            console.log(product);
-                            // alert("Product added");
-                            let message = "Product added!" 
+                            let message = "Product added!";
                             alertModal(message); 
         
                             $("#addProductName").val("");
@@ -443,7 +408,8 @@ $(document).ready(function() {
                             $("#addProductImgThreeUrl").val("");
                         },
                         error: function() {
-                            console.log("Error: cannot call api");
+                            let message = "Error: cannot call api";
+                            alertModal(message); 
                         }
                     }); // end of ajax
                 } // end of info fields if/else statement
@@ -455,32 +421,29 @@ $(document).ready(function() {
     // reusable code for product cards (is called initially from the first successful ajax function)
     $('#landingProductsCards').empty() //empty the container
 
+    // start of generate home card
     function generateHomeCard(productsFromMongo) {
         for(let i = 0; i < productsFromMongo.slice(0,8).length; i++) {
-            // console.log(productsFromMongo[i]);
-
-            
-
             $('#landingProductsCards').append(
                 `
-            <div class="cards ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}">
-                <div class="cards__img">
-                    <img src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" class="cards-img">
-                </div>
-                <div class="cards__body">
-                    <div class="cards__body-top">
-                    <p class="cards__body-name">${productsFromMongo[i].productName}</p>
-                    <p class="cards__body-price">$${productsFromMongo[i].price}</p>
+                    <div class="cards ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}">
+                        <div class="cards__img">
+                            <img src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" class="cards-img">
+                        </div>
+                        <div class="cards__body">
+                            <div class="cards__body-top">
+                            <p class="cards__body-name">${productsFromMongo[i].productName}</p>
+                            <p class="cards__body-price">$${productsFromMongo[i].price}</p>
+                            </div>
+                            <div class="cards__body-bottom" id="cardBottomBody">
+                                <p class="cards__body-artist">Jane Doe</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cards__body-bottom" id="cardBottomBody">
-                        <p class="cards__body-artist">Jane Doe</p>
-                    </div>
-                </div>
-            </div>
                 `
-            )
-        }
-    };
+            ); // end of append
+        } // end of for loop
+    }; // start of generate home card
 
 
     // ----- home page end -----
@@ -488,6 +451,7 @@ $(document).ready(function() {
 
     // ----- shop page start -----
 
+    // hiding/showing relevent back btns depending on whoch page have been appended to core html
     $("#profileBackBtn").click(function() {
         let profileBackBtn = document.getElementById("profileBackBtn");
         profileBackBtn.classList.add("hide");
@@ -524,31 +488,9 @@ $(document).ready(function() {
                 `
             );
 
-            // NOT WORKING
-            // start of all users from DB ajax
-            $.ajax({
-                url: `http://${url}/allUsersFromDB`,
-                type: "GET",
-                dataType: "json",
-                success: function(usersFromMongo) {
-                    // console.log(usersFromMongo);
-                    // $("#cardBottomBody").append(
-                    //     `
-                    //         <p class="cards__body-artist">${usersFromMongo.storeName}</p>
-                    //     `
-                    // )
-                },
-                error: function() {
-                    // alert("Unable to get users");
-                }
-            }); // end of all users from DB ajax
-
-            // shopCardName(i);
 
             // when product card in shop is click, finds the relevant product details
             $(`.${productsFromMongo[i].authorId}`).click(function() {
-                console.log(this.id);
-                console.log(this.classList[1]);
 
                 let productBackBtn = document.getElementById("productBackBtn");
                 productBackBtn.classList.remove("hide");
@@ -572,8 +514,8 @@ $(document).ready(function() {
 
                         // calls the function that creates the product section of the product details page
                         generateProductSection(productsFromMongo, i);
-                    }
-                }
+                    } // end of if statement
+                } // end of for loop
 
                 // gets users from mongo to append store information to product details
                 $.ajax({
@@ -584,65 +526,18 @@ $(document).ready(function() {
                         for(let i = 0; i < usersFromMongo.length; i++) {
                             if(thisUserId === usersFromMongo[i]._id) {
                                 generateAuthorProductSection(usersFromMongo, i);
-                                // $("#authorContainer").empty();
-                                // $("#authorContainer").append(
-                                //     `
-                                //         <p>Store name: ${usersFromMongo[i].storeName}</p>
-                                //     `
-                                // );
                             }
                         }
                     },
                     error: function() {
                         // alert("Unable to get users");
-                        let message = "Unable to get users!" 
+                        let message = "Unable to get users!";
                         alertModal(message); 
                     }
                 }); // end of get users ajax
             }); // end of product detail appending
-        }
-        
-
-        // THE FOLLOWING COMMENTS CONTAINS THE OLD CARD DESIGN IN CASE IT'S  NEEDED
-
-                //         <a class="card ${productsFromMongo[i].authorId}" id="${productsFromMongo[i]._id}" href"./product-page.html">
-                //     <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap" style="width: 15rem;">
-                //     <div class="card-body">
-                //         <div class="card-body-top">
-                //             <p class="card-name">${productsFromMongo[i].productName}</p>
-                //             <p class="card-price">$${productsFromMongo[i].price}</p>
-                //         </div>
-                //         <div class="card-body-bottom">
-                //             <p class="card-artist">Jane Doe</p>
-                //         </div>
-                //     </div>
-                // </a>
-                
-        // END OF OLD CARD DESIGN
-
-        
+        } // end of for loop
     } // end of generateShopCard function
-
-    // function shopCardName(i) {
-    //     // start of all users from DB ajax
-    //     $.ajax({
-    //         url: `http://${url}/allUsersFromDB`,
-    //         type: "GET",
-    //         dataType: "json",
-    //         success: function(usersFromMongo) {
-    //             $("#cardBottomBody").append(
-    //                 `
-    //                     <p class="cards__body-artist">${usersFromMongo[i].storeName}</p>
-    //                 `
-    //             )
-    //         },
-    //         error: function() {
-    //             // alert("Unable to get users");
-    //         }
-    //     }); // end of all users from DB ajax
-
-        
-    // }
 
     // ----- shop page end -----
 
@@ -707,7 +602,6 @@ $(document).ready(function() {
 
         // view seller profile start
         $("#viewSellerProfile").click(function() {
-            console.log('clicked');
             document.getElementById("productDetails").style.display = "none";
             document.getElementById("artistProfile").style.display = "block";
             const profileCurvedText = document.getElementById("artistProfileCurvedText");
@@ -757,7 +651,7 @@ $(document).ready(function() {
                         </a>
                     `
                 );
-            }
+            } // end of if statement
 
             if(usersFromMongo[i].facebook !== "") {
                 $("#artistProfileFacebookDiv").append(
@@ -768,7 +662,7 @@ $(document).ready(function() {
                         </a>
                     `
                 );
-            }
+            } // end of if statement
 
             if(usersFromMongo[i].twitter !== "") {
                 $("#artistProfileTwitterDiv").append(
@@ -779,7 +673,7 @@ $(document).ready(function() {
                         </a>
                     `
                 );
-            }
+            } // end of if statement
         }); // end of view seller profile 
     } // end of generate product section
 
@@ -875,7 +769,7 @@ $(document).ready(function() {
         // THIS CODE ONLY ADDS SELECTED PRODUCT - needs fixing
         $("#artistProfileListings").append(
             `
-                <div class="card" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
+                <div class="cards" style="width: 27rem;" data-value=${productsFromMongo[i]._id} id="productID">
                     <img class="card-img-top" src=${productsFromMongo[i].imgOneUrl} alt="Card image cap">
                     <div class="card-body">
                     <div class="card-body-top">
@@ -889,75 +783,66 @@ $(document).ready(function() {
                 </div>
             `
         ); // end of profile listings append
-
-        //---------------------------------- new code ends ----------------------------
-        //---------------------------------- old code starts ----------------------------
-
-        // ----- comments start -----
-
-        
     } // end of generate product section
+
+    // ----- comments start -----
     $("#addCommentBtn").click(function() {
-        console.log("clicked");
         userId = sessionStorage.getItem('userID');
 
         if (!userId) {
-            // alert("Please login to comment");
-            let message = "Please log in to comment!" 
+            alert("Please login to comment");
+            let message = "Please log in to comment!";
             alertModal(message); 
         } else {
             $("#commentModal").modal("show");
         }
-    });
+    }); // comments btn click end
 
 
+    // when called this function posts comment to DB
     function commentsFunction(productId, authorId) {
-        // Post comment start
-            userId = sessionStorage.getItem('userID');
-            let comment = document.querySelector("#commentField").value;
-            let username = sessionStorage.getItem('username');
-            let initial = username.charAt(0);
-            let isArtist;
+        userId = sessionStorage.getItem('userID');
+        let comment = document.querySelector("#commentField").value;
+        let username = sessionStorage.getItem('username');
+        let initial = username.charAt(0);
+        let isArtist;
 
-            if(authorId === sessionStorage.userID) {
-                isArtist = true;
-            } else {
-                isArtist = false;
-            }
-            
-            if (!userId) {
-                // alert("Please login to comment");
-                let message = "Please login to comment!" 
-                alertModal(message); 
-            } else {
-                $.ajax({
-                    url: `http://${url}/createComment`,
-                    type: "POST",
-                    data: {
-                        comment,
-                        initial,
-                        authorId: userId,
-                        productId,
-                        isArtist
-                    },
-                    success: function(comment) {
-                        console.log(comment);
-                        // alert("Comment posted");
-                        let message = "Comment posted!!" 
-                        alertModal(message); 
-                        document.querySelector("#commentField").value = "";
-                        $("#commentModal").modal("hide");
-                    },
-                    error: function() {
-                        // alert("Unable to post comment");
-                        let message = "Unable to post comment!" 
-                        alertModal(message); 
-                    }
-                }); // end of ajax
-            } // end of if/else statement
-        // }); // end of post comment function
-    } // end of comments function
+        if(authorId === sessionStorage.userID) {
+            isArtist = true;
+        } else {
+            isArtist = false;
+        }
+        
+        if (!userId) {
+            // alert("Please login to comment");
+            let message = "Please login to comment!";
+            alertModal(message); 
+        } else {
+            $.ajax({
+                url: `http://${url}/createComment`,
+                type: "POST",
+                data: {
+                    comment,
+                    initial,
+                    authorId: userId,
+                    productId,
+                    isArtist
+                },
+                success: function(comment) {
+                    let message = "Comment posted!!";
+                    alertModal(message); 
+                    document.querySelector("#commentField").value = "";
+                    $("#commentModal").modal("hide");
+                },
+                error: function() {
+                    let message = "Unable to post comment!";
+                    alertModal(message); 
+                }
+            }); // end of ajax
+        } // end of if/else statement
+    } // end of post comments function
 
+    // start of view comments function
     function viewComments(productId) {
         // view comments start
         $.ajax({
@@ -999,10 +884,10 @@ $(document).ready(function() {
                 }
             },
             error: function() {
-                console.log("Error: cannot retrieve comments");
+                let message = "Error: cannot retrieve comments";
+                alertModal(message); 
             } // end of error
         }); // end of ajax
-        // end of view comments
     } // end of view comments
 
     
@@ -1014,13 +899,14 @@ $(document).ready(function() {
 
     function populateProfile(usersFromMongo) {
         if (sessionStorage.username !== "") {
-            
-
             for(let i = 0; i < usersFromMongo.length; i++) {
                 if(sessionStorage.userID === usersFromMongo[i]._id) {
                     const profileCurvedText = document.getElementById("profileCurvedText");
 
                     if (usersFromMongo[i].seller === true) {
+
+                        $("#postListing").css("display", "block");
+                        
                         profileCurvedText.innerHTML = "SELLER PROFILE."
 
                         $("#cardBottomBody").append(
@@ -1048,7 +934,7 @@ $(document).ready(function() {
                                 <h3 class="user-name">${usersFromMongo[i].username}</h3>
                             `
                         );
-                    }
+                    } // end of if/else statement
 
                     $("#profileDescription").append(
                         `<p class="user-about">${usersFromMongo[i].storeDescription}</p>`
@@ -1141,11 +1027,11 @@ $(document).ready(function() {
                         url: `http://${url}/deleteProduct/${id}`,
                         type: "DELETE",
                         success: function() {
-                            console.log("Deleted");
+                            let message = "Product deleted!";
+                            alertModal(message); 
                         },
                         error: function() {
-                            // alert("Error: cannot delete");
-                            let message = "Cannot Delete!" 
+                            let message = "Cannot Delete!";
                             alertModal(message); 
                         }
                     });
@@ -1227,26 +1113,21 @@ $(document).ready(function() {
                             })
                         },
                         error: function() {
-                            // alert("Error: cannot update");
-                            let message = "Error: Cannot update!" 
+                            let message = "Error: Cannot update!";
                             alertModal(message); 
                         }
                     }); // end of ajax
                 });
             }); // end of edit listing function
-
-        }
-
+        } // end of for loop
         
-            // exit edit listing function, back to user profile
-            $("#goBackProfileBtn").click(function() {
-                document.getElementById("userProfileSection").style.display = "block";
-                document.getElementById("editListingSection").style.display = "none";
-            }); // end of exit edit listing function
+        // exit edit listing function, back to user profile
+        $("#goBackProfileBtn").click(function() {
+            document.getElementById("userProfileSection").style.display = "block";
+            document.getElementById("editListingSection").style.display = "none";
+        }); // end of exit edit listing function
         }
     } // end of populate listings on profile
-
-    
 
     // ----- profile page end -----
 

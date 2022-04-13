@@ -10,6 +10,11 @@
         // text-align: right;
         padding-bottom: 3vw;
 
+        @media #{$tablet, $mobile}{
+            margin-top: 5vw;
+            margin-bottom: 8vw;
+        }
+
         .title{
             @include title;
             font-size: 3.4em;

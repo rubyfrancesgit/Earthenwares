@@ -21,22 +21,18 @@
 
     <body>
 
+        <div class="secondary-nav__top" id="postListing">
+            <a href="upload-product.html"><div class="secondary-nav__btn" >
+                <button class="secondary-nav-post">Post a Listing</button>
+                <i class="fa-solid fa-circle-plus nav-fa-landing"></i>
+            </div></a>
+        </div>
+
         <div class="secondary-nav">
             <div class="secondary-nav__logo">
                 <img src="./img/LOGO-GREEN-SVG.svg" alt="" class="secondary-nav-logo">
             </div>
-            <!-- <div class="secondary-nav__navigation">
-                <div class="secondary-nav__top">
-                    <div class="secondary-nav__btn">
-                        <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
-                        <button class="secondary-nav-back">Go Back</button>
-                    </div>
-                    <div class="secondary-nav__btn">
-                        <button class="secondary-nav-back">Post a Listing</button>
-                        <i class="fa-solid fa-circle-plus nav-fa-landing"></i>
-                    </div>
-                </div>
-                <div class="secondary-nav__bottom"> -->
+
                     <ul class="secondary-nav__ul">
                         <div class="secondary-nav__back hide" id="productBackBtn">
                             <i class="fa-solid fa-arrow-left-long nav-fa-landing"></i>
@@ -53,6 +49,22 @@
                     <div class="secondary-nav__btn" id="indexUserProfile">
                         <button class="secondary-nav-btn">User Profile</button>
                         <i class="fa-solid fa-bag-shopping secondary-nav-fa-landing"></i>
+                    </div>
+
+                    <div class="mobile-menu">
+                        <i class="fa-solid fa-bars hamburger-nav" id="hamburgerNav"></i>
+                        <i class="fa-solid fa-bag-shopping nav-fa-landing hamburger-bag"></i>
+                    </div>
+                    
+                    <div class="hamburger-menu">
+                        <ul class="hamburger__ul">
+                            <a href="index.html"><li class="nav-li">Home</li></a>
+                            <a href="shop-products-profile.html"><li class="nav-li">Collection</li></a>
+                            <li class="nav-li">About Us</li>
+                        </ul>
+                        <a class="hamburger__btn" href="./profile.html">
+                            <button class="nav-btn">User Profile</button>
+                        </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -508,13 +520,6 @@
 
                     </div>
                     <div class="top-left__right">
-                        <button class="edit-profile-btn">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </button>
-                        
                         <div class="artist-info">
                             <div id="artistProfileName"></div>
                             <div id="artistProfileDescription"></div>
